@@ -1,0 +1,18 @@
+<Event name='WriteIOPoints' qualifier='ZIOS'>
+    <EventId>1235</EventId>
+    <Nuid>ZED-000001</Nuid>
+    <NetworkNumber>17</NetworkNumber>
+    <FirmwareVersion>700</FirmwareVersion>
+    <WriteIOPoints>
+        <WriteValue>
+            <Index>100</Index>
+            <DataType>Float</DataType>
+            <Value>2.2</Value>
+        </WriteValue>
+        <WriteValue>
+            <Index>101</Index>
+            <DataType>Float</DataType>
+            <Value>1.2</Value>
+        </WriteValue>
+    </WriteIOPoints>
+</Event>

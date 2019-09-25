@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Event name='Configure' qualifier='ZIOS'>
+    <EventId>12345</EventId>
+    <Nuid>ZED-00001</Nuid>
+    <Configure object='site'>
+        <Action type='delete'>
+            <CorrelationId>123</CorrelationId>
+            <Id>5</Id> 
+        </Action>
+        <Action type='delete'>
+            <CorrelationId>567</CorrelationId>
+            <Id>21</Id>
+        </Action>
+        <Action type='add'>
+            <CorrelationId>123</CorrelationId>
+            <Name>Freddy Zipplemier</Name>
+        </Action>
+        <Action type='update'>
+            <CorrelationId>123</CorrelationId>
+            <Id>456</Id>
+            <Name>Archie Bunker</Name>
+        </Action>
+    </Configure>
+</Event>

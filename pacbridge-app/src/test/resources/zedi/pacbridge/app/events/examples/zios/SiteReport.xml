@@ -1,0 +1,11 @@
+<SiteReport messageId="091634817-22006" qualifier="ZIOS">
+    <Nuid>ZGWDAVE</Nuid>
+    <PollSetNumber>1</PollSetNumber>
+    <Timestamp>1091634797</Timestamp>
+    <ReportItem index="1" dataType="8" alarmStatus="OK">
+        <Value>234.009</Value>
+    </ReportItem>
+    <ReportItem index="2" dataType="8" alarmStatus="OK">
+        <Value>234.009</Value>
+    </ReportItem>
+</SiteReport>

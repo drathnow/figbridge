@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_h7zeQGZDEeKSp55GhdZi8g" name="model">
+  <packagedElement xmi:type="uml:Realization" xmi:id="_beFFgGZGEeKSp55GhdZi8g" name="" client="_Z-AZ4GZGEeKSp55GhdZi8g" supplier="_iGXdkGZFEeKSp55GhdZi8g"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lDJiUGZGEeKSp55GhdZi8g" name="zedi.pacbridge.msg">
+    <packagedElement xmi:type="uml:Class" xmi:id="_etvU4GZFEeKSp55GhdZi8g" clientDependency="_JPKokGZHEeKSp55GhdZi8g _Ty7iQGZHEeKSp55GhdZi8g _Y-dL8GZHEeKSp55GhdZi8g _Lo0LEGZIEeKSp55GhdZi8g" name="JmsCenter">
+      <ownedAttribute xmi:id="_6SecQGZFEeKSp55GhdZi8g" name="jmsImplementor" type="_iGXdkGZFEeKSp55GhdZi8g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6SecQWZFEeKSp55GhdZi8g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6SecQmZFEeKSp55GhdZi8g" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_iGXdkGZFEeKSp55GhdZi8g" name="JmsImplementor"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_f40ygGZGEeKSp55GhdZi8g" name="JmsServerReconnector"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_JPKokGZHEeKSp55GhdZi8g" name="Dependency1" client="_etvU4GZFEeKSp55GhdZi8g" supplier="_iGXdkGZFEeKSp55GhdZi8g"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RLZfUGZHEeKSp55GhdZi8g" name="MessageListenerManager"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Ty7iQGZHEeKSp55GhdZi8g" name="" client="_etvU4GZFEeKSp55GhdZi8g" supplier="_RLZfUGZHEeKSp55GhdZi8g"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Wf--YGZHEeKSp55GhdZi8g" clientDependency="_hCfT0GZHEeKSp55GhdZi8g _7vHugGZHEeKSp55GhdZi8g" name="ExceptionListener"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Y-dL8GZHEeKSp55GhdZi8g" name="Dependency2" client="_etvU4GZFEeKSp55GhdZi8g" supplier="_Wf--YGZHEeKSp55GhdZi8g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hCfT0GZHEeKSp55GhdZi8g" name="" client="_Wf--YGZHEeKSp55GhdZi8g" supplier="_f40ygGZGEeKSp55GhdZi8g"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z8QPIGZHEeKSp55GhdZi8g" name="ReconnectionRunner"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_7vHugGZHEeKSp55GhdZi8g" name="Dependency3" client="_Wf--YGZHEeKSp55GhdZi8g" supplier="_z8QPIGZHEeKSp55GhdZi8g"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HXuwYGZIEeKSp55GhdZi8g" name="ConnectionPool"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Lo0LEGZIEeKSp55GhdZi8g" name="Dependency4" client="_etvU4GZFEeKSp55GhdZi8g" supplier="_HXuwYGZIEeKSp55GhdZi8g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_BQ6_oGZHEeKSp55GhdZi8g" name="zedi.pacbridge.wsmq">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Z-AZ4GZGEeKSp55GhdZi8g" clientDependency="_beFFgGZGEeKSp55GhdZi8g" name="WsmqJmsImplementator"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_muWDYGZHEeKSp55GhdZi8g" clientDependency="_x6VasGZHEeKSp55GhdZi8g" name="WsmqServerReconnector"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_x6VasGZHEeKSp55GhdZi8g" name="Realization1" client="_muWDYGZHEeKSp55GhdZi8g" supplier="_f40ygGZGEeKSp55GhdZi8g"/>
+</uml:Model>

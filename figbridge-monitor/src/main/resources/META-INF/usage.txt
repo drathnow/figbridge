@@ -1,0 +1,93 @@
+usage: figbridge-monitor [--config=<path-to-config>] [--debug] [--help]
+
+The figbridge-monitor will test the health of a FIG bridge.  
+
+Options:
+    --config=<path-to-config>   Optional.  This option specifies the path to the configuration file.  
+                                If not specified, the default file used is bridgemonitor.xml in 
+                                the current directory where the command is run from.
+    
+    --debug  Optional. Will display extra log messages
+    
+    --help   Optional. Will display this text.
+    
+    
+Properties 
+
+    figbridgeMonitor.mqWaitSeconds  Specifies the number of seconds to wait for the Site Report
+                                    message to be be received by the figbridge-monitor program,
+                                    after it is sent.
+                                    
+    Properties can be defined in one of two ways:
+    
+    1. You can add them to the command line:
+    
+        java [-DpropertyName=propertyValue] -jar figbridge-monitor.jar
+        
+    2.  You can add a "Property" element to the configuration file after the
+        root element (i.e. <FigBridgeMonitor>) like this:
+        
+            <Property name="foo" value="bar" />
+        
+
+The program does the following:
+
+1. It will first make a connection to the bridge. The connection information is taken
+   from the configuration file elements:
+
+        <Bridge>
+            <Address>IP ADDRESS</Address>
+            <Port>PORT NUMBER</Port>
+        </Bridge>
+    
+2. Authenticate with the bridge. The authentication information is taken from the configuration
+   file elements:
+
+        <Authentication>
+            <Nuid>NUID</Nuid>
+            <SecretKey>ENCODED_KEY</SecretKey>
+        </Authentication>
+
+    Where:    
+        NUID must be a valid device identifier already defined in the Zedi Access database.
+    
+        ENCODED_KEY value must be a valid, Base64 encoding for a Secret Key used to authenticate with
+        bridge.
+    
+3.  Send in a report containing a single reading value. The values for this report are generated
+    internally by the program.
+    
+4.  Wait for a Site Report message to published to the message server that contains the values
+    generated in step 3. The connection information for the message server is taken from the
+    configuration element:
+    
+        <Jms>
+            <QueueManagerName>QM_NAME</QueueManagerName>
+            <HostName>HOST_NAME</HostName>
+            <EventTopicName>TOPIC_NAME</EventTopicName>
+        </Jms>
+
+    Where:
+        QM_NAME is the name of the message server Queue Manager
+        
+        HOST_NAME is the name of the host running the message server
+        
+        TOPIC_NAME is the name of the topic where the Site Report message is
+        published.  This name must be prefixed by either "topic://" or "queue://" 
+        and contain slashes (/) NOT dots (.).  For example, the existing topic
+        used to publish site reports would be specified as "topic://scada/system/events".
+         
+
+Status results are written to SYSOUT in the format <NUM>:<MSG>. The NUM is a numeric
+value for the error and the MSG is text associated with the error.  Values produced by
+this program are:
+
+0:SUCCESS          - All tests passed successfully.
+1:CONNECT_FAILED   - Unable to connect to the bridge
+2:AUTH_FAILED      - Authentication failure.
+3:<MSG>            - Unable to send to message to the bridge.  The 
+                     <MSG> will contain more details
+3:NO_MSG_PUB       - No message published to the Message Server
+99:<MSG>           - A fatal error has occured.  This may be caused by almost
+                     anything.  Before restarting the bridge, check logs that contain
+                     output FROM THIS PROGRAM!

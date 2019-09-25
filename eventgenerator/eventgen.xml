@@ -1,0 +1,10 @@
+<EventGenerator>
+  <Usernames>
+    <Username default='true'>BigD</Username>
+    <Username>TEST-DAVE</Username>
+    <Username>LittleD</Username>
+  </Usernames>
+  <JmsQManager>QM_csmqdev1</JmsQManager>
+  <JmsHost>csmqdev1</JmsHost>
+  <EventTopicName>topic://scada/system/events</EventTopicName>
+</EventGenerator>

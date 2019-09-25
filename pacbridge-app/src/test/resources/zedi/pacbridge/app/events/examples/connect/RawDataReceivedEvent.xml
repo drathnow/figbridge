@@ -1,0 +1,7 @@
+<Event name="RawDataReceived" qualifier="Connect">
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <RawDataReceived>
+        <SiteReport></SiteReport>
+    </RawDataReceived>
+</Event>

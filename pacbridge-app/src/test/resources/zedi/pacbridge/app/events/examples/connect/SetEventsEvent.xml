@@ -1,0 +1,29 @@
+<Event name="SetEvents" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>TEST_89433894934</SerialNumber>
+    <FirmwareVersion>400</FirmwareVersion>
+    <SetEvents>
+        <DeviceEvents>
+            <DeviceEvent>
+                <Index>1</Index>
+                <EventAction>poll</EventAction>
+                <Parameter1>123</Parameter1>
+                <Parameter2>456</Parameter2>
+                <StartTime>12123123</StartTime>
+                <Interval>22</Interval>
+                <Duration>2323</Duration>
+            </DeviceEvent>
+            <DeviceEvent>
+                <Index>5</Index>
+                <EventAction>poll</EventAction>
+                <Parameter1>123</Parameter1>
+                <Parameter2>456</Parameter2>
+                <StartTime>12123123</StartTime>
+                <Interval>22</Interval>
+                <Duration>2323</Duration>
+            </DeviceEvent>
+        </DeviceEvents>
+    </SetEvents>
+</Event>

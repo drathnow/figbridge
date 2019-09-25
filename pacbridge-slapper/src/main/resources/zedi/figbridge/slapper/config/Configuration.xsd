@@ -1,0 +1,68 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="IntervalType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fixed" />
+            <xs:enumeration value="random" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:element name="BridgeSlapper">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Jms">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="QueueManagerName" />
+                            <xs:element type="xs:string" name="HostName" />
+                            <xs:element type="xs:string" name="ClientId" />
+                            <xs:element type="xs:string" name="RawDataDestinationName" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Bridge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Address" />
+                            <xs:element type="xs:short" name="Port" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="FigDevice" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:choice>
+
+                            <xs:element name="FixedReport" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:unsignedInt" name="IntervalSeconds" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element type="xs:unsignedInt" name="NumberOfReadings" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="IntervalType" name="intervalType" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="RandomReport" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:unsignedInt" name="IntervalSeconds" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element type="xs:unsignedInt" name="MinNumberOfReadings" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element type="xs:unsignedInt" name="MaxNumberOfReadings" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="IntervalType" name="intervalType" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:choice>
+                        <xs:attribute type="xs:unsignedInt" name="count" use="required" />
+                        <xs:attribute type="xs:unsignedInt" name="startDelaySeconds" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<FigBridgeMonitor>
+    <Jms>
+        <QueueManagerName>QM_csmqdev1</QueueManagerName>
+        <HostName>csmqdev1</HostName>
+        <EventTopicName>topic://scada/system/events</EventTopicName>
+    </Jms>
+    <Bridge>
+        <Address>192.168.169.64</Address>
+        <Port>3100</Port>
+    </Bridge>
+    <Authentication>
+        <Nuid>BridgeMonitor</Nuid>
+        <SecretKey>AAAAAKu1koTfs2aAfRQakxR5gW8sesbFIWpW6cHMZ4yW2XLy1EbhitLE+JaEttZ4VFXlYljfZPX6F3ikANiYW/JCf1k=</SecretKey>
+    </Authentication>
+</FigBridgeMonitor>

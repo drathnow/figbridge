@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>pacbridge</artifactId>
+        <groupId>zedi.pacbridge</groupId>
+        <version>6.4.0</version>
+    </parent>
+
+    <artifactId>pacbridge-ear</artifactId>
+    <version>6.4.0.Final-2</version>
+    <packaging>ear</packaging>
+
+    <name>PacBridge Ear</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <version>6</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <packagingExcludes>
+                        **/dom4j-1.6.1.jar
+                    </packagingExcludes>
+                    <modules>
+                        <webModule>
+                            <groupId>zedi.pacbridge</groupId>
+                            <artifactId>pacbridge-web</artifactId>
+                            <contextRoot>/pacbridge</contextRoot>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>zedi.pacbridge</groupId>
+                            <artifactId>pacbridge-app</artifactId>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>zedi.pacbridge</groupId>
+                            <artifactId>pacbridge-domain</artifactId>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Depend on the ejb module and war so that we can package them -->
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-web</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-app</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-domain</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-utl</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-net</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-gdn</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-zap</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>

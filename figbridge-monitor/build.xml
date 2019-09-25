@@ -1,0 +1,30 @@
+<project name="BridgeMonitor" default="zipit" basedir=".">
+    <property environment="env" />
+    <property name="version" value="1.0.0" />
+    <property name="m2_repo" value="${env.M2_REPO}" />  
+
+    <target name="zipit">
+        <delete file="./target/figbridge-monitor-${version}.zip" />
+        <zip destfile="./target/figbridge-monitor-${version}.zip">
+        	<zipfileset dir="." includes="bridgemonitor.xml" />
+            <zipfileset dir="../docs" includes="BridgeMonitor.pdf" />
+            <zipfileset dir="./target" includes="pacbridge-monitor-1.0.0.jar" />
+            <zipfileset dir="${m2_repo}/wsmq/dhbcore/7.5.0.0" includes="dhbcore-7.5.0.0.jar" />
+            <zipfileset dir="${m2_repo}/wsmq/com.ibm.mq.headers/7.5.0.0" includes="com.ibm.mq.headers-7.5.0.0.jar" />
+            <zipfileset dir="${m2_repo}/wsmq/com.ibm.mq.jmqi/7.5.0.0" includes="com.ibm.mq.jmqi-7.5.0.0.jar" />
+            <zipfileset dir="${m2_repo}/wsmq/com.ibm.mqjms/7.5.0.0" includes="com.ibm.mqjms-7.5.0.0.jar" />
+            <zipfileset dir="${m2_repo}/javax/jms/jms/1.1" includes="jms-1.1.jar" />
+            <zipfileset dir="${m2_repo}/org/jdom/jdom/2.0.2" includes="jdom-2.0.2.jar" />
+            <zipfileset dir="${m2_repo}/log4j/log4j/1.2.17" includes="log4j-1.2.17.jar" />
+            <zipfileset dir="${m2_repo}/org/slf4j/slf4j-api/1.7.5" includes="slf4j-api-1.7.5.jar" />
+            <zipfileset dir="${m2_repo}/org/slf4j/slf4j-log4j12/1.7.5" includes="slf4j-log4j12-1.7.5.jar" />
+        	<zipfileset dir="${m2_repo}/commons-codec/commons-codec/1.8" includes="commons-codec-1.8.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-utl/6.2.0" includes="pacbridge-utl-6.2.0.jar" />
+        	<zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-zap/6.2.0" includes="pacbridge-zap-6.2.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-net/6.2.0" includes="pacbridge-net-6.2.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-app/6.2.0" includes="pacbridge-app-6.2.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/figbridge-monitor/1.0.0" includes="figbridge-monitor-1.0.0.jar" fullpath="figbridge-monitor.jar" />
+        </zip>
+    </target>
+
+</project>

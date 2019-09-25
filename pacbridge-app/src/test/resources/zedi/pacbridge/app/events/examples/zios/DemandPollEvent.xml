@@ -1,0 +1,10 @@
+<Event name='DemandPoll' qualifier='ZIOS'>
+    <EventId>12345</EventId>
+    <Nuid>ZED-00001</Nuid>
+    <NetworkNumber>17</NetworkNumber>
+    <FirmwareVersion>700</FirmwareVersion>
+    <DemandPoll>
+        <Index>1</Index>
+        <PollsetNumber>0</PollsetNumber>
+    </DemandPoll>
+</Event>

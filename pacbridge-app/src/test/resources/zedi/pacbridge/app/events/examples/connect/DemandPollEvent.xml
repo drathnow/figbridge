@@ -1,0 +1,11 @@
+<Event name="DemandPoll" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>89433894934</SerialNumber>
+    <FirmwareVersion>600</FirmwareVersion>
+    <DemandPoll>
+        <Index>23</Index>
+        <PollsetNumber>3</PollsetNumber>
+    </DemandPoll>
+</Event>

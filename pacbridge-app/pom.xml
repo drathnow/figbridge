@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>pacbridge</artifactId>
+		<groupId>zedi.pacbridge</groupId>
+		<version>6.4.0</version>
+	</parent>
+
+	<artifactId>pacbridge-app</artifactId>
+	<packaging>ejb</packaging>
+
+	<name>PacBridge App</name>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>${javassist.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>figbridge-testbase</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>pacbridge-gdn</artifactId>
+			<version>${pacbridge.global.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>pacbridge-utl</artifactId>
+			<version>${pacbridge.global.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>pacbridge-zap</artifactId>
+			<version>${pacbridge.global.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>pacbridge-net</artifactId>
+			<version>${pacbridge.global.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>zedi.pacbridge</groupId>
+			<artifactId>pacbridge-domain</artifactId>
+			<version>${pacbridge.global.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-core</artifactId>
+			<version>${infinispan.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-query</artifactId>
+			<version>${infinispan.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>xpp3</groupId>
+			<artifactId>xpp3</artifactId>
+			<version>1.1.4c</version>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.core</groupId>
+			<artifactId>wildfly-server</artifactId>
+			<version>2.0.10.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-ejb-client-bom</artifactId>
+			<version>${version.wildfly}</version>
+			<scope>provided</scope>
+			<type>pom</type>
+		</dependency>
+
+		<!-- We need to keep this here so that our tests will run. If it's removed, 
+			you'll start seeing java.lang.ClassFormatError exceptions re: JMSException -->
+		<dependency>
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+			<version>2.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-clustering-singleton-api</artifactId>
+			<version>10.0.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-clustering-jgroups-extension</artifactId>
+			<version>10.0.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-clustering-infinispan-extension</artifactId>
+			<version>10.0.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-parent</artifactId>
+			<version>10.0.0.Final</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<archive>
+						<manifestEntries>
+							<Dependencies>
+								org.infinispan:ispn-8.1 services,
+								org.infinispan.query:ispn-8.1 services,
+								org.jboss.as.clustering.jgroups export,
+								org.jboss.as.server export,
+								org.jgroups export
+							</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

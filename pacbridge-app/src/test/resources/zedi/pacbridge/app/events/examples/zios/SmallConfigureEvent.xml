@@ -1,0 +1,21 @@
+<Event name="Configure" qualifier="ZIOS">
+  <EventId>6937982</EventId>
+  <Nuid>TEST-HAYKEL</Nuid>
+  <Configure object="ioPoint">
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.apn.active</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>299</CorrelationId>
+    </Action>
+  </Configure>
+</Event>

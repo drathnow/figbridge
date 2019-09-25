@@ -1,0 +1,18 @@
+<project name="MessageDecoder" default="zipit" basedir=".">
+    <property environment="env" />
+    
+    <target name="zipit">
+        <delete file="./target/message-decoder-${version}.zip" />
+        <zip destfile="./target/message-decoder-${version}.zip">
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/message-decoder/${version}" includes="message-decoder-${version}.jar" fullpath="message-decoder.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-stp/6.0.0" includes="pacbridge-stp-6.0.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-gdn/6.0.0" includes="pacbridge-gdn-6.0.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-utl/6.0.0" includes="pacbridge-utl-6.0.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/pacbridge-net/6.0.0" includes="pacbridge-net-6.0.0.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/swingutl/1.0.0" includes="swingutl-1.0.0.jar" />
+            <zipfileset dir="${m2_repo}/log4j/log4j/1.2.16" includes="log4j-1.2.16.jar" />
+            <zipfileset dir="${m2_repo}/org/slf4j/slf4j-api/1.7.5" includes="slf4j-api-1.7.5.jar" />
+            <zipfileset dir="${m2_repo}/org/slf4j/slf4j-log4j12/1.7.5" includes="slf4j-log4j12-1.7.5.jar" />
+            </zip>
+    </target>
+</project>

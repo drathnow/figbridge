@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="eventStatusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Created" />
+            <xs:enumeration value="Pending" />
+            <xs:enumeration value="Running" />
+            <xs:enumeration value="Success" />
+            <xs:enumeration value="Failed" />
+            <xs:enumeration value="Processing" />
+            <xs:enumeration value="Cancelled" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Defines the acceptable value for the the utcTime attribute that can be added to IOSTimestampType elements. The general format of the timestamp is: yyyy-mm-dd HH:mm:ssZ Example: 2009-04-10 12:15:45Z -->
+    <xs:simpleType name="IOSTimestampStringType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="IpAddressType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ReasonCodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Scheduled" />
+            <xs:enumeration value="Demand" />
+            <xs:enumeration value="IOModify" />
+            <xs:enumeration value="IOWrite" />
+            <xs:enumeration value="AlarmModify" />
+            <xs:enumeration value="AlarmTrigger" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EmptyValue" />
+            <xs:enumeration value="Discrete" />
+            <xs:enumeration value="Byte" />
+            <xs:enumeration value="UnsignedByte" />
+            <xs:enumeration value="Short" />
+            <xs:enumeration value="UnsignedShort" />
+            <xs:enumeration value="Integer" />
+            <xs:enumeration value="UnsignedInteger" />
+            <xs:enumeration value="Long" />
+            <xs:enumeration value="UnsignedLong" />
+            <xs:enumeration value="LongLong" />
+            <xs:enumeration value="UnsignedLongLong" />
+            <xs:enumeration value="Float" />
+            <xs:enumeration value="Double" />
+            <xs:enumeration value="String" />
+            <xs:enumeration value="Binary" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ObjectType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="site" />
+            <xs:enumeration value="device" />
+            <xs:enumeration value="event" />
+            <xs:enumeration value="ioPoint" />
+            <xs:enumeration value="port" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ActionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="delete" />
+            <xs:enumeration value="add" />
+            <xs:enumeration value="update" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="IoPointClassType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RTU" />
+            <xs:enumeration value="Network" />
+            <xs:enumeration value="Memory" />
+            <xs:enumeration value="Configuration" />
+            <xs:enumeration value="Internal" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="IoPointType">
+        <xs:all>
+            <xs:element name="DataType" type="DataType" />
+            <xs:element name="Index" type="xs:unsignedInt" />
+            <xs:element name="F1" type="xs:unsignedInt" />
+            <xs:element name="F2" type="xs:unsignedInt" />
+            <xs:element name="F3" type="xs:unsignedInt" />
+            <xs:element name="F4" type="xs:unsignedInt" />
+            <xs:element name="PollsetNumber" type="xs:unsignedInt" />
+            <xs:element name="RtuAddress" type="xs:unsignedInt" />
+            <xs:element name="Factor" type="xs:decimal" />
+            <xs:element name="Offset" type="xs:decimal" />
+            <xs:element name="IoPointClass" type="IoPointClassType" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="OtadStatusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Started" />
+            <xs:enumeration value="Downloading" />
+            <xs:enumeration value="Unpacking" />
+            <xs:enumeration value="Installing" />
+            <xs:enumeration value="Rebooting" />
+            <xs:enumeration value="Complete" />
+            <xs:enumeration value="Failed" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="AlarmType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OK" />
+            <xs:enumeration value="Low" />
+            <xs:enumeration value="LowLow" />
+            <xs:enumeration value="High" />
+            <xs:enumeration value="HighHigh" />
+            <xs:enumeration value="RtuTimeout" />
+            <xs:enumeration value="RtuError" />
+            <xs:enumeration value="RtuBackoff" />
+            <xs:enumeration value="NoData" />
+            <xs:enumeration value="OutOfRangeLow" />
+            <xs:enumeration value="OutOfRangeHigh" />
+            <xs:enumeration value="RtuOverflow" />
+            <xs:enumeration value="History" />
+            <xs:enumeration value="Empty" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="EventNameType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WriteIOPoints" />
+            <xs:enumeration value="DemandPoll" />
+            <xs:enumeration value="SiteConnected" />
+            <xs:enumeration value="SiteDisconnected" />
+            <xs:enumeration value="Configure" />
+            <xs:enumeration value="ConfigureUpdate" />
+            <xs:enumeration value="ConfigureResponse" />
+            <xs:enumeration value="EventResponse" />
+            <xs:enumeration value="OtadRequest" />
+            <xs:enumeration value="OtadStatus" />
+            <xs:enumeration value="Scrub" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ActionElementType">
+        <xs:all>
+            <xs:element name="CorrelationId" type="xs:unsignedLong" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Id" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ErrorCode" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="SiteId" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Tag" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PollSetId" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IOPointClass" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="DataType" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ExternalDeviceId" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="SourceAddress" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="SensorClassName" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IsSystemPoint" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IsReadOnly" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="RtuAddress" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PortId" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ProtocolHandlerName" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ProtocolArguments" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PortType" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Device" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="TimedEventType" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="StartTime" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Interval" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Duration" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PassThroughPort" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="PassThroughPortTimeout" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ModeControl" type="xs:unsignedByte" minOccurs="0" maxOccurs="1" />
+            <xs:element name="StartDelay" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="EndDelay" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Message" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Index" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="AlarmMask" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="AlarmSetHysteresis" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="AlarmClearHysteresis" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LowLowSet" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LowLowHysteresis" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LowSet" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LowHysteresis" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="HighHighSet" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="HighHighHysteresis" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="HighSet" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="HighHysteresis" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="EventId" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="User" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ProtocolId" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="MaxRetries" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="RequestTimeout" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="RtuBackoffCount" type="xs:unsignedShort" minOccurs="0" maxOccurs="1" />
+            <xs:element name="RtuBackoffTimeout" type="xs:integer" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+        <xs:attribute name="type" type="ActionType" use="required" />
+    </xs:complexType>
+
+    <xs:simpleType name="EventQualifierType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ZIOS" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="WriteValueType">
+        <xs:all>
+            <xs:element name="DataType" type="DataType" />
+            <xs:element name="Index" type="xs:unsignedInt" />
+            <xs:element name="Value" type="xs:string" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="EventDataType">
+        <xs:sequence>
+            <xs:element name="Property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="required" />
+                    <xs:attribute  name="value" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="SiteReport">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="EventId" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element type="xs:string" name="Nuid" minOccurs="1" maxOccurs="1" />
+                <xs:element name="IpAddress" type="IpAddressType" minOccurs="0" maxOccurs="1" />
+                <xs:element type="xs:unsignedInt" name="PollSetNumber" />
+                <xs:element type="xs:long" name="Timestamp" />
+                <xs:element name="ReportItem" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="Value" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute type="xs:unsignedInt" name="index" use="optional" />
+                        <xs:attribute type="DataType" name="dataType" use="optional" />
+                        <xs:attribute type="AlarmType" name="alarmStatus" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="messageId" />
+            <xs:attribute type="xs:string" name="qualifier" use="required" />
+            <xs:attribute type="ReasonCodeType" name="reason" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Event">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="NUID" type="xs:string" />
+                    <xs:element name="RawDataReceived">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SiteReport" type="xs:string" minOccurs="1" maxOccurs="1" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+
+                <xs:sequence>
+                    <xs:element name="Nuid" type="xs:string" />
+                    <xs:element name="NetworkNumber" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+                    <xs:choice>
+                        <!-- Site Connected -->
+                        <xs:element name="SiteConnected">
+                            <xs:complexType>
+                                <xs:all>
+                                    <xs:element name="BridgeInstance" type="xs:string" />
+                                    <xs:element name="IpAddress" type="IpAddressType" />
+                                    <xs:element name="TimestampUtc" type="IOSTimestampStringType" />
+                                    <xs:element name="FirmwareVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                </xs:all>
+                            </xs:complexType>
+                        </xs:element>
+                        <!-- Site Disconnected -->
+                        <xs:element name="SiteDisconnected">
+                            <xs:complexType>
+                                <xs:all>
+                                    <xs:element name="BridgeInstance" type="xs:string" />
+                                    <xs:element name="IpAddress" type="IpAddressType" />
+                                    <xs:element name="BytesReceived" type="xs:unsignedInt" />
+                                    <xs:element name="BytesTransmitted" type="xs:unsignedInt" />
+                                    <xs:element name="TimestampUtc" type="IOSTimestampStringType" />
+                                </xs:all>
+                            </xs:complexType>
+                        </xs:element>
+
+                    </xs:choice>
+                </xs:sequence>
+
+                <xs:sequence>
+                    <xs:element name="EventId" type="xs:string" />
+                    <xs:element name="Nuid" type="xs:string" />
+                    <xs:element name="NetworkNumber" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="FirmwareVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    <xs:choice>
+                        <xs:sequence>
+                            <!-- Event Response Event -->
+                            <xs:element name="EventResponse">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="ResponseTo" type="EventNameType" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Status" type="xs:string" />
+                                        <xs:element name="Message" type="xs:string" />
+                                        <xs:element name="EventData" type="EventDataType"  minOccurs="0" maxOccurs="1" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <xs:sequence>
+                            <!-- OTAD Request -->
+                            <xs:element name="OtadRequest">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Url" type="xs:string" />
+                                        <xs:element name="Md5Hash" type="xs:string" />
+                                        <xs:element name="UseAuthentication" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="ForceRestart" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Retries" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="RetryIntervalSeconds" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="TimeoutSeconds" type="xs:integer"  minOccurs="0" maxOccurs="1" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <xs:sequence>
+                            <!-- OTAD Status -->
+                            <xs:element name="OtadStatus">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Status" type="OtadStatusType" />
+                                        <xs:element name="OptionalData" type="xs:string"  minOccurs="0" maxOccurs="1" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <xs:sequence>
+                            <!-- Configure Response -->
+                            <xs:element name="ConfigureResponse">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Action" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="CorrelationId" type="xs:unsignedLong" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="Id" type="xs:unsignedLong" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="ErrorCode" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="Message" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                                </xs:all>
+                                                <xs:attribute name="type" type="ActionType" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="object" type="ObjectType" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <xs:sequence>
+                            <xs:choice>
+                                <!-- Write IO Points Value -->
+                                <xs:element name="WriteIOPoints">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="WriteValue" type="WriteValueType" minOccurs="1" maxOccurs="unbounded" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+
+                                <!-- Scrub -->
+                                <xs:element name="Scrub">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="IOPoints" minOccurs="0" maxOccurs="1" />
+                                            <xs:element name="Reports" minOccurs="0" maxOccurs="1" />
+                                            <xs:element name="Events" minOccurs="0" maxOccurs="1" />
+                                            <xs:element name="All" minOccurs="0" maxOccurs="1" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+
+                                <!-- Demand Poll -->
+                                <xs:element name="DemandPoll">
+                                    <xs:complexType>
+                                        <xs:all>
+                                            <xs:element name="Index" type="xs:unsignedInt" />
+                                            <xs:element name="PollsetNumber" type="xs:unsignedInt" />
+                                        </xs:all>
+                                    </xs:complexType>
+                                </xs:element>
+
+                                <!-- Configure -->
+
+                                <xs:element name="Configure">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Action" minOccurs="1" maxOccurs="unbounded" type="ActionElementType" />
+                                        </xs:sequence>
+                                        <xs:attribute name="object" type="ObjectType" use="required" />
+                                    </xs:complexType>
+                                </xs:element>
+
+                                <!-- ConfigureUpdate -->
+
+                                <xs:element name="ConfigureUpdate">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Action" minOccurs="1" maxOccurs="unbounded" type="ActionElementType" />
+                                        </xs:sequence>
+                                        <xs:attribute name="object" type="ObjectType" use="required" />
+                                    </xs:complexType>
+                                </xs:element>
+
+                            </xs:choice>
+                        </xs:sequence>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:choice>
+            <xs:attribute name="name" type="EventNameType" use="required" />
+            <xs:attribute name="qualifier" type="EventQualifierType" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

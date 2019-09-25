@@ -1,0 +1,29 @@
+<Event name="ConfigureAlarm" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>89433894934</SerialNumber>
+    <FirmwareVersion>600</FirmwareVersion>
+    <ConfigureAlarm>
+        <DataType>Float</DataType>
+        <Index>3</Index>
+        <AlarmValues>
+            <ExtendedAlarmValue>
+                <AlarmType>highHigh</AlarmType>
+                <LimitValue>2.33</LimitValue>
+                <HysteresisValue>4.99</HysteresisValue>
+                <Enabled>true</Enabled>
+                <SetTime>200</SetTime>
+                <ClearTime>333</ClearTime>
+            </ExtendedAlarmValue>
+            <ExtendedAlarmValue>
+                <AlarmType>low</AlarmType>
+                <LimitValue>2.33</LimitValue>
+                <HysteresisValue>4.99</HysteresisValue>
+                <Enabled>false</Enabled>
+                <SetTime>200</SetTime>
+                <ClearTime>333</ClearTime>
+            </ExtendedAlarmValue>
+        </AlarmValues>
+    </ConfigureAlarm>
+</Event>

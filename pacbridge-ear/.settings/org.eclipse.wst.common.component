@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="pacbridge-ear-6.4.0.Final-2">
+                
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+                
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="pacbridge-web-6.4.0.war" deploy-path="/" handle="module:/resource/pacbridge-web/pacbridge-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-app-6.4.0.jar" deploy-path="/" handle="module:/resource/pacbridge-app/pacbridge-app">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-domain-6.4.0.jar" deploy-path="/" handle="module:/resource/pacbridge-domain/pacbridge-domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javaee-api-7.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/javax/javaee-api/7.0/javaee-api-7.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.mail-1.5.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="activation-1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/javax/activation/activation/1.1/activation-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="wildfly-checkstyle-config-1.0.4.Final.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="eclipselink-2.5.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commonj.sdo-2.1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.persistence-2.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-utl-6.4.0.jar" deploy-path="/lib" handle="module:/resource/pacbridge-utl/pacbridge-utl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-beanutils-1.8.3.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="reflections-0.9.11.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/reflections/reflections/0.9.11/reflections-0.9.11.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="guava-20.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/google/guava/guava/20.0/guava-20.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javassist-3.21.0-GA.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-net-6.4.0.jar" deploy-path="/lib" handle="module:/resource/pacbridge-net/pacbridge-net">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-gdn-6.4.0.jar" deploy-path="/lib" handle="module:/resource/pacbridge-gdn/pacbridge-gdn">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-codec-1.7.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/commons-codec/commons-codec/1.7/commons-codec-1.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pacbridge-zap-6.4.0.jar" deploy-path="/lib" handle="module:/resource/pacbridge-zap/pacbridge-zap">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="json-20151123.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/json/json/20151123/json-20151123.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jdom-2.0.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/jdom/jdom/2.0.2/jdom-2.0.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mockito-core-3.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="byte-buddy-1.9.10.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="byte-buddy-agent-1.9.10.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-lang-2.6.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xpp3-1.1.4c.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
+        <property name="component.exclusion.patterns" value="**/dom4j-1.6.1.jar"/>
+            
+    </wb-module>
+    
+</project-modules>

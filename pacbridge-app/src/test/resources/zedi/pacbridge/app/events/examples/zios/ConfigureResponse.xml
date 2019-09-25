@@ -1,0 +1,24 @@
+<Event name='ConfigureResponse' qualifier='ZIOS'>
+    <EventId>12345</EventId>
+    <Nuid>DavesNotHere</Nuid>
+    <ConfigureResponse object='site'>
+        <Action type='delete'>
+            <CorrelationId>123</CorrelationId>
+            <ErrorCode>0</ErrorCode>
+        </Action>
+        <Action type='delete'>
+            <CorrelationId>567</CorrelationId>
+            <ErrorCode>0</ErrorCode>
+        </Action>
+        <Action type='add'>
+            <CorrelationId>2345</CorrelationId>
+            <Id>10</Id>
+            <ErrorCode>0</ErrorCode>
+        </Action>
+        <Action type='update'>
+            <CorrelationId>123</CorrelationId>
+            <ErrorCode>0</ErrorCode>
+            <Message>Hello world</Message>
+        </Action>
+    </ConfigureResponse>
+</Event>

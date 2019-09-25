@@ -1,0 +1,17 @@
+<project name="TopicReader" default="zipit" basedir=".">
+    <property environment="env" />
+    <property name="m2_repo" value="${env.M2_REPO}" />  
+
+    <target name="zipit">
+        <delete file="./target/topicreader-${version}.zip" />
+        <zip destfile="./target/topicreader-${version}.zip">
+        	<zipfileset dir="${m2_repo}/wsmq/dhbcore/7.5.0.0" includes="dhbcore-7.5.0.0.jar" />
+        	<zipfileset dir="${m2_repo}/wsmq/com.ibm.mq.headers/7.5.0.0" includes="com.ibm.mq.headers-7.5.0.0.jar" />
+        	<zipfileset dir="${m2_repo}/wsmq/com.ibm.mq.jmqi/7.5.0.0" includes="com.ibm.mq.jmqi-7.5.0.0.jar" />
+        	<zipfileset dir="${m2_repo}/wsmq/com.ibm.mqjms/7.5.0.0" includes="com.ibm.mqjms-7.5.0.0.jar" />
+            <zipfileset dir="${m2_repo}/javax/jms/jms/1.1" includes="jms-1.1.jar" />
+            <zipfileset dir="${m2_repo}/zedi/pacbridge/topicreader/1.0.0" includes="topicreader-1.0.0.jar" fullpath="topicreader.jar" />
+        </zip>
+    </target>
+
+</project>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PacBridge>
+    <Properties>
+        <Property name="pacbridge.cacheStorePath" value="${jboss.server.data.dir}/cacheStore" />
+        <Property name="pacbridge.defaultNetworkNumber" value="17" />
+    </Properties>
+
+    <Networks>
+        <Network number="17" type="zap">
+        
+            <Protocol name="zap">
+                <MaxPacketSize>2048</MaxPacketSize>
+                <Authentication>
+                    <Mode>promiscuous</Mode>
+                    <MatchNameRE>TEST*</MatchNameRE>
+                </Authentication>
+            </Protocol>
+
+            <TcpTransport incomingOnly="true">
+                <ListeningPort>3100</ListeningPort>
+                <ConnectionQueueLimit>500</ConnectionQueueLimit>
+            </TcpTransport>
+            
+            <Property name="controls.responseTimeoutSeconds" value="10" />
+        </Network>
+    </Networks>
+
+    <ControlExclusionAddresses>
+        <Address ip="1.2.3.4" number="17" />
+        <Address nuid="1234" number="17" />
+    </ControlExclusionAddresses>
+</PacBridge>

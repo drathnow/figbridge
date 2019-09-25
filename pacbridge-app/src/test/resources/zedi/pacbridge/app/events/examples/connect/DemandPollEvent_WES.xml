@@ -1,0 +1,23 @@
+<Event name="DemandPoll" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>89433894934</SerialNumber>
+    <FirmwareVersion>600</FirmwareVersion>
+    <EventSchedule>
+        <DeviceEventBasic>
+            <StartTime>12123123</StartTime>
+            <Interval>22</Interval>
+            <Duration>0</Duration>
+        </DeviceEventBasic>
+        <DeviceEventBasic>
+            <StartTime>1234356</StartTime>
+            <Interval>60</Interval>
+            <Duration>0</Duration>
+        </DeviceEventBasic>
+    </EventSchedule>
+    <DemandPoll>
+        <Index>23</Index>
+        <PollsetNumber>3</PollsetNumber>
+    </DemandPoll>
+</Event>

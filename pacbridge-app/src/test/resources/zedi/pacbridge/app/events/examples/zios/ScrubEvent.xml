@@ -1,0 +1,10 @@
+<Event name='Scrub' qualifier='ZIOS'>
+    <EventId>12345</EventId>
+    <Nuid>ZED-00001</Nuid>
+    <Scrub>
+        <IOPoints/>
+        <Reports/>
+        <Events/>
+        <All/>
+    </Scrub>
+</Event>

@@ -1,0 +1,5 @@
+<Event name="AddIoPoint">
+    <EventId>123</EventId>
+    <NUID>7890</NUID>
+    <NetworkNumber>17</NetworkNumber>
+</Event>

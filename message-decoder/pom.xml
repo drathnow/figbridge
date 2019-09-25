@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>zedi.pacbridge</groupId>
+        <artifactId>pacbridge</artifactId>
+        <version>6.4.0</version>
+    </parent>
+    <artifactId>message-decoder</artifactId>
+    <version>1.0.0</version>
+    <name>Message Decoder</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-utl</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>figbridge-testbase</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-gdn</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-zap</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>swingutl</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>message-decoder</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <!--                                                            -->
+                    <!-- Invoke ant task to create the zip file into the repository -->
+                    <!--                                                            -->
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <ant target="zipit" inheritAll="true" inheritRefs="true">
+                                    <property name="ant.home" value="${ant.home}" />
+                                    <property name="m2_repo" value="${settings.localRepository}" />
+                                    <property name="version" value="${project.version}" />
+                                </ant>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Main-Class>zedi.pacbridge.messagedecoder.Main</Main-Class>
+                            <Version>${project.version}.${buildNumber}</Version>
+                            <Class-Path> . slf4j-api-1.7.5.jar swingutl-1.0.0.jar slf4j-log4j12-1.7.5.jar pacbridge-stp-6.0.0.jar pacbridge-gdn-6.4.0.jar pacbridge-utl-6.0.0.jar pacbridge-net-6.0.0.jar log4j-1.2.16.jar</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                    <excludes>
+                        <exclude>**/log4j.xml</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

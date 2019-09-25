@@ -1,0 +1,46 @@
+JBoss 8 setup:
+
+Add User:
+
+Username (admin) :
+The username 'admin' is easy to guess
+Are you sure you want to add user 'admin' yes/no? yes
+Password :
+
+ * Error *
+JBAS015267: Password must have at least one non-alphanumeric symbol.
+
+Username (admin) :
+The username 'admin' is easy to guess
+Are you sure you want to add user 'admin' yes/no? yes
+Password :
+
+ * Error *
+JBAS015267: Password must have at least one non-alphanumeric symbol.
+
+Username (admin) :
+The username 'admin' is easy to guess
+Are you sure you want to add user 'admin' yes/no? yes
+Password :
+Re-enter Password :
+About to add user 'admin' for realm 'ManagementRealm'
+Is this correct yes/no? yes
+Added user 'admin' to file 'D:\java\jboss-8.0.0.Alpha2\standalone\configuration\mgmt-users.properties'
+Added user 'admin' to file 'D:\java\jboss-8.0.0.Alpha2\domain\configuration\mgmt-users.properties'
+Is this new user going to be used for one AS process to connect to another AS process?
+e.g. for a slave host controller connecting to the master or for a Remoting connection for server to server EJB calls.
+yes/no? yes
+To represent the user add the following to the server-identities definition <secret value="KmJpZ21vbmV5MQ==" />
+Press any key to continue . . .
+
+Installing GWT Stuff
+
+1. Open Eclipse
+2. Go To Help-->Install New Software
+3. Enter ther site for your eclipse version i.e. http://dl.google.com/eclipse/plugin/3.7 for version 3.7
+4. Select the sdk
+5. Install the Designer from this location http://dl.google.com/eclipse/inst/d2gwt/latest/3.7 in the same way
+6. Make a new Gwt project
+
+By right clicking on a class file inheriting the Composite Class you will be able to open it with Gwt Designer (Open With--> Gwt Designer)
+If you still see the code, then on the bottom left of the code file you will see the option to open the designer.

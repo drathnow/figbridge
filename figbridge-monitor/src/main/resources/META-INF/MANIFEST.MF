@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: zedi.figbridge.monitor.Main
+Class-Path: jms-1.1.jar jdom-2.0.2.jar log4j-1.2.17.jar slf4j-api-1.7.5.jar google-guice-3.0.jar swingutil-1.0.0.jar slf4j-log4j12-1.7.5.jar figbridge-monitor-2.0.0.jar pacbridge-utl-6.1.0.jar pacbridge-zap-1.0.0.jar pacbridge-net-6.1.0.jar pacbridge-msg-6.1.0.jar pacbridge-wsmq-1.0.0.jar guiceyfruit-core-2.0.jar figdevice-emulator-1.0.0.jar

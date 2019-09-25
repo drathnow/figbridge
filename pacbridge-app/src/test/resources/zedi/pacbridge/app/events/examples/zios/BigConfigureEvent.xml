@@ -1,0 +1,456 @@
+<Event name="Configure" qualifier="ZIOS">
+  <EventId>6937982</EventId>
+  <Nuid>TEST-HAYKEL</Nuid>
+  <Configure object="ioPoint">
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.apn.active</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>299</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.apn.requested</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>0</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>300</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>3</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.data.state</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>301</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>3</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.enable</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>302</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.hostname.active</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+     <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>303</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.hostname.requested</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>0</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>304</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.hw.id</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>305</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.hw.revision</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>306</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.modem.imei</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>307</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.modem.model</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>308</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.modem.revision</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>309</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>3</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.modem.state</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>310</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>8</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.ber</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>311</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.localip</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>312</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.msisdn</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>313</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.operator</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>314</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.register</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>315</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>8</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.net.rssi</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>316</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>3</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.recycle</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>317</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.sim.id</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>318</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+     <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.cell.sim.imsi</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>319</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.eth0.macaddress</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>320</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.server.hostname</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>321</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>4</IOPointClass>
+      <DataType>3</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>net.server.state</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Network</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>322</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.fw.revision</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>323</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.hw.main.id</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>324</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.hw.main.revision</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>325</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>8</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.hw.main.temperature</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>326</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>8</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.hw.main.voltage</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>327</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>6</IOPointClass>
+      <DataType>10</DataType>
+      <PollSetId>1</PollSetId>
+      <ExternalDeviceId>0</ExternalDeviceId>
+      <Tag>sys.serialnumber</Tag>
+      <SiteId>1</SiteId>
+      <SourceAddress />
+      <SensorClassName>Memory</SensorClassName>
+      <IsReadOnly>1</IsReadOnly>
+      <AlarmMask>0</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <CorrelationId>328</CorrelationId>
+    </Action>
+  </Configure>
+</Event>

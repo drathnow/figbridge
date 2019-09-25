@@ -1,0 +1,24 @@
+<Event name="SetIOPointValue" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>TEST_89433894934</SerialNumber>
+    <FirmwareVersion>400</FirmwareVersion>
+    <EventSchedule>
+        <DeviceEventBasic>
+            <StartTime>12123123</StartTime>
+            <Interval>22</Interval>
+        </DeviceEventBasic>
+        <DeviceEventBasic>
+            <StartTime>12123123</StartTime>
+            <Interval>22</Interval>
+        </DeviceEventBasic>
+    </EventSchedule>
+    <SetIOPointValue>
+        <WriteValue>
+            <Index>3</Index>
+            <DataType>UnsignedInteger</DataType>
+            <Value>2345</Value>
+        </WriteValue>
+    </SetIOPointValue>
+</Event>

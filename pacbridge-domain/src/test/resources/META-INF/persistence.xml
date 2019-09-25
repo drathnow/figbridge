@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+    xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="JEE6Demo-Persistence"
+        transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>zedi.pacbridge.domain.entities.Device</class>
+        <properties>
+            <property name="eclipselink.target-database" value="ORACLE" />
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin://@zi1szaqa-int:1521:essadev1" />
+            <property name="javax.persistence.jdbc.user" value="developer" />
+            <property name="javax.persistence.jdbc.password" value="developer" />
+            <property name="eclipselink.ddl-generation" value="none" />
+            <property name="eclipselink.logging.level" value="INFO" />
+        </properties>
+    </persistence-unit>
+</persistence>

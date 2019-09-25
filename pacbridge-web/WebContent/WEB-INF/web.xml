@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns="http://java.sun.com/xml/ns/javaee" 
+            xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+            id="FigBridgeWeb" 
+            version="3.0">
+  <display-name>Field Gateway Bridge</display-name>
+   
+    <context-param>
+        <param-name>resteasy.resources</param-name>
+        <param-value>
+            zedi.pacbridge.web.services.OutgoingRequests,
+            zedi.pacbridge.web.services.Connections, 
+            zedi.pacbridge.web.services.Devices,
+            zedi.pacbridge.web.services.Cluster,
+            zedi.pacbridge.web.services.Bridge
+        </param-value>
+    </context-param>
+    
+   <servlet>
+      <servlet-name>Resteasy</servlet-name>
+      <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+   </servlet>
+  
+   <context-param>
+      <param-name>resteasy.servlet.mapping.prefix</param-name>
+      <param-value>/srv</param-value>
+   </context-param>
+   
+   <servlet-mapping>
+      <servlet-name>Resteasy</servlet-name>
+      <url-pattern>/srv/*</url-pattern>
+   </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,74 @@
+<BridgeSlapper>
+
+    <!-- 
+        Our usual JMS sever that we have to connect to.
+     -->
+    <Jms>
+        <QueueManagerName>QM_csmqdev1</QueueManagerName>
+        <HostName>csmqdev1</HostName>
+        <ClientId>pacbridge_id</ClientId>
+        <RawDataDestinationName>topic://scada/system/events</RawDataDestinationName>
+    </Jms>
+
+    <!-- 
+        The bridge
+     -->
+    <Bridge>
+        <Address>192.168.169.64</Address>
+        <Port>3100</Port>
+    </Bridge>
+
+    <!-- 
+        Next are the device simulations that will be sending message to the bridge.
+     -->
+
+   <FigDevice count="400">
+        <FixedReport intervalType="fixed">
+            <IntervalSeconds>20</IntervalSeconds>
+            <NumberOfReadings>100</NumberOfReadings>
+        </FixedReport>
+    </FigDevice>
+
+    <!-- 
+        5 devices will send in fixed report every 30 seconds
+    -->
+    <FigDevice count="200">
+        <FixedReport intervalType="fixed">
+            <IntervalSeconds>30</IntervalSeconds>
+            <NumberOfReadings>20</NumberOfReadings>
+        </FixedReport>
+    </FigDevice>
+
+    <!-- 
+        5 devices will send in fixed report at random intervals between 0 and 30 seconds
+    -->
+    <FigDevice count="400">
+        <FixedReport intervalType="random">
+            <IntervalSeconds>30</IntervalSeconds>
+            <NumberOfReadings>20</NumberOfReadings>
+        </FixedReport>
+    </FigDevice>
+
+    <!-- 
+        5 devices will send in random report with 10-5 values every 60 seconds 
+    -->
+    <FigDevice count="200" startDelaySeconds="10">
+        <RandomReport intervalType="fixed">
+            <IntervalSeconds>60</IntervalSeconds>
+            <MinNumberOfReadings>5</MinNumberOfReadings>
+            <MaxNumberOfReadings>20</MaxNumberOfReadings>
+        </RandomReport>
+    </FigDevice>
+
+    <!-- 
+        5 devices will send in random report with 10-5 values between 0 and 30 seconds 
+    -->
+    <FigDevice count="200">
+        <RandomReport intervalType="random">
+            <IntervalSeconds>60</IntervalSeconds>
+            <MinNumberOfReadings>10</MinNumberOfReadings>
+            <MaxNumberOfReadings>100</MaxNumberOfReadings>
+        </RandomReport>
+    </FigDevice>
+
+</BridgeSlapper>

@@ -1,0 +1,32 @@
+<Event name="AddIOPoint" qualifier="Connect">
+    <EventId>342</EventId>
+    <IpAddress>1.2.3.4</IpAddress>
+    <NetworkNumber>12</NetworkNumber>
+    <SerialNumber>TEST_89433894934</SerialNumber>
+    <FirmwareVersion>600</FirmwareVersion>
+    <EventSchedule>
+        <DeviceEventBasic>
+            <StartTime>12123123</StartTime>
+            <Interval>22</Interval>
+        </DeviceEventBasic>
+        <DeviceEventBasic>
+            <StartTime>12123123</StartTime>
+            <Interval>22</Interval>
+        </DeviceEventBasic>
+    </EventSchedule>
+    <AddIOPoint>
+        <IoPoint>
+            <DataType>UnsignedInteger</DataType>
+            <Index>42</Index>
+            <RtuAddress>21323</RtuAddress>
+            <PollsetNumber>1</PollsetNumber>
+            <F1>1</F1>
+            <F2>2</F2>
+            <F3>3</F3>
+            <F4>4</F4>
+            <Factor>4.77</Factor>
+            <Offset>4.98</Offset>
+            <IoPointClass>System</IoPointClass>
+        </IoPoint>
+    </AddIOPoint>
+</Event>

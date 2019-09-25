@@ -1,0 +1,32 @@
+<FigDevice>
+    <Nuid>TestDevice1</Nuid>
+    <Bridge>
+        <Address>192.168.169.64</Address>
+        <Port>3100</Port>
+    </Bridge>
+    <ReportGenerator>
+        <!-- 
+        <FixedReport intervalType="fixed">
+            <IntervalSeconds>10</IntervalSeconds>
+            <NumberOfReadings>20</NumberOfReadings>
+        </FixedReport>
+        -->
+        <!-- 
+            In the case of intervalType="random", the IntervalSeconds is taken as the 
+             maximum interval, meaning intervals will 0 <= reportInterval < IntervalSeconds
+         -->
+        <FixedReport intervalType="fixed">
+            <IntervalSeconds>5</IntervalSeconds>
+            <NumberOfReadings>5000</NumberOfReadings>
+        </FixedReport>
+
+         <!-- 
+        <RandomReport intervalType="random">
+            <IntervalSeconds>10</IntervalSeconds>
+            <MinNumberOfReadings>10</MinNumberOfReadings>
+            <MaxNumberOfReadings>20</MaxNumberOfReadings>
+        </RandomReport>
+         -->
+
+    </ReportGenerator>
+</FigDevice>

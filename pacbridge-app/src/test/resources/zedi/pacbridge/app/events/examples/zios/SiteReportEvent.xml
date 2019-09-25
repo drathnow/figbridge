@@ -1,0 +1,44 @@
+<Event name='RawDataReceived' qualifier='ZIOS'>
+    <EventId>1235</EventId>
+    <Nuid>ZED-000001</Nuid>
+    <NetworkNumber>17</NetworkNumber>
+    <FirmwareVersion>700</FirmwareVersion>
+    <RawDataReceived>
+        <SiteReport reason="scheduled" messageId="1424731116240">
+            <NetworkNumber>17</NetworkNumber>
+            <Address>LittleD</Address>
+            <PollSetNumber>10</PollSetNumber>
+            <Timestamp>1424799414000</Timestamp>
+            <ReportItem index="111" dataType="8" alarmStatus="OK">
+                <Value>1</Value>
+            </ReportItem>
+            <ReportItem index="110" dataType="1" alarmStatus="OK">
+                <Value>1</Value>
+            </ReportItem>
+        </SiteReport>
+    </RawDataReceived>
+</Event>
+
+<!-- 
+<Event>
+    <EventQualifier>Connect</EventQualifier>
+    <EventName>RawDataReceived</EventName>
+    <Indexes>
+        <Item>0</Item>
+        <Item>0</Item>
+        <Item>0</Item>
+    </Indexes>
+    <Keys>
+        <Item>ipAddress</Item>
+        <Item>networkNumber</Item>
+        <Item>xmlBody</Item>
+    </Keys>
+    <Values>
+        <Item>LittleD</Item>
+        <Item>17</Item>
+        <Item>&lt;siteReport reason="scheduled(0)"
+            messageId="1424731116258"&gt;&lt;networkNumber&gt;17&lt;/networkNumber&gt;&lt;address&gt;LittleD&lt;/address&gt;&lt;pollSetNumber&gt;10&lt;/pollSetNumber&gt;&lt;timestamp&gt;1424799684000&lt;/timestamp&gt;&lt;reportItem index="111" dataType="8"
+            alarmStatus="OK"&gt;&lt;value&gt;1&lt;/value&gt;&lt;/reportItem&gt;&lt;reportItem index="110" dataType="1" alarmStatus="OK"&gt;&lt;value&gt;1&lt;/value&gt;&lt;/reportItem&gt;&lt;/siteReport&gt;</Item>
+    </Values>
+</Event>
+ -->

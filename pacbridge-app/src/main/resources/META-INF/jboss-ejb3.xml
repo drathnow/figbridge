@@ -1,0 +1,54 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<jboss:ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" 
+               xmlns:jboss="http://www.jboss.com/xml/ns/javaee"
+               xmlns:r="urn:resource-adapter-binding"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-spec-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+        version="3.1" impl-version="2.0">
+    <jboss:enterprise-beans>
+        <message-driven>
+            <ejb-name>EventListenerMDBExp</ejb-name>
+            <ejb-class>zedi.pacbridge.app.events.EventListenerMDB</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-destination-type>javax.jms.Topic</message-destination-type>
+            <activation-config>
+                <activation-config-property>
+                    <activation-config-property-name>channel</activation-config-property-name>
+                    <activation-config-property-value>${websphere.channel}</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>queueManager</activation-config-property-name>
+                    <activation-config-property-value>${websphere.queueManager}</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>hostName</activation-config-property-name>
+                    <activation-config-property-value>${websphere.hostName}</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>port</activation-config-property-name>
+                    <activation-config-property-value>${websphere.port}</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>destination</activation-config-property-name>
+                    <activation-config-property-value>${websphere.eventQueueName}</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>destinationType</activation-config-property-name>
+                    <activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>maxSession</activation-config-property-name>
+                    <activation-config-property-value>1</activation-config-property-value>
+                </activation-config-property>
+            </activation-config>
+        </message-driven>
+    </jboss:enterprise-beans>
+    <assembly-descriptor>
+    <!-- 
+        <r:resource-adapter-binding>
+            <ejb-name>EventListenerMDBExp</ejb-name>
+            <r:resource-adapter-name>${websphere.resource.adapter}</r:resource-adapter-name>
+        </r:resource-adapter-binding>
+    -->
+    </assembly-descriptor>
+</jboss:ejb-jar>

@@ -1,0 +1,8 @@
+<Event name="EventResponse" qualifier="Connect">
+    <EventId>342</EventId>
+    <EventResponse>
+        <Status>Success</Status>
+        <Message></Message>
+        <EventData></EventData>
+    </EventResponse>
+</Event>
