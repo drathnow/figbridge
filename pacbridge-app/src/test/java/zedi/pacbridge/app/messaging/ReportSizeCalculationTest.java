@@ -1,5 +1,6 @@
 package zedi.pacbridge.app.messaging;
 
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,7 +52,7 @@ public class ReportSizeCalculationTest {
         Map<Integer, ZapReport> reportMap = new TreeMap<>();
         reportMap.put(REPORTID1, report);
         BundledReportMessage message = new BundledReportMessage(1, reportIds, reportMap);
-        byteBuffer.clear();
+        ((Buffer)byteBuffer).clear();
         message.serialize(byteBuffer);
         System.out.println("Size of Bundled Report Message with " + n + " floats: " + byteBuffer.position());
     }

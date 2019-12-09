@@ -31,12 +31,10 @@ class MessageListenerManager implements Notifiable {
     private List<MessageListenerContainer> messageListenerContainers = new ArrayList<MessageListenerContainer>();
     private Map<String, MessageListenerContainer> listenerClassMap = new HashMap<String, MessageListenerContainer>();
     private MessageListenerContainerFactory messageListenerContainerFactory;
-    private NotificationCenter notificationCenter;
 
     MessageListenerManager(JmsCenter jmsCenter, MessageListenerContainerFactory messageListenerContainerFactory, NotificationCenter notificationCenter) {
         this.messageListenerContainerFactory = messageListenerContainerFactory;
         this.jmsCenter = jmsCenter;
-        this.notificationCenter = notificationCenter;
         this.lock = new ReentrantLock();
         notificationCenter.addObserver(this, JmsCenter.CONNECTION_LOST_NOTIFICATION);
         notificationCenter.addObserver(this, JmsCenter.CONNECTION_RECONNECTED_NOTIFICATION);
@@ -122,7 +120,8 @@ class MessageListenerManager implements Notifiable {
     public void unregisterMessageListenerClass(Class<? extends MessageListener> listernClass) {
         lock.lock();
         try {
-            MessageListenerContainer container = listenerClassMap.get(listernClass);
+            @SuppressWarnings("unlikely-arg-type")
+			MessageListenerContainer container = listenerClassMap.get(listernClass);
             if (container != null)
                 messageListenerContainers.remove(container);
         } finally {

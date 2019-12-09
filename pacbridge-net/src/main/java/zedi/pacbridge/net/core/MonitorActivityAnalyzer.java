@@ -4,7 +4,8 @@ import java.util.List;
 
 class MonitorActivityAnalyzer implements Runnable {
 
-    private List<MonitoringEvent> monitoringEvents;
+    @SuppressWarnings("unused")
+	private List<MonitoringEvent> monitoringEvents;
     
     public MonitorActivityAnalyzer(List<MonitoringEvent> monitoringEvents, RequestQueueMonitorHelper threadPoolManager) {
         this.monitoringEvents = monitoringEvents;

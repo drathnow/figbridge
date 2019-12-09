@@ -5,6 +5,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
 import java.nio.ByteBuffer;
+import java.nio.Buffer;
 
 import org.jdom2.Element;
 import org.junit.Test;
@@ -73,7 +74,7 @@ public class WriteValueElementTest extends BaseTestCase {
         assertEquals(DATA_TYPE, writeValue.getDataType());
         assertEquals(INDEX.longValue(), writeValue.getIndex().longValue());
         writeValue.getValue().serialize(byteBuffer);
-        byteBuffer.flip();
+        ((Buffer)byteBuffer).flip();
         assertEquals(VALUE.floatValue(), byteBuffer.getFloat(), 0.1f);
     }
 

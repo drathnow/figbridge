@@ -13,7 +13,6 @@ import org.junit.Test;
 public class NetworkTrafficMessageFormatterTest {
 
     private static final byte[] TEST_BYTES = new byte[]{0x01, 0x02, 0x03};
-    private static final int NETWORK_NUMBER = 1;
     private static final String TCP = "TCP";
     private static final String ADDRESS = "1.2.3.4";
     private static final Pattern LOG_PATTERN = Pattern.compile(NetworkTrafficMessageFormatter.TRAFFIC_PARSING_RE);

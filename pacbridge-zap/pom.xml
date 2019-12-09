@@ -5,8 +5,9 @@
         <artifactId>pacbridge</artifactId>
         <groupId>zedi.pacbridge</groupId>
         <version>6.4.0</version>
-		<relativePath>../pom.xml</relativePath>
+		<relativePath>../build/uberpom.xml</relativePath>
     </parent>
+    
     <artifactId>pacbridge-zap</artifactId>
     <name>PacBridge Zap</name>
     <packaging>jar</packaging>

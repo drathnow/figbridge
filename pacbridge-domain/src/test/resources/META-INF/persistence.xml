@@ -9,8 +9,8 @@
             <property name="eclipselink.target-database" value="ORACLE" />
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin://@zi1szaqa-int:1521:essadev1" />
-            <property name="javax.persistence.jdbc.user" value="developer" />
-            <property name="javax.persistence.jdbc.password" value="developer" />
+            <property name="javax.persistence.jdbc.user" value="${username}" />
+            <property name="javax.persistence.jdbc.password" value="${password}" />
             <property name="eclipselink.ddl-generation" value="none" />
             <property name="eclipselink.logging.level" value="INFO" />
         </properties>

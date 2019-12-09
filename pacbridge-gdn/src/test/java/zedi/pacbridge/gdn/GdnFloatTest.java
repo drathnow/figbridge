@@ -17,7 +17,6 @@ import zedi.pacbridge.utl.Utilities;
 
 public class GdnFloatTest extends BaseTestCase {
 
-    private GdnFloat gdnFloat;
     protected static final Float TESTLONG1 = new Float(Float.MAX_VALUE);
     protected static final byte[] LONG_BYTES = new byte[]{(byte)0xff, (byte)0xff, (byte)0xff, (byte)0xff};
     protected ByteArrayOutputStream byteArrayOutputStream;
@@ -26,14 +25,12 @@ public class GdnFloatTest extends BaseTestCase {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        gdnFloat = new GdnFloat(TESTLONG1);
         byteArrayOutputStream = new ByteArrayOutputStream();
         dataOutputStream = new DataOutputStream(byteArrayOutputStream);
     }
 
     @After
     public void tearDown() throws Exception {
-        gdnFloat = null;
         super.tearDown();
     }
 

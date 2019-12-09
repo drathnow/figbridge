@@ -11,7 +11,8 @@ import zedi.pacbridge.utl.SiteAddress;
 
 public class SessionlessMessageHandlerAdapterTest extends BaseTestCase {
     private boolean called;
-    private SiteAddress calledSiteAddressArg;
+    @SuppressWarnings("unused")
+	private SiteAddress calledSiteAddressArg;
     private Message calledMessageArg;
     private Session calledSessionArg;
 
@@ -103,7 +104,8 @@ public class SessionlessMessageHandlerAdapterTest extends BaseTestCase {
     }
 
     private class MissingAnnotation {
-        public void handleMessage(Message message) {
+        @SuppressWarnings("unused")
+		public void handleMessage(Message message) {
         }
     }
 }

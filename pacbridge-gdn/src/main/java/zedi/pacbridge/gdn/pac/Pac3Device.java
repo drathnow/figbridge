@@ -6,9 +6,6 @@ public class Pac3Device extends AbstractPacDevice {
 
     static final long serialVersionUID = 10001L;
 
-    private Pac3Device() {
-    }
-    
     public Pac3Device(int aSoftwareVersion) {
         super(aSoftwareVersion);
     }

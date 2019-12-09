@@ -4,10 +4,10 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import com.sun.corba.se.impl.orbutil.HexOutputStream;
+
 import zedi.pacbridge.utl.HexStringDecoder;
 import zedi.pacbridge.utl.crc.CcittCheckSum;
-
-import com.sun.corba.se.impl.orbutil.HexOutputStream;
 
 
 public class OtadTestUtilities {

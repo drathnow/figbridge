@@ -20,9 +20,9 @@ public abstract class GdnMessageBase implements Message, Serializable {
     
     @Override
     public Integer sequenceNumber() {
-        return 0;
+        return sequenceNumber;
     }
-    
+
     @Override
     public void setSequenceNumber(Integer sequenceNumber) {
         this.sequenceNumber = sequenceNumber;

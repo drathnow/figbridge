@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.nio.ByteBuffer;
+import java.nio.Buffer;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class ChallengeResponseMessageV1Test extends BaseTestCase {
         byteBuffer.put(CLIENT_HASH);
         byteBuffer.put((byte)USERNAME.length());
         byteBuffer.put(USERNAME.getBytes());
-        byteBuffer.flip();
+        ((Buffer)byteBuffer).flip();
 
         ChallengeResponseMessageV1 response = ChallengeResponseMessageV1.clientChallengeResponseFromByteBuffer(byteBuffer);
 

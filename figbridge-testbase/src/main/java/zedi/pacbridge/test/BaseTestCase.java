@@ -2,28 +2,19 @@ package zedi.pacbridge.test;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.Properties;
-
-import javax.swing.text.Utilities;
 
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.PatternLayout;
 import org.junit.After;
 import org.junit.Before;
 import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class BaseTestCase {
     
-    private static final Logger logger = LoggerFactory.getLogger(BaseTestCase.class.getName());
-
-    static {
+   static {
         if (!org.apache.log4j.Logger.getRootLogger().getAllAppenders().hasMoreElements())
             org.apache.log4j.Logger.getRootLogger().addAppender(new ConsoleAppender(new PatternLayout("%m%n")));
     }

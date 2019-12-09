@@ -8,6 +8,7 @@
 		<artifactId>pacbridge</artifactId>
 		<groupId>zedi.pacbridge</groupId>
 		<version>6.4.0</version>
+        <relativePath>../build/uberpom.xml</relativePath>
 	</parent>
 
 	<artifactId>pacbridge-app</artifactId>
@@ -21,6 +22,7 @@
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
+            <scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -103,8 +105,10 @@
 			<type>pom</type>
 		</dependency>
 
-		<!-- We need to keep this here so that our tests will run. If it's removed, 
-			you'll start seeing java.lang.ClassFormatError exceptions re: JMSException -->
+		<!-- 
+		    We need to keep this here so that our tests will run. If it's removed, 
+            you'll start seeing java.lang.ClassFormatError exceptions re: JMSException 
+        -->
 		<dependency>
 			<groupId>org.jboss.ejb3</groupId>
 			<artifactId>jboss-ejb3-ext-api</artifactId>
@@ -149,11 +153,7 @@
 					<archive>
 						<manifestEntries>
 							<Dependencies>
-								org.infinispan:ispn-8.1 services,
-								org.infinispan.query:ispn-8.1 services,
-								org.jboss.as.clustering.jgroups export,
-								org.jboss.as.server export,
-								org.jgroups export
+								org.infinispan:ispn-8.1 services, org.infinispan.query:ispn-8.1 services, org.jboss.as.clustering.jgroups export, org.jboss.as.server export, org.jgroups export
 							</Dependencies>
 						</manifestEntries>
 					</archive>

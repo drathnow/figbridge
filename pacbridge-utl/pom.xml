@@ -7,24 +7,21 @@
 		<artifactId>pacbridge</artifactId>
 		<groupId>zedi.pacbridge</groupId>
 		<version>6.4.0</version>
-		<relativePath>../pom.xml</relativePath>
+		<relativePath>../build/uberpom.xml</relativePath>
 	</parent>
+	
 	<artifactId>pacbridge-utl</artifactId>
 	<name>PacBridge Utl</name>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>2.0.2</version>
-		</dependency>
-		<dependency>
 			<groupId>org.jboss</groupId>
 			<artifactId>jboss-vfs</artifactId>
 			<version>3.0.1.GA</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
@@ -36,11 +33,19 @@
 			<artifactId>reflections</artifactId>
 			<version>0.9.11</version>
 		</dependency>
+		
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>figbridge-testbase</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+       </dependency>
+       
 	</dependencies>
 </project>

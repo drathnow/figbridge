@@ -1,6 +1,6 @@
 package zedi.pacbridge.gdn.messages;
 
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 
 import java.nio.ByteBuffer;

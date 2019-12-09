@@ -7,9 +7,6 @@ public class ConnectDevice extends Pac4Device implements Serializable {
     
     static final long serialVersionUID = 10001L;
     
-    private ConnectDevice() {
-    }
-    
     public ConnectDevice(int softwareVersion) {
         super(softwareVersion);
     }

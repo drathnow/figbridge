@@ -80,7 +80,8 @@ public class UnsolicitedMessageHandlerAdapterTest extends BaseTestCase {
     }
 
     private class MissingAnnotation {
-        public void handleMessage(Message message) {
+        @SuppressWarnings("unused")
+		public void handleMessage(Message message) {
         }
     }
 }
