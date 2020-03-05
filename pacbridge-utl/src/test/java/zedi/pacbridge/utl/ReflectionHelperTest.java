@@ -1,16 +1,13 @@
 package zedi.pacbridge.utl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.TreeMap;
 
 import javax.ejb.Asynchronous;
-import javax.inject.Inject;
 
 import org.junit.Test;
 

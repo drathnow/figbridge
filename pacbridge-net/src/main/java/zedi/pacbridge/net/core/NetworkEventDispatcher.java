@@ -44,7 +44,8 @@ class NetworkEventDispatcher implements DetachedTask, ContextCommandProcessor {
                                             MIN_SHUTDOWN_DELAY_SECONDS, 
                                             MAX_SHUTDOWN_DELAY_SECONDS);
     
-    private static IntegerSystemProperty contextCommandTimeLimitMilliseconds
+    @SuppressWarnings("unused")
+	private static IntegerSystemProperty contextCommandTimeLimitMilliseconds
         = new IntegerSystemProperty(CONTEXT_COMMAND_PROCTIME_LIMIT_PROPERTY_NAME, 
                                         DEFAULT_CONTEXT_COMMAND_PROCTIME_MILLIS, 
                                         MIN_CONTEXT_COMMAND_PROCTIME_MILLIS, 

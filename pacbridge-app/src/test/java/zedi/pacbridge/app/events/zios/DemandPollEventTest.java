@@ -2,6 +2,7 @@ package zedi.pacbridge.app.events.zios;
 
 import static org.junit.Assert.assertSame;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -82,12 +83,12 @@ public class DemandPollEventTest extends ZiosEventTestCase {
         given(device.getFirmwareVersion()).willReturn(FIRMWARE_VERSION);
         
         whenNew(DemandPollEvent.class)
-            .withArguments(eq(EVENT_ID), matchesSiteAddress(SITE_ADDRESS), eq(FIRMWARE_VERSION), eq(INDEX), eq(POLLSET_NUMBER))
+            .withArguments(eq(EVENT_ID), argThat(matchesSiteAddress(SITE_ADDRESS)), eq(FIRMWARE_VERSION), eq(INDEX), eq(POLLSET_NUMBER))
             .thenReturn(event);
 
         assertIsValidXml(XML_EVENT);
         DemandPollEvent demandPollEvent = DemandPollEvent.demandPollEventEventForElement(JDomUtilities.elementForXmlString(XML_EVENT), deviceCache);
-        verifyNew(DemandPollEvent.class).withArguments(eq(EVENT_ID), matchesSiteAddress(SITE_ADDRESS), eq(FIRMWARE_VERSION), eq(INDEX), eq(POLLSET_NUMBER));
+        verifyNew(DemandPollEvent.class).withArguments(eq(EVENT_ID), argThat(matchesSiteAddress(SITE_ADDRESS)), eq(FIRMWARE_VERSION), eq(INDEX), eq(POLLSET_NUMBER));
         assertSame(event, demandPollEvent);
         verify(deviceCache).deviceForNetworkUnitId(NUID.toString());
         verify(device).getNetworkNumber();

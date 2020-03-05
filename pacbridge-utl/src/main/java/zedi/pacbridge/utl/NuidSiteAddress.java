@@ -10,7 +10,8 @@ public class NuidSiteAddress extends SiteAddress implements Serializable {
 
     private String networkUnitId;
     private Long hashedValue;
-    private InetSocketAddress remoteAddress;
+    @SuppressWarnings("unused")
+	private InetSocketAddress remoteAddress;
 
     public NuidSiteAddress(String nuid) {
         this(nuid, 0, null);

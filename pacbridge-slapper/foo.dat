@@ -1,0 +1,23 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------< [0;36mzedi.pacbridge:pacbridge-slapper[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding Bridge Slapper 2.1.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+Downloading from MVNRepository: http://mvnrepository.com/org/guiceyfruit/guiceyfruit-core/2.0/guiceyfruit-core-2.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/guiceyfruit/guiceyfruit-core/2.0/guiceyfruit-core-2.0.pom
+Downloading from ibiblio: http://www.ibiblio.org/maven2/org/guiceyfruit/guiceyfruit-core/2.0/guiceyfruit-core-2.0.pom
+Downloading from mirror-ibiblio: http://mirrors.ibiblio.org/pub/mirrors/maven2/org/guiceyfruit/guiceyfruit-core/2.0/guiceyfruit-core-2.0.pom
+Downloading from JBoss-Maven2: http://repository.jboss.com/maven2/org/guiceyfruit/guiceyfruit-core/2.0/guiceyfruit-core-2.0.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  02:01 min
+[[1;34mINFO[m] Finished at: 2019-11-07T14:48:55-07:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal on project [36mpacbridge-slapper[m: [1;31mCould not resolve dependencies for project zedi.pacbridge:pacbridge-slapper:jar:2.1.0: Failed to collect dependencies at org.guiceyfruit:guiceyfruit-core:jar:2.0[m: Failed to read artifact descriptor for org.guiceyfruit:guiceyfruit-core:jar:2.0: Could not transfer artifact org.guiceyfruit:guiceyfruit-core:pom:2.0 from/to MVNRepository (http://mvnrepository.com/): mvnrepository.com: Name or service not known: Unknown host mvnrepository.com: Name or service not known -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException

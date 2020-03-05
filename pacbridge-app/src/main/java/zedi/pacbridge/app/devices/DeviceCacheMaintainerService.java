@@ -74,26 +74,26 @@ public class DeviceCacheMaintainerService implements Service<String> {
 
         @Override
         public void run() {
-            try {
-                logger.info("DeviceCacheMaintainer is starting");
-                waitForDeletegate();
-                updateDelegate = InitialContext.doLookup(DeviceCacheUpdateDelegate.JNDI_NAME);
-                updateDelegate.primeCache();
-                while (shutdown == false) {
-                    logger.trace("DeviceCacheMaintainer is checking for updates");
-                    if (updateDelegate == null)
-                        updateDelegate = InitialContext.doLookup(DeviceCacheUpdateDelegate.JNDI_NAME);
-                    try {
-                        Thread.sleep(TimeUnit.SECONDS.toMillis(scanIntervalSeconds));
-                        updateDelegate.checkForUpdates();
-                    } catch (InterruptedException e) {
-                    }
-                    updateDelegate = null;
-                }
-            } catch (NamingException e) {
-                logger.error("Unable to lookup update delegate", e);
-            }
-            logger.info("DeviceCacheMaintainer is shutting down");
+//            try {
+//                logger.info("DeviceCacheMaintainer is starting");
+//                waitForDeletegate();
+//                updateDelegate = InitialContext.doLookup(DeviceCacheUpdateDelegate.JNDI_NAME);
+//                updateDelegate.primeCache();
+//                while (shutdown == false) {
+//                    logger.trace("DeviceCacheMaintainer is checking for updates");
+//                    if (updateDelegate == null)
+//                        updateDelegate = InitialContext.doLookup(DeviceCacheUpdateDelegate.JNDI_NAME);
+//                    try {
+//                        Thread.sleep(TimeUnit.SECONDS.toMillis(scanIntervalSeconds));
+//                        updateDelegate.checkForUpdates();
+//                    } catch (InterruptedException e) {
+//                    }
+//                    updateDelegate = null;
+//                }
+//            } catch (NamingException e) {
+//                logger.error("Unable to lookup update delegate", e);
+//            }
+//            logger.info("DeviceCacheMaintainer is shutting down");
         }
         
         private void waitForDeletegate() {

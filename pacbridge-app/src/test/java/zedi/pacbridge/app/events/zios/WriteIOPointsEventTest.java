@@ -3,6 +3,7 @@ package zedi.pacbridge.app.events.zios;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
@@ -13,11 +14,10 @@ import static zedi.pacbridge.app.util.SiteAddressMatcher.matchesSiteAddress;
 
 import java.util.List;
 
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
 import org.jdom2.Element;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatcher;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -117,13 +117,13 @@ public class WriteIOPointsEventTest extends ZiosEventTestCase {
             .withArguments(INDEX+1, value)
             .thenReturn(newWriteValue2);
         whenNew(WriteIOPointsEvent.class)
-            .withArguments(matchesExpecteList(), eq(EVENT_ID), matchesSiteAddress(SITE_ADDRESS), eq(FIRMWARE_VERSION))
+            .withArguments(argThat(matchesExpecteList()), eq(EVENT_ID), argThat(matchesSiteAddress(SITE_ADDRESS)), eq(FIRMWARE_VERSION))
             .thenReturn(event);
         
         WriteIOPointsEvent writeIOEvent = WriteIOPointsEvent.writeIoPointsEventForElement(element, deviceCache);
         assertSame(event, writeIOEvent);
 
-        verifyNew(WriteIOPointsEvent.class).withArguments(matchesExpecteList(), eq(EVENT_ID), matchesSiteAddress(SITE_ADDRESS), eq(FIRMWARE_VERSION));
+        verifyNew(WriteIOPointsEvent.class).withArguments(argThat(matchesExpecteList()), eq(EVENT_ID), argThat(matchesSiteAddress(SITE_ADDRESS)), eq(FIRMWARE_VERSION));
         verify(deviceCache).deviceForNetworkUnitId(NUID.toString());
         verify(device).getNetworkNumber();
         verify(device).getFirmwareVersion();
@@ -148,16 +148,14 @@ public class WriteIOPointsEventTest extends ZiosEventTestCase {
         return XML_EVENT;
     }
 
-    BaseMatcher<List<WriteValueElement>> matchesExpecteList() {
+    ArgumentMatcher<List<WriteValueElement>> matchesExpecteList() {
 
-        return new BaseMatcher<List<WriteValueElement>>() {
+        return new ArgumentMatcher<List<WriteValueElement>>() {
 
             String errorMessage;
 
             @Override
-            public boolean matches(Object object) {
-                @SuppressWarnings("unchecked")
-                List<WriteValueElement> writeValues = (List<WriteValueElement>)object;
+            public boolean matches(List<WriteValueElement> writeValues) {
                 if (writeValues.size() != 2) {
                     errorMessage = "List contains too few elements. Expected 2 but was " + writeValues.size();
                     return false;
@@ -195,11 +193,6 @@ public class WriteIOPointsEventTest extends ZiosEventTestCase {
                 }
 
                 return true;
-            }
-
-            @Override
-            public void describeTo(Description description) {
-                description.appendText(errorMessage);
             }
         };
     }

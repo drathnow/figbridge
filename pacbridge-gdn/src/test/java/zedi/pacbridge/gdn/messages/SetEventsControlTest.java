@@ -32,8 +32,6 @@ public class SetEventsControlTest extends BaseTestCase {
     private static final Integer INTERVAL_2 = 5;
     private static final Integer DURATION_2 = 80;
 
-    private static final String EVENT_PKT = "0C 2A FF FC 01 00 21 01 00 00 04 00 01 00 02 00 FF 00 01 49 A8 20 8A 00 00 13 88 00 00 00 00 00 02 00 02 00 01 00 02 49 AA ED 2A 00 00 1F 40 00 00 00 00 00 04 00 01 00 01 00 00 49 AC 72 97 00 00 2A F8 00 00 00 00 00 03 00 04 00 00 00 00 4A 02 12 7E 00 00 1C 20 00 00 00 00";
-
 
     @Test
     public void testDeserialize() throws Exception {

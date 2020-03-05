@@ -29,7 +29,6 @@ import java.security.PrivilegedAction;
 * @author Scott.Stark@jboss.org
 * @version $Revision: 2787 $
 */
-@SuppressWarnings("unchecked")
 class SysPropertyActions
 {
   interface SysProps
@@ -45,7 +44,7 @@ class SysPropertyActions
      {
         public String getProperty(final String name, final String defaultValue)
         {
-           PrivilegedAction action = new PrivilegedAction()
+           PrivilegedAction<Object> action = new PrivilegedAction<Object>()
            {
               public Object run()
               {

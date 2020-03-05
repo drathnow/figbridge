@@ -46,7 +46,7 @@ public class KeyDecoderTest extends BaseTestCase {
 				if (argument.array()[i] != KEY_BYTES[j++])
 					return false;
 			}
-			return false;
+			return true;
 		}
     	
     }

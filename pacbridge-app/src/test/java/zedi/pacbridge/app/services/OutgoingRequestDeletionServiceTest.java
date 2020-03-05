@@ -11,8 +11,6 @@ import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.verifyNew;
 import static org.powermock.api.mockito.PowerMockito.whenNew;
 
-import javax.jms.JMSException;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InOrder;
@@ -50,7 +48,7 @@ public class OutgoingRequestDeletionServiceTest extends BaseTestCase {
         given(request.getSiteAddress()).willReturn(siteAddress);
         given(siteAddress.getAddress()).willReturn(NUID);
         whenNew(ZiosEventResponseEvent.class).withArguments(EVENT_ID, EventStatus.Cancelled, NUID).thenReturn(event);
-        doThrow(JMSException.class).when(eventPublisher).publishEvent(event);
+        doThrow(RuntimeException.class).when(eventPublisher).publishEvent(event);
         
         OutgoingRequestDeletionService service = new OutgoingRequestDeletionService(cache, eventPublisher);
         assertFalse(service.deleteOutgoingRequestWithRequestId(REQUEST_ID));

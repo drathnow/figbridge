@@ -9,14 +9,10 @@ import org.slf4j.LoggerFactory;
 
 import zedi.pacbridge.net.ByteBufferManager;
 import zedi.pacbridge.net.FramingLayer;
-import zedi.pacbridge.net.LayerTap;
-import zedi.pacbridge.net.LowerLayer;
 import zedi.pacbridge.net.NetworkAdapter;
 import zedi.pacbridge.net.ProtocolException;
 import zedi.pacbridge.net.ProtocolPacket;
-import zedi.pacbridge.net.SecurityLayer;
 import zedi.pacbridge.net.TransportLayer;
-import zedi.pacbridge.net.UpperLayer;
 import zedi.pacbridge.net.annotations.ProtocolLayer;
 import zedi.pacbridge.utl.IntegerSystemProperty;
 import zedi.pacbridge.utl.crc.CheckSumException;

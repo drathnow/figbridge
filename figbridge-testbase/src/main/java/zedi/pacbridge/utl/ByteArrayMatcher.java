@@ -2,10 +2,9 @@ package zedi.pacbridge.utl;
 
 import java.util.Arrays;
 
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
+import org.mockito.ArgumentMatcher;
 
-public class ByteArrayMatcher extends BaseMatcher<byte[]> {
+public class ByteArrayMatcher implements ArgumentMatcher<byte[]> {
 
     private byte[] expectedArray;
     
@@ -14,12 +13,8 @@ public class ByteArrayMatcher extends BaseMatcher<byte[]> {
     }
     
     @Override
-    public boolean matches(Object otherArray) {
+    public boolean matches(byte[] otherArray) {
         return Arrays.equals(expectedArray, (byte[])otherArray);
-    }
-
-    @Override
-    public void describeTo(Description description) {
     }
 
     public static ByteArrayMatcher matchesArrayOfBytes(byte[] array) {

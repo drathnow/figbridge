@@ -4,6 +4,7 @@
         <artifactId>pacbridge</artifactId>
         <groupId>zedi.pacbridge</groupId>
         <version>6.4.0</version>
+        <relativePath>../build/uberpom.xml</relativePath>
     </parent>
     <artifactId>pacbridge-slapper</artifactId>
     <version>2.1.0</version>
@@ -23,12 +24,12 @@
         <dependency>
             <groupId>zedi.pacbridge</groupId>
             <artifactId>pacbridge-wsmq</artifactId>
-            <version>6.1.0</version>
+            <version>${pacbridge.global.version}</version>
         </dependency>
         <dependency>
             <groupId>zedi.pacbridge</groupId>
             <artifactId>pacbridge-msg</artifactId>
-            <version>6.1.0</version>
+            <version>${pacbridge.global.version}</version>
         </dependency>
         <dependency>
             <groupId>zedi.pacbridge</groupId>
@@ -56,6 +57,7 @@
             <artifactId>guice</artifactId>
             <version>3.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.guiceyfruit</groupId>
             <artifactId>guiceyfruit-core</artifactId>

@@ -31,7 +31,6 @@ public class UnsolicitedMessageHandlerDiscoverer {
         }
     }
     
-    @SuppressWarnings("deprecation")
 	public Object handlerForNetworkTypeName(String networkTypeName) {
         try {
             Class<?> clazz = unsolicitedMsgHandlerClasses.get(networkTypeName.toUpperCase());

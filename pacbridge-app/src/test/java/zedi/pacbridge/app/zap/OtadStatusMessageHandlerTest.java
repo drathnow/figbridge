@@ -155,7 +155,7 @@ public class OtadStatusMessageHandlerTest extends BaseTestCase {
                            eventData)
             .thenReturn(event);
 
-        doThrow(Exception.class).when(publisher).publishEvent(event);
+        doThrow(RuntimeException.class).when(publisher).publishEvent(event);
         
         OtadStatusMessageHandler handler = new OtadStatusMessageHandler(publisher);
         assertFalse(handler.didProcessStatusUpdateMessage(siteAddress, statusMessage));

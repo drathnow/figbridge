@@ -16,9 +16,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import zedi.pacbridge.utl.HexStringDecoder;
-
 import com.sun.corba.se.impl.orbutil.HexOutputStream;
+
+import zedi.pacbridge.utl.HexStringDecoder;
 
 public class DownloadImageTest {
     protected static final int ADDRESS = 0x380000;

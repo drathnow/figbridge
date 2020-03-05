@@ -116,7 +116,8 @@ public class CountedByteMessageReceiverTest extends BaseTestCase {
         List<byte[]> bytesToBeRead = new ArrayList<>();
         List<byte[]> bytesWritten= new ArrayList<>();
         int count;
-        boolean closeCalled;
+        @SuppressWarnings("unused")
+		boolean closeCalled;
         
         public MockSocketChannel() {
             super(null);

@@ -1,12 +1,9 @@
 package zedi.pacbridge.gdn;
 
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.powermock.api.mockito.PowerMockito.verifyNew;
-import static org.powermock.api.mockito.PowerMockito.whenNew;
 
 import org.junit.Test;
 
@@ -14,8 +11,6 @@ import zedi.pacbridge.gdn.messages.GdnMessage;
 import zedi.pacbridge.gdn.messages.GdnMessageType;
 import zedi.pacbridge.gdn.messages.GdnPacket;
 import zedi.pacbridge.gdn.messages.SwtHeader;
-import zedi.pacbridge.gdn.messages.SwtHeader10;
-import zedi.pacbridge.gdn.messages.SwtHeader12;
 import zedi.pacbridge.gdn.messages.SwtHeaderFactory;
 import zedi.pacbridge.net.Packet;
 import zedi.pacbridge.net.Session;

@@ -3,7 +3,6 @@ package zedi.pacbridge.net.tcp;
 import java.io.IOException;
 import java.net.BindException;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.net.SocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -117,7 +116,6 @@ class ServerHelper {
     
     private void bindAddress(InetSocketAddress listeningAddress, int connectionQueueLimit, ServerSocketChannel serverSocketChannel) throws IOException, BindException {
         try {
-        	ServerSocket socket = serverSocketChannel.socket();
             serverSocketChannel.socket().setReuseAddress(true);
             serverSocketChannel.socket().bind(listeningAddress, connectionQueueLimit);
         } catch (BindException e) {

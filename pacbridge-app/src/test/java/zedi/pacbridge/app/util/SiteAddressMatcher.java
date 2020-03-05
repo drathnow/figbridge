@@ -1,13 +1,12 @@
 package zedi.pacbridge.app.util;
 
-import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
-import org.hamcrest.Matcher;
+import org.mockito.ArgumentMatcher;
 
 import zedi.pacbridge.utl.SiteAddress;
 
 
-public class SiteAddressMatcher extends BaseMatcher<SiteAddress> {
+public class SiteAddressMatcher implements ArgumentMatcher<SiteAddress> {
 
     private SiteAddress siteAddress;
     private SiteAddress butWas;
@@ -16,7 +15,7 @@ public class SiteAddressMatcher extends BaseMatcher<SiteAddress> {
         this.siteAddress = siteAddress;
     }
     
-    public boolean matches(Object object) {
+    public boolean matches(SiteAddress object) {
         butWas = ((SiteAddress)object);
         return siteAddress.equals(butWas);
     }
@@ -29,7 +28,7 @@ public class SiteAddressMatcher extends BaseMatcher<SiteAddress> {
             .appendText(">");
     }
  
-    public static Matcher<SiteAddress> matchesSiteAddress(SiteAddress siteAddress) {
+    public static ArgumentMatcher<SiteAddress> matchesSiteAddress(SiteAddress siteAddress) {
         return new SiteAddressMatcher(siteAddress);
     }
     

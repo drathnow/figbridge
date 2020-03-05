@@ -10,11 +10,11 @@ import org.slf4j.LoggerFactory;
 
 import zedi.pacbridge.net.FramingLayer;
 import zedi.pacbridge.net.ProtocolException;
-import zedi.pacbridge.net.ProtocolPacket;
+import zedi.pacbridge.net.ReceiveProtocolPacket;
 import zedi.pacbridge.net.SecurityLayer;
+import zedi.pacbridge.net.TransmitProtocolPacket;
 import zedi.pacbridge.net.TransportLayer;
 import zedi.pacbridge.net.annotations.AsyncRequester;
-import zedi.pacbridge.net.annotations.ProtocolLayer;
 import zedi.pacbridge.utl.DefaultInactivityStrategy;
 import zedi.pacbridge.utl.InactivityStrategy;
 import zedi.pacbridge.utl.IntegerSystemProperty;
@@ -36,7 +36,6 @@ import zedi.pacbridge.utl.strategies.RetryStrategy;
  * characters need to be escaped.
  * 
  */
-@ProtocolLayer(name="FAD")
 public class Fad implements TransportLayer, ThreadContextHandler {
 
     private static Logger logger = LoggerFactory.getLogger(Fad.class);
@@ -296,12 +295,12 @@ public class Fad implements TransportLayer, ThreadContextHandler {
     }
 
     @Override
-    public void receive(ProtocolPacket protocolPacket) throws ProtocolException {
+    public void receive(ReceiveProtocolPacket protocolPacket) throws ProtocolException {
         handleReceivedData(protocolPacket.bodyByteBuffer());
     }
 
     @Override
-    public void transmit(ProtocolPacket protocolPacket) throws IOException {
+    public void transmit(TransmitProtocolPacket protocolPacket) throws IOException {
         transmitData(protocolPacket.bodyByteBuffer());
     }
 
