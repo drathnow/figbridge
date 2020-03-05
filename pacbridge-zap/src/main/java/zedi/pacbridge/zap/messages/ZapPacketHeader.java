@@ -29,7 +29,7 @@ public abstract class ZapPacketHeader implements PacketHeader {
     public static ZapPacketHeader packetHeaderFromByteBuffer(ByteBuffer byteBuffer) {
         Integer type = (int)Unsigned.getUnsignedByte(byteBuffer);
         switch (type) {
-            case ZapHeaderType.SESSION_HEADER_NUMBER : return SessionHeader.sessionHeaderFromByteBuffer(byteBuffer);
+            case ZapHeaderType.SESSION_HEADER_NUMBER : return ZapSessionHeader.sessionHeaderFromByteBuffer(byteBuffer);
         }
         throw new IllegalArgumentException("Unknow header type '" + type + "'");
     }

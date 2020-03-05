@@ -16,5 +16,4 @@ public class MainFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent quitEvent) {
         this.processWindowEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }
-
 }

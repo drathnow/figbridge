@@ -31,7 +31,7 @@ public class WriteValueTest {
         values.add(writeValue);
         WriteIoPointsControl control = new WriteIoPointsControl(values, IOID);
         
-        ZapPacketHeader hdr = new SessionHeader(ZapMessageType.WriteIOPoints);
+        ZapPacketHeader hdr = new ZapSessionHeader(ZapMessageType.WriteIOPoints);
         ZapPacket pkt = new ZapPacket(hdr, control);
         pkt.serialize(byteBuffer);
         System.out.println("Hex: " + HexStringEncoder.bytesAsHexString(bytes, byteBuffer.position()));

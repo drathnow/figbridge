@@ -35,7 +35,7 @@ public class ZapPacket implements Packet {
         ZapPacketHeader header = ZapPacketHeader.packetHeaderFromByteBuffer(byteBuffer);
         Message message = messageFactory.messageFromByteBuffer(header.messageType().getNumber(), byteBuffer);
         if (header.headerType() == ZapHeaderType.SESSION_HEADER)
-            message.setSequenceNumber(((SessionHeader)header).getSequenceNumber());
+            message.setSequenceNumber(((ZapSessionHeader)header).getSequenceNumber());
         return new ZapPacket(header, message);
     }
 
@@ -44,7 +44,7 @@ public class ZapPacket implements Packet {
         ZapPacketHeader header = ZapPacketHeader.packetHeaderFromByteBuffer(byteBuffer);
         Message message = messageFactory.messageFromByteBuffer(header.messageType().getNumber(), byteBuffer);
         if (header.headerType() == ZapHeaderType.SESSION_HEADER)
-            message.setSequenceNumber(((SessionHeader)header).getSequenceNumber());
+            message.setSequenceNumber(((ZapSessionHeader)header).getSequenceNumber());
         return new ZapPacket(header, message);
     }
 

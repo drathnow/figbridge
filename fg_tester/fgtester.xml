@@ -1,0 +1,6 @@
+<FgTester>
+    <Listener>
+        <Address>192.168.1.1</Address>
+        <Port>3100</Port>
+    </Listener>
+</FgTester>
