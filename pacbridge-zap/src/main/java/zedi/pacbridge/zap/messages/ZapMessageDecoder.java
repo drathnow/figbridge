@@ -38,6 +38,9 @@ public class ZapMessageDecoder
 	private DecimalFormat integerFormat;
 	private MessageFormat reportItemMessageFormat;
 	private MessageFormat writeValueMessageFormat;
+	private FieldTypeLibrary fieldTypeLibrary;
+
+	private Object object;
 
 	public ZapMessageDecoder()
 	{
@@ -50,6 +53,12 @@ public class ZapMessageDecoder
 		writeValueMessageFormat = new MessageFormat(WRITE_VALUE_FORMAT_STRING);
 	}
 
+	public ZapMessageDecoder(FieldTypeLibrary fieldTypeLibrary)
+	{
+		this();
+		this.fieldTypeLibrary = fieldTypeLibrary;
+	}
+
 	public String decodePacketBytes(ByteBuffer byteBuffer)
 	{
 		((Buffer) byteBuffer).mark();
@@ -57,7 +66,7 @@ public class ZapMessageDecoder
 		if (len != byteBuffer.limit() - 2)
 			((Buffer) byteBuffer).reset();
 		StringBuilder stringBuilder = new StringBuilder();
-		ZapPacket packet = ZapPacket.packetFromByteBuffer(byteBuffer);
+		ZapPacket packet = ZapPacket.packetFromByteBuffer(byteBuffer, fieldTypeLibrary);
 		ZapSessionHeader header = (ZapSessionHeader) packet.getHeader();
 		stringBuilder.append("ZAP Packet").append('\n')
 		                .append("    Type           : " + header.headerType().getName()).append('\n')
@@ -136,6 +145,10 @@ public class ZapMessageDecoder
 			case ZapMessageType.CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER:
 				message = ChallengeResponseMessageV2.clientChallengeResponseFromByteBuffer(byteBuffer);
 				break;
+
+			case ZapMessageType.SCRUB_NUMBER:
+				message = ScrubControl.scrubControlFromByteBuffer(byteBuffer);
+				break;
 		}
 
 		if (message != null)
@@ -164,16 +177,44 @@ public class ZapMessageDecoder
 			case ZapMessageType.SERVER_CHALLENGE_MESSAGE_NUMBER:
 				return decodeMessage((ServerChallenge) message);
 			case ZapMessageType.CHALLENGE_RESPONSE_MESSAGE_NUMBER:
-			case ZapMessageType.CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER :
+			case ZapMessageType.CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER:
 				return decodeMessage((ChallengeResponseMessage) message);
 			case ZapMessageType.AUTHENTICATION_RESPONSE_MESSAGE_NUMBER:
 				return decodeMessage((AuthenticationResponseMessage) message);
+			case ZapMessageType.SCRUB_NUMBER:
+				return decodeMessage((ScrubControl) message);
+			case ZapMessageType.CONFIGURE_NUMBER:
+				return decodeMessage((ConfigureControl) message);
 		}
-		
+
 		return "Message type not currently supported: '" + message.messageType() + "'";
 	}
-	
-	private String decodeMessage(AuthenticationResponseMessage message) 
+
+	private String decodeMessage(ConfigureControl message)
+	{
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Message Type : ").append(message.messageType().getName()).append('\n');
+		stringBuilder.append("Object Type  : ").append(message.getObjectType().getName()).append('\n');
+		List<Action> actions = message.getActions();
+
+		for (Action action : actions)
+		{
+			stringBuilder.append("    Action Type  : ").append(action.getActionType().getName()).append('\n');
+			List<Field<?>> fields = action.getFields();
+			for (Field<?> field : fields) 
+			{
+				stringBuilder.append("        Field: ")
+					.append(field.getFieldType().getName())
+					.append("=")
+					.append(field.getValue().toString())
+					.append('\n');
+			}
+		}
+
+		return stringBuilder.toString();
+	}
+
+	private String decodeMessage(AuthenticationResponseMessage message)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
 		Date deviceTime = new Date(message.getDeviceTime() * 1000);
@@ -186,23 +227,23 @@ public class ZapMessageDecoder
 			stringBuilder.append("N/A").append('\n');
 		else
 			stringBuilder.append(HexStringEncoder.bytesAsHexString(message.getServerHash())).append('\n');
-		
+
 		stringBuilder.append("Session Key     : ");
 		if (message.getSessionKey() == null)
 			stringBuilder.append("N/A").append('\n');
 		else
 			stringBuilder.append(HexStringEncoder.bytesAsHexString(message.getSessionKey())).append('\n');
-		
+
 		stringBuilder.append("Device Time     : ").append(utcDateFormatter.format(deviceTime)).append('\n');
 		stringBuilder.append("Server Time     : ").append(utcDateFormatter.format(serverTime)).append('\n');
 		return stringBuilder.toString();
 	}
 
-	private String decodeMessage(ChallengeResponseMessage message) 
+	private String decodeMessage(ChallengeResponseMessage message)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
 		Date deviceTime = new Date(message.getDeviceTime() * 1000);
-		
+
 		stringBuilder.append("Message Type    : ").append(message.messageType().getName()).append('\n');
 		stringBuilder.append("Firmware Version: ").append(message.getFirmwareVersion() == null ? "N/A" : message.getFirmwareVersion()).append('\n');
 		stringBuilder.append("Encryption Type : ").append(message.getEncryptionType()).append('\n');
@@ -210,18 +251,29 @@ public class ZapMessageDecoder
 		stringBuilder.append("Device Time     : ").append(utcDateFormatter.format(deviceTime)).append('\n');
 		stringBuilder.append("Client Salt     : ").append(HexStringEncoder.bytesAsHexString(message.getClientSalt())).append('\n');
 		stringBuilder.append("Client Hash     : ").append(HexStringEncoder.bytesAsHexString(message.getClientHash())).append('\n');
-		stringBuilder.append("Username        : ").append(message.getUsername()).append('\n');		
+		stringBuilder.append("Username        : ").append(message.getUsername()).append('\n');
 		return stringBuilder.toString();
 	}
-	
-	private String decodeMessage(ServerChallenge message) 
+
+	private String decodeMessage(ScrubControl message)
+	{
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Message Type   : ").append(message.messageType().getName()).append('\n');
+		stringBuilder.append("Scrub IO Points: ").append(message.isScrubIoPoints()).append('\n');
+		stringBuilder.append("Scrub Report   : ").append(message.isScrubReports()).append('\n');
+		stringBuilder.append("Scrub Events   : ").append(message.isScrubEvents()).append('\n');
+		stringBuilder.append("Scrub All      : ").append(message.isScrubAll()).append('\n');
+		return stringBuilder.toString();
+	}
+
+	private String decodeMessage(ServerChallenge message)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("Message Type  : ").append(message.messageType().getName()).append('\n');
 		stringBuilder.append("Salt          : ").append(HexStringEncoder.bytesAsHexString(message.getServerSaltValue())).append('\n');
 		return stringBuilder.toString();
 	}
-	
+
 	private String decodeMessage(OtadStatusMessage message)
 	{
 		StringBuilder stringBuilder = new StringBuilder();

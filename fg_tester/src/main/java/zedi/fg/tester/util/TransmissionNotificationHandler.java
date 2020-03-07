@@ -11,13 +11,14 @@ import zedi.pacbridge.zap.messages.ZapMessageDecoder;
 public class TransmissionNotificationHandler implements Notifiable
 {
 	private static final Logger logger = Logger.getLogger(TransmissionNotificationHandler.class);
-	private ZapMessageDecoder messageDecoder = new ZapMessageDecoder();
+	private ZapMessageDecoder messageDecoder;
 	private ConsoleTextPane consoleTextPane;
 	
 	
-	public TransmissionNotificationHandler(ConsoleTextPane consoleTextPane)
+	public TransmissionNotificationHandler(ConsoleTextPane consoleTextPane, ZapMessageDecoder messageDecoder)
 	{
 		this.consoleTextPane = consoleTextPane;
+		this.messageDecoder = messageDecoder;
 	}
 
 	@Override

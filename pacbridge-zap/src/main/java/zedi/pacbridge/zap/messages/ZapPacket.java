@@ -31,12 +31,7 @@ public class ZapPacket implements Packet {
             fieldTypeLibray = DependencyResolver.Implementation.sharedInstance().getImplementationOf(FieldTypeLibrary.class);
         } catch (Exception e) {
         }
-        ZapMessageFactory messageFactory = new ZapMessageFactory(fieldTypeLibray);
-        ZapPacketHeader header = ZapPacketHeader.packetHeaderFromByteBuffer(byteBuffer);
-        Message message = messageFactory.messageFromByteBuffer(header.messageType().getNumber(), byteBuffer);
-        if (header.headerType() == ZapHeaderType.SESSION_HEADER)
-            message.setSequenceNumber(((ZapSessionHeader)header).getSequenceNumber());
-        return new ZapPacket(header, message);
+        return packetFromByteBuffer(byteBuffer, fieldTypeLibray);
     }
 
     public static ZapPacket packetFromByteBuffer(ByteBuffer byteBuffer, FieldTypeLibrary fieldTypeLibrary) {

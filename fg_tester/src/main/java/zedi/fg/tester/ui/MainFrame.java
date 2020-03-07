@@ -12,10 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JSplitPane;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import zedi.fg.tester.util.AppController;
 
@@ -25,8 +23,11 @@ public class MainFrame extends JFrame implements ActionListener
 	private JSplitPane splitPane = new JSplitPane();
 	private ConsoleTextPane loggingPane = new ConsoleTextPane();
 	private ConsoleTextPane tracePane = new ConsoleTextPane();
-	private DemandPollDialog demandPollDialog;
     private JMenu sendMenu = new JMenu("Send");
+    private JMenu testSetupMenu = new JMenu("Test Setup");
+    private DemandPollDialog demandPollDialog;
+    private ScrubDialog srubDialog;
+    private PreferencesDialog preferenceDialog;
 
 	private JMenuBar menuBar = new JMenuBar();
     
@@ -79,25 +80,44 @@ public class MainFrame extends JFrame implements ActionListener
 	{
 		return tracePane;
 	}
+
+	public void enableMenus()
+	{
+        sendMenu.setEnabled(true);
+        testSetupMenu.setEnabled(true);
+	}
 	
+	public void disableMenu()
+	{
+        sendMenu.setEnabled(false);
+        testSetupMenu.setEnabled(false);
+	}
+
 	private void buildMenuBar()
 	{
-		
-		JMenu fileMenu = new JMenu("File");
-		menuBar.add(fileMenu);
+		menuBar.add(buildFileMenu());
+        menuBar.add(buildSendMenu());
+        menuBar.add(buildTestSetupMenu());
+	}
 
-	    JMenuItem exitMenuItem = new JMenuItem("Exit");
-        exitMenuItem.addActionListener(new ActionListener() {
+	private JMenu buildTestSetupMenu() 
+	{
+        JMenuItem modbusSetupMenuItem = new JMenuItem("Modbus Test");
+        modbusSetupMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                MainFrame.this.dispose();
+            	appController.setupModbusTest();
             }
         });
-
-        fileMenu.add(exitMenuItem);
+        testSetupMenu.add(modbusSetupMenuItem);
+		
+        testSetupMenu.setEnabled(false);
+		return testSetupMenu;
+	}
+	
+	private JMenu buildSendMenu()
+	{
         
-        menuBar.add(sendMenu);
-        
-        JMenuItem demanPollMenuItem = new JMenuItem("Demand Poll");
+        JMenuItem demanPollMenuItem = new JMenuItem("Demand Poll...");
         demanPollMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	if (demandPollDialog == null)
@@ -106,19 +126,52 @@ public class MainFrame extends JFrame implements ActionListener
             }
         });
         sendMenu.add(demanPollMenuItem);
-        sendMenu.setEnabled(false);
-	}
 
-	public void enableSendMenu()
-	{
-        sendMenu.setEnabled(true);
+        JMenuItem scrubMenuItem = new JMenuItem("Scrub...");
+        scrubMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	if (srubDialog == null)
+            		srubDialog = new ScrubDialog(appController);
+            	srubDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(scrubMenuItem);
+        
+        sendMenu.setEnabled(false);
+        
+        return sendMenu;
 	}
 	
-	public void disableSendMenu()
+	private JMenu buildFileMenu() 
 	{
-        sendMenu.setEnabled(false);
-	}
+		JMenu fileMenu = new JMenu("File");
+		menuBar.add(fileMenu);
 
+	    JMenuItem prefMenuItem = new JMenuItem("Preferences...");
+	    prefMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	if (preferenceDialog == null)
+            		preferenceDialog = new PreferencesDialog();
+            	preferenceDialog.setVisible(true);
+            }
+        });
+
+        fileMenu.add(prefMenuItem);
+        
+        fileMenu.add(new JSeparator());
+        
+	    JMenuItem exitMenuItem = new JMenuItem("Exit");
+        exitMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MainFrame.this.dispose();
+            }
+        });
+
+        fileMenu.add(exitMenuItem);
+
+        return fileMenu;
+	}
+	
 	class MainFrameWindowListener extends WindowAdapter {
 	    public void windowClosed(WindowEvent e)
 	    {

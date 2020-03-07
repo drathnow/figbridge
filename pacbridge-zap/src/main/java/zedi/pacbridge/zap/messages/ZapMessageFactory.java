@@ -47,6 +47,13 @@ public class ZapMessageFactory implements MessageFactory<ZapMessage> {
                 return DemandPollControl.messageFromByteBuffer(byteBuffer);
             case ZapMessageType.OTAD_REQUEST_NUMBER :
                 return OtadRequestControl.fromByteBuffer(byteBuffer);
+            case ZapMessageType.SCRUB_NUMBER :
+            	return ScrubControl.scrubControlFromByteBuffer(byteBuffer);
+            case ZapMessageType.CONFIGURE_NUMBER : 
+                if (fieldTypeLibrary == null)
+                    logger.error("Unable to decode ConfigureUpdateMessage because no FieldTypeLibrary is available");
+                else
+                	return ConfigureControl.configureControlFromByteBuffer(byteBuffer, fieldTypeLibrary);
             case ZapMessageType.CONFIGUR_UPDATE_MESSAGE_NUMBER :
                 if (fieldTypeLibrary == null)
                     logger.error("Unable to decode ConfigureUpdateMessage because no FieldTypeLibrary is available");
