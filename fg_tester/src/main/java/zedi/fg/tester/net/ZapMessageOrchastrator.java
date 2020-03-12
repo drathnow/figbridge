@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import zedi.fg.tester.util.BundledReportMessageHandler;
+import zedi.fg.tester.util.ConfigureUpdateHandler;
 import zedi.fg.tester.util.Constants;
 import zedi.fg.tester.util.FgMessageSender;
 import zedi.fg.tester.util.HeartbeatMessageHandler;
@@ -52,6 +53,7 @@ public class ZapMessageOrchastrator implements Notifiable
 		ZapMessageOrchastrator messageOrchastrator = new ZapMessageOrchastrator(messageSender);
 		messageOrchastrator.registerHandler(ZapMessageType.HeartBeat, new HeartbeatMessageHandler());
 		messageOrchastrator.registerHandler(ZapMessageType.BundledReport, new BundledReportMessageHandler());
+		messageOrchastrator.registerHandler(ZapMessageType.ConfigureUpdate, new ConfigureUpdateHandler());
 		return messageOrchastrator;
 	}
 }

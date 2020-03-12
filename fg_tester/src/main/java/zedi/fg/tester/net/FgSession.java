@@ -22,6 +22,7 @@ import zedi.pacbridge.zap.ZapMessageType;
 import zedi.pacbridge.zap.messages.AuthenticationResponseMessage;
 import zedi.pacbridge.zap.messages.ChallengeResponseMessage;
 import zedi.pacbridge.zap.messages.ConnectionFlags;
+import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 import zedi.pacbridge.zap.messages.ServerChallenge;
 import zedi.pacbridge.zap.messages.ZapMessage;
 import zedi.pacbridge.zap.messages.ZapPacket;
@@ -49,8 +50,9 @@ public class FgSession implements Runnable
 	private State currentState;
 	private Integer sessionId;
 	private boolean shutdown;
+	private FieldTypeLibrary fieldTypeLibrary;
 
-	public FgSession(NotificationCenter notificationCenter, SocketChannel socketChannel) throws IOException
+	public FgSession(NotificationCenter notificationCenter, SocketChannel socketChannel, FieldTypeLibrary fieldTypeLibrary) throws IOException
 	{
 		this.notificationCenter = notificationCenter;
 		this.rcvBuffer = new byte[RCV_BUFFER_SIZE];
@@ -65,6 +67,7 @@ public class FgSession implements Runnable
 		this.selectionKey = socketChannel.register(selector, 0);
 		this.sessionId = SESSION_ID.getAndAdd(1);
 		this.shutdown = true;
+		this.fieldTypeLibrary = fieldTypeLibrary;
 	}
 	
 	public void close() 
@@ -125,6 +128,13 @@ public class FgSession implements Runnable
 			
 		} catch (ClosedChannelException e) 
 		{
+		    logger.info(socketChannel.socket().getInetAddress().toString() + " disconnected");
+		    try
+            {
+                socketChannel.close();
+            } catch (IOException e1)
+            {
+            }
 		} catch (IOException e)
 		{
 			logger.info("FG connection closed");
@@ -248,10 +258,16 @@ public class FgSession implements Runnable
 				break;
 				
 			case AUTHENTICATED:
-				rcvByteBuffer.getShort();
-				ZapPacket packet = ZapPacket.packetFromByteBuffer(rcvByteBuffer);
-				notificationCenter.postNotification(Constants.ZAP_MSG_RECEVIED, packet);
-				expectedBytes = Integer.MAX_VALUE;
+				ZapPacket packet = null;
+				try {
+					rcvByteBuffer.getShort();
+					packet = ZapPacket.packetFromByteBuffer(rcvByteBuffer, fieldTypeLibrary);
+					notificationCenter.postNotification(Constants.ZAP_MSG_RECEVIED, packet);
+					expectedBytes = Integer.MAX_VALUE;
+				} catch (Exception e)
+				{
+					logger.error("Unable to decode message", e);
+				}
 				break;
 		}
 	}
@@ -259,7 +275,7 @@ public class FgSession implements Runnable
 	private void sendAuthenticated() 
 	{
 		rcvByteBuffer.getShort();
-		ZapPacket packet = ZapPacket.packetFromByteBuffer(rcvByteBuffer);
+		ZapPacket packet = ZapPacket.packetFromByteBuffer(rcvByteBuffer, fieldTypeLibrary);
 		
 		ChallengeResponseMessage challengeResponse = (ChallengeResponseMessage)packet.getMessage();
 		

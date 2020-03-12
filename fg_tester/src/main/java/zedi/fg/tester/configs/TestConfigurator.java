@@ -15,7 +15,13 @@ public class TestConfigurator
 	
 	public void setupModbusTestConfiguration()
 	{
-		ModbusTestConfiguration config =  new ModbusTestConfiguration(fieldTypeLibrary);
-		setupCoordinator.addConfigureControls(config.configureControls());
+		ConfigurationSetup config =  new ModbusTestConfiguration(fieldTypeLibrary);
+		setupCoordinator.submitConfigurationSetup(config);
 	}
+
+    public void setupAIDITestConfiguration()
+    {
+        ConfigurationSetup config =  new AIDITestConfiguration(fieldTypeLibrary);
+        setupCoordinator.submitConfigurationSetup(config);
+    }
 }

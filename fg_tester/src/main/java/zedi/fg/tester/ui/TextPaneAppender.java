@@ -4,6 +4,7 @@ package zedi.fg.tester.ui;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Layout;
 import org.apache.log4j.Level;
+import org.apache.log4j.spi.Filter;
 import org.apache.log4j.spi.LoggingEvent;
 
 public class TextPaneAppender extends AppenderSkeleton {
@@ -14,6 +15,32 @@ public class TextPaneAppender extends AppenderSkeleton {
         setLayout(layout);
         this.consoleTextPane = consoleTextPane;
     }
+    
+    public
+    synchronized 
+    void doAppend(LoggingEvent event) {
+      if(closed) {
+        return;
+      }
+      
+      if(!isAsSevereAsThreshold(event.getLevel())) {
+        return;
+      }
+
+      Filter f = this.headFilter;
+      
+      FILTER_LOOP:
+      while(f != null) {
+        switch(f.decide(event)) {
+        case Filter.DENY: return;
+        case Filter.ACCEPT: break FILTER_LOOP;
+        case Filter.NEUTRAL: f = f.getNext();
+        }
+      }
+      
+      this.append(event);    
+    }
+
 
     @Override
     protected synchronized void append(LoggingEvent loggingEvent) {

@@ -6,4 +6,5 @@ public class Constants
 	public static final String FG_CONNECTED = "FgConnected";
 	public static final String FG_DISCONNECTED = "FgDisconnected";
 	public static final String ZAP_MSG_RECEVIED = "ZapMessageReceived";
+	public static final String TRACE_LOGGER_NAME = "zedi.fg.tester.tracelogger";
 }

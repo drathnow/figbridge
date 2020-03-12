@@ -3,7 +3,6 @@ package zedi.fg.tester.configs;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -26,8 +25,8 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 	private static final Logger logger = Logger.getLogger(TestConfigurationSetupCoordinator.class);
 
 	private FgMessageSender messageSender;
-	private Deque<ConfigureControl> controls;
-	private ConfigureControl pendingControl;
+	private Deque<ConfigurationSetup> configurationSetups;
+	private ConfigurationSetup currentConfigurationSetup;
 	private boolean shutdown;
 	private final Lock syncLock;
 	private final Condition condition;
@@ -35,11 +34,11 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 	public TestConfigurationSetupCoordinator(FgMessageSender messageSender)
 	{
 		this.messageSender = messageSender;
-		this.controls = new ArrayDeque<ConfigureControl>();
+		this.configurationSetups = new ArrayDeque<ConfigurationSetup>();
 		this.syncLock = new ReentrantLock();
 		this.condition = syncLock.newCondition();
 		this.shutdown = true;
-		this.pendingControl = null;
+		this.currentConfigurationSetup = null;
 	}
 
 	public void start()
@@ -63,12 +62,12 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 		}
 	}
 
-	public void addConfigureControl(ConfigureControl control)
+	public void submitConfigurationSetup(ConfigurationSetup configurationSetup)
 	{
 		try
 		{
 			syncLock.lock();
-			controls.offer(control);
+			configurationSetups.offer(configurationSetup);
 			condition.signal();
 		} finally
 		{
@@ -76,11 +75,6 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 		}
 	}
 
-	public void addConfigureControls(List<ConfigureControl> controls)
-	{
-		for (ConfigureControl control : controls)
-			addConfigureControl(control);
-	}
 
 	@Override
 	public void handleNotification(Notification notification)
@@ -93,34 +87,30 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 				AckMessage ackMessage = (AckMessage)packet.getMessage();
 				if (ackMessage.getAckedMessageType().getNumber() == ZapMessageType.CONFIGURE_NUMBER)
 				{
-					ConfigureResponseAckDetails details = ackMessage.additionalDetails();
+					ConfigureResponseAckDetails ackDetails = ackMessage.additionalDetails();
+					currentConfigurationSetup.handleConfigurationResponse(ackDetails);
 					syncLock.lock();
-					try
-					{
-						if (pendingControl != null && pendingControl.getObjectType().getNumber() == details.getObjectType().getNumber())
-							condition.signal();
-					} finally
-					{
-						syncLock.unlock();
-					}
+					condition.signal();
+					syncLock.unlock();
 				}
 			}
 		}
 	}
 
-	private void processPendingControl() throws InterruptedException
+	private void processCurrentConfigurationSetups() throws InterruptedException
 	{
 		try
 		{
-			messageSender.sendMessageWithSession(pendingControl);
-			if (!condition.await(5, TimeUnit.SECONDS))
-				logger.error("Respone timeout exceeded.  Configure control not ACKed.");
+			ConfigureControl nextControl = null;
+			while ((nextControl = currentConfigurationSetup.nextConfigureControl()) != null) 
+			{
+				messageSender.sendMessageWithSession(nextControl);
+				if (!condition.await(5, TimeUnit.SECONDS))
+					logger.error("Respone timeout exceeded.  Configure control not ACKed.");
+			}
 		} catch (IOException e)
 		{
 			logger.error("Unable to send control", e);
-		} finally
-		{
-			pendingControl = null;
 		}
 	}
 
@@ -134,17 +124,18 @@ public class TestConfigurationSetupCoordinator implements Notifiable
 				syncLock.lock();
 				while (!shutdown)
 				{
-					if (controls.size() == 0)
+					if (configurationSetups.size() == 0)
 						condition.await();
 					else
 					{
-						pendingControl = controls.getFirst();
-						controls.removeFirst();
-						processPendingControl();
+						currentConfigurationSetup = configurationSetups.getFirst();
+						configurationSetups.removeFirst();
+						processCurrentConfigurationSetups();
 					}
 				}
 			} catch (Exception e)
 			{
+			    logger.error("Unhandled exception", e);
 			} finally
 			{
 				syncLock.unlock();

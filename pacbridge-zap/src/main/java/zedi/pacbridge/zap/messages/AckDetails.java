@@ -51,6 +51,8 @@ public abstract class AckDetails implements ZapSerializable {
                 return ConfigureResponseAckDetails.configureResponseAckDetailsFromByteBuffer(byteBuffer);
             case AckDetailsType.SCRUB_RESULT_NUMBER :
                 return ScrubControlAckDetails.scrubResultsFromByteBuffer(byteBuffer);
+            case AckDetailsType.CONFIGURE_UPDATE_RESPONSE_NUMBER:
+                return ConfigureUpdateAckDetails.ackDetailsFromByteBuffer(byteBuffer);
             case AckDetailsType.OTAD_REQUEST_DETAILS_NUMBER:
                 return OtadRequestAckDetails.detailsFromByteBuffer(byteBuffer);
         }

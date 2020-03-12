@@ -7,15 +7,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JSplitPane;
+import javax.swing.JTextField;
 
 import zedi.fg.tester.util.AppController;
+import zedi.fg.tester.util.SwingUtl;
 
 public class MainFrame extends JFrame implements ActionListener
 {
@@ -30,7 +34,7 @@ public class MainFrame extends JFrame implements ActionListener
     private PreferencesDialog preferenceDialog;
 
 	private JMenuBar menuBar = new JMenuBar();
-    
+
 	public MainFrame()
 	{
         setBounds(100, 100, 450, 300);
@@ -50,11 +54,17 @@ public class MainFrame extends JFrame implements ActionListener
         splitPane.setDividerSize(10);
 		
 		getContentPane().add(splitPane, BorderLayout.CENTER);
-		
-		buildMenuBar();
+
+		JPanel statusPanel = new JPanel();
+		JTextField textField = new JTextField();
+		statusPanel.setLayout(new BorderLayout());
+        statusPanel.add(textField,  BorderLayout.CENTER);
+        getContentPane().add(new StatusPanel(), BorderLayout.SOUTH);
+
+        buildMenuBar();
 		setJMenuBar(menuBar);
         
-		addWindowListener(new MainFrameWindowListener());		
+		addWindowListener(new MainFrameWindowListener());
 	}
 
 	public MainFrame(AppController appController)
@@ -98,6 +108,7 @@ public class MainFrame extends JFrame implements ActionListener
 		menuBar.add(buildFileMenu());
         menuBar.add(buildSendMenu());
         menuBar.add(buildTestSetupMenu());
+        menuBar.add(buildViewMenu());
 	}
 
 	private JMenu buildTestSetupMenu() 
@@ -110,6 +121,14 @@ public class MainFrame extends JFrame implements ActionListener
         });
         testSetupMenu.add(modbusSetupMenuItem);
 		
+        JMenuItem aidiSetupMenuItem = new JMenuItem("AIDI Test");
+        aidiSetupMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                appController.setupAIDITest();
+            }
+        });
+        testSetupMenu.add(aidiSetupMenuItem);
+
         testSetupMenu.setEnabled(false);
 		return testSetupMenu;
 	}
@@ -152,6 +171,7 @@ public class MainFrame extends JFrame implements ActionListener
             public void actionPerformed(ActionEvent e) {
             	if (preferenceDialog == null)
             		preferenceDialog = new PreferencesDialog();
+            	SwingUtl.centerWindowInWindow(MainFrame.this, preferenceDialog);
             	preferenceDialog.setVisible(true);
             }
         });
@@ -170,6 +190,25 @@ public class MainFrame extends JFrame implements ActionListener
         fileMenu.add(exitMenuItem);
 
         return fileMenu;
+	}
+
+	private JMenu buildViewMenu() 
+	{
+		JMenu viewMenu = new JMenu("View");
+		menuBar.add(viewMenu);
+
+	    JMenuItem traceWindowMenuItem = new JMenuItem("Trace Window");
+	    traceWindowMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) 
+            {
+            	TraceWindow traceWindow = new TraceWindow(tracePane);
+            	traceWindow.setVisible(true);
+            }
+        });
+
+        viewMenu.add(traceWindowMenuItem);
+
+        return viewMenu;
 	}
 	
 	class MainFrameWindowListener extends WindowAdapter {

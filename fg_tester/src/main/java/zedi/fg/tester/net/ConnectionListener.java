@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 import zedi.fg.tester.util.FgMessageSender;
 import zedi.pacbridge.utl.NotificationCenter;
+import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 import zedi.pacbridge.zap.messages.ZapMessage;
 
 public class ConnectionListener implements Runnable, FgMessageSender
@@ -24,8 +25,9 @@ public class ConnectionListener implements Runnable, FgMessageSender
 	private ServerSocketChannel serverSocketChannel;
 	private SelectionKey selectionKey;
 	private boolean shutdown;
+	private FieldTypeLibrary fieldTypeLibrary;
 	
-	public ConnectionListener(NotificationCenter notificationCenter, String address, Integer port) throws IOException
+	public ConnectionListener(NotificationCenter notificationCenter, String address, Integer port, FieldTypeLibrary fieldTypeLibrary) throws IOException
 	{
 		this.notificationCenter = notificationCenter;
 		this.socketAddress = new InetSocketAddress(address, port);
@@ -35,6 +37,7 @@ public class ConnectionListener implements Runnable, FgMessageSender
 		this.serverSocketChannel.configureBlocking(false);
 		this.selectionKey = serverSocketChannel.register(selector, serverSocketChannel.validOps(), null);
 		this.shutdown = true;
+		this.fieldTypeLibrary = fieldTypeLibrary;
 	}
 	
 	public void start()
@@ -60,14 +63,14 @@ public class ConnectionListener implements Runnable, FgMessageSender
 			{
 				if (selector.select() > 0)
 				{
-					selectionKey.interestOps(0);
+					selectionKey.interestOps(SelectionKey.OP_ACCEPT);
 		            if (selectionKey.isValid() && selectionKey.isAcceptable()) 
 		            {
 			            if (currentSession != null)
 			            	currentSession.close();
 			            SocketChannel socketChannel = serverSocketChannel.accept();
 			            logger.info("New connection accepted from " + socketChannel.socket().getInetAddress().toString());
-			            currentSession = new FgSession(notificationCenter, socketChannel);
+			            currentSession = new FgSession(notificationCenter, socketChannel, fieldTypeLibrary);
 			            currentSession.start();
 		            }
 				}

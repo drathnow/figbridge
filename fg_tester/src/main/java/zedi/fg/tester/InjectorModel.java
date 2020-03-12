@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+import javax.ws.rs.NotSupportedException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,9 +13,11 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
 
-import zedi.fg.tester.configs.TestConfigurator;
 import zedi.fg.tester.util.Configuration;
+import zedi.fg.tester.util.ConfigurationFileSerializer;
+import zedi.fg.tester.util.ConfigurationSerializer;
 import zedi.pacbridge.app.events.zios.ZiosFieldTypeLibrary;
+import zedi.pacbridge.utl.DependencyResolver;
 import zedi.pacbridge.utl.NotificationCenter;
 import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 
@@ -23,41 +27,50 @@ public class InjectorModel extends AbstractModule
 
 	private static FieldTypeLibrary fieldTypeLibrary = null;
 	private static Configuration configuration = null;
-	
+
 	@Override
 	protected void configure()
 	{
 		bind(NotificationCenter.class)
-			.in(Scopes.SINGLETON);
+		                .in(Scopes.SINGLETON);
 	}
 
+    @Provides
+	private static ConfigurationSerializer configurationSerializer()
+	{
+        File configFile = new File("fgtester.xml");
+        return new ConfigurationFileSerializer(configFile);
+	}
+	
 	@Provides
-	private static FieldTypeLibrary loadFieldTypeLibrary() 
+	private static FieldTypeLibrary loadFieldTypeLibrary()
 	{
 		if (fieldTypeLibrary == null)
 		{
 			InputStream inputStream = FieldTypeLibrary.class.getResourceAsStream("/zedi/pacbridge/zap/messages/FieldTypes.xml");
-			assert(inputStream != null);
+			assert (inputStream != null);
 			fieldTypeLibrary = new ZiosFieldTypeLibrary(inputStream);
 		}
-        return fieldTypeLibrary;
+		return fieldTypeLibrary;
 	}
-	
-    @Provides
-    private static Configuration configuration() {
 
-    	if (configuration == null)
-    	{
-    		try {
-    			FileInputStream fileInputStream = new FileInputStream(new File("fgtester.xml"));
-    			configuration = new Configuration();
-    			configuration.serialize(fileInputStream);
-    		} catch (Exception e) {
-    			logger.error("Unable to load configuration", e);
-    			configuration = null;
-    		}
-    	}
-    	return configuration;
-    }
+	@Provides
+	private static Configuration configuration()
+	{
+		if (configuration == null)
+		{
+			try
+			{
+			    File configFile = new File("fgtester.xml");
+			    ConfigurationFileSerializer serializer = new ConfigurationFileSerializer(configFile);
+				configuration = serializer.loadConfiguration();
+			} catch (Exception e)
+			{
+				logger.error("Unable to load configuration", e);
+				configuration = null;
+			}
+		}
+		return configuration;
+	}
 
 }

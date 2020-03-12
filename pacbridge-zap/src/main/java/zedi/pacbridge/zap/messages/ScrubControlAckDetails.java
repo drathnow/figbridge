@@ -103,6 +103,11 @@ public class ScrubControlAckDetails extends AckDetails {
         return json;
     }
 
+    @Override
+    public String toString() {
+        return asJSONObject().toString();
+    }
+
     public static AckDetails scrubResultsFromByteBuffer(ByteBuffer byteBuffer) {
         Integer status = (int)Unsigned.getUnsignedByte(byteBuffer);
         Integer failResults = Unsigned.getUnsignedShort(byteBuffer);

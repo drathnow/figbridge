@@ -164,6 +164,8 @@ public class ZapMessageDecoder
 				return decodeMessage((BundledReportMessage) message);
 			case ZapMessageType.HEART_BEAT_MESSAGE_NUMBER:
 				return decodeMessage((HeartBeatMessage) message);
+			case ZapMessageType.HEART_BEAT_RESPONSE_MESSAGE_NUMBER:
+				return decodeMessage((HeartBeatResponseMessage) message);
 			case ZapMessageType.ACK_MESSAGE_NUMBER:
 				return decodeMessage((AckMessage) message);
 			case ZapMessageType.WRITE_IO_POINT_NUMBER:
@@ -185,9 +187,35 @@ public class ZapMessageDecoder
 				return decodeMessage((ScrubControl) message);
 			case ZapMessageType.CONFIGURE_NUMBER:
 				return decodeMessage((ConfigureControl) message);
+			case ZapMessageType.CONFIGURE_UPDATE_MESSAGE_NUMBER :
+				return decodeMessage((ConfigureUpdateMessage) message);
 		}
 
 		return "Message type not currently supported: '" + message.messageType() + "'";
+	}
+
+	private String decodeMessage(ConfigureUpdateMessage message)
+	{
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Message Type : ").append(message.messageType().getName()).append('\n');
+		stringBuilder.append("Object Type  : ").append(message.getObjectType().getName()).append('\n');
+		List<Action> actions = message.getActions();
+
+		for (Action action : actions)
+		{
+			stringBuilder.append("    Action Type  : ").append(action.getActionType().getName()).append('\n');
+			List<Field<?>> fields = action.getFields();
+			for (Field<?> field : fields) 
+			{
+				stringBuilder.append("        Field: ")
+					.append(field.getFieldType().getName())
+					.append("=")
+					.append(field.getValue().toString())
+					.append('\n');
+			}
+		}
+
+		return stringBuilder.toString();
 	}
 
 	private String decodeMessage(ConfigureControl message)
