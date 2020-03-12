@@ -6,16 +6,16 @@ import zedi.pacbridge.net.MessageType;
 import zedi.pacbridge.utl.io.Unsigned;
 import zedi.pacbridge.zap.ZapMessageType;
 
-public class SessionHeader extends ZapPacketHeader {
+public class ZapSessionHeader extends ZapPacketHeader {
     private Integer sessionId = 0;
     private Integer sequenceNumber = 0;
     
-    public SessionHeader(MessageType messageType) {
+    public ZapSessionHeader(MessageType messageType) {
         super(ZapHeaderType.SESSION_HEADER, messageType);
     }
 
     
-    public SessionHeader(ZapMessageType messageType, Integer sessionId, Integer sequenceNumber) {
+    public ZapSessionHeader(ZapMessageType messageType, Integer sessionId, Integer sequenceNumber) {
         super(ZapHeaderType.SESSION_HEADER, messageType);
         this.sessionId = sessionId;
         this.sequenceNumber = sequenceNumber;
@@ -37,11 +37,11 @@ public class SessionHeader extends ZapPacketHeader {
         byteBuffer.putShort(sequenceNumber.shortValue());
     }
     
-    public static SessionHeader sessionHeaderFromByteBuffer(ByteBuffer byteBuffer) {
+    public static ZapSessionHeader sessionHeaderFromByteBuffer(ByteBuffer byteBuffer) {
         ZapMessageType type = ZapMessageType.messageTypeForNumber(Unsigned.getUnsignedShort(byteBuffer));
         Integer sessionId = Unsigned.getUnsignedShort(byteBuffer);
         Integer sequenceNumber = Unsigned.getUnsignedShort(byteBuffer);
-        return new SessionHeader(type, sessionId, sequenceNumber);
+        return new ZapSessionHeader(type, sessionId, sequenceNumber);
     }
 
 

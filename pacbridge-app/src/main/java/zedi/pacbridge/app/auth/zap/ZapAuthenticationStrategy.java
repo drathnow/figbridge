@@ -23,7 +23,7 @@ import zedi.pacbridge.zap.messages.AuthenticationResponseMessage;
 import zedi.pacbridge.zap.messages.ChallengeResponseMessage;
 import zedi.pacbridge.zap.messages.ConnectionFlags;
 import zedi.pacbridge.zap.messages.ServerChallenge;
-import zedi.pacbridge.zap.messages.SessionHeader;
+import zedi.pacbridge.zap.messages.ZapSessionHeader;
 import zedi.pacbridge.zap.messages.ZapPacket;
 import zedi.pacbridge.zap.messages.ZapPacketHeader;
 
@@ -94,7 +94,7 @@ public class ZapAuthenticationStrategy implements AuthenticationStrategy {
         try {
             if (nextMessage == null)
                 return null;
-            ZapPacketHeader header = new SessionHeader(nextMessage.messageType());
+            ZapPacketHeader header = new ZapSessionHeader(nextMessage.messageType());
             return new ZapPacket(header, nextMessage);
         } finally {
             nextMessage = null;

@@ -71,7 +71,7 @@ public class ZapUnsolicitedMessageHandler implements UnsolicitedMessageHandler {
                 requestTimeMessageHandler.handleMessageForSiteAddress((RequestTimeMessage)message, siteAddress, responseSender);
                 break;
                 
-            case ZapMessageType.CONFIGUR_UPDATE_MESSAGE_NUMBER :
+            case ZapMessageType.CONFIGURE_UPDATE_MESSAGE_NUMBER :
                 configureUpdateMessageHandler.handleMessageForSiteAddress((ConfigureUpdateMessage)message, siteAddress, responseSender);
                 break;
                 

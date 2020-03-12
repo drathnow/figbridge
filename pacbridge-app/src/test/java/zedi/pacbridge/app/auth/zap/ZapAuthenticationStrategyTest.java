@@ -17,7 +17,8 @@ import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.verifyNew;
 import static org.powermock.api.mockito.PowerMockito.verifyStatic;
 import static org.powermock.api.mockito.PowerMockito.whenNew;
-import static zedi.figbridge.test.matchers.ByteArrayArgumentMatcher.matchesByteArrayArgument;
+
+import static zedi.pacbridge.utl.ByteArrayArgumentMatcher.matchesByteArrayArgument;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;

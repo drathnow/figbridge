@@ -35,6 +35,12 @@
         </dependency>
         <dependency>
             <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-utl</artifactId>
+            <version>${pacbridge.global.version}</version>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
             <artifactId>swingutl</artifactId>
             <version>1.0.0</version>
         </dependency>

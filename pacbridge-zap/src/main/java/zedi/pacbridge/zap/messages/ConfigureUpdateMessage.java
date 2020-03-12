@@ -23,7 +23,7 @@ public class ConfigureUpdateMessage  extends ZapMessage implements Control, Seri
 	    this.actions = actions;
     }
 	
-	public ObjectType getObjectTyp() {
+	public ObjectType getObjectType() {
 	    return objectType;
     }
 	

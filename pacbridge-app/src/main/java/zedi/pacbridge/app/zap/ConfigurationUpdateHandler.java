@@ -27,7 +27,7 @@ public class ConfigurationUpdateHandler implements ZapConfigurationUpdateHandler
     
     @Override
     public boolean didProcessConfigurationUpdate(SiteAddress siteAddress, ConfigureUpdateMessage updateMessage) {
-        ConfigureUpdateEvent updateEvent = new ConfigureUpdateEvent(siteAddress, updateMessage.getObjectTyp(), updateMessage.getActions());
+        ConfigureUpdateEvent updateEvent = new ConfigureUpdateEvent(siteAddress, updateMessage.getObjectType(), updateMessage.getActions());
         try {
             eventPublisher.publishEvent(updateEvent);
             return true;

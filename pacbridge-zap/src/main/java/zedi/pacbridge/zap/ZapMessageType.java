@@ -24,7 +24,7 @@ public class ZapMessageType extends NamedType implements MessageType, Serializab
     public static final int CONFIGURE_RESPONSE_NUMBER = 8;
     public static final int SCRUB_NUMBER = 9;
     public static final int CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER = 10;
-    public static final int CONFIGUR_UPDATE_MESSAGE_NUMBER = 11;
+    public static final int CONFIGURE_UPDATE_MESSAGE_NUMBER = 11;
     public static final int OTAD_REQUEST_NUMBER = 12;
     public static final int OTAD_STATUS_UPDATE_NUMBER = 13;
     
@@ -37,7 +37,7 @@ public class ZapMessageType extends NamedType implements MessageType, Serializab
     public static final ZapMessageType ServerTime = new ZapMessageType("Server Time", SERVER_TIME_MESSAGE_NUMBER);
     public static final ZapMessageType Scrub = new ZapMessageType("Scrub", SCRUB_NUMBER);
     public static final ZapMessageType ChallengeResponseV2 = new ZapMessageType("Client Challenge Response Version 2", CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER);
-    public static final ZapMessageType ConfigureUpdate = new ZapMessageType("ConfigureUpdate", CONFIGUR_UPDATE_MESSAGE_NUMBER);
+    public static final ZapMessageType ConfigureUpdate = new ZapMessageType("ConfigureUpdate", CONFIGURE_UPDATE_MESSAGE_NUMBER);
     public static final ZapMessageType OtadRequest = new ZapMessageType("OTAD Request", OTAD_REQUEST_NUMBER);
     public static final ZapMessageType OtadStatusUpdate = new ZapMessageType("OTAD Status Update", OTAD_STATUS_UPDATE_NUMBER);
     
@@ -77,7 +77,7 @@ public class ZapMessageType extends NamedType implements MessageType, Serializab
             case CONFIGURE_RESPONSE_NUMBER : return ConfigureResponse;
             case SCRUB_NUMBER : return Scrub;
             case CHALLENGE_RESPONSE_MESSAGE_V2_NUMBER : return ChallengeResponseV2;
-            case CONFIGUR_UPDATE_MESSAGE_NUMBER : return ConfigureUpdate;
+            case CONFIGURE_UPDATE_MESSAGE_NUMBER : return ConfigureUpdate;
             case OTAD_REQUEST_NUMBER : return OtadRequest;
             case OTAD_STATUS_UPDATE_NUMBER : return OtadStatusUpdate;
         }

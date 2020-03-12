@@ -31,6 +31,8 @@ public class ZapMessageFactory implements MessageFactory<ZapMessage> {
                 return AuthenticationResponseMessage.authenticationResponseFromByteByffer(byteBuffer);
             case ZapMessageType.HEART_BEAT_MESSAGE_NUMBER :
                 return HeartBeatMessage.heartBeatMessageFromByteBuffer(byteBuffer);
+            case ZapMessageType.HEART_BEAT_RESPONSE_MESSAGE_NUMBER :
+            	return HeartBeatResponseMessage.heartBeatMessageFromByteBuffer(byteBuffer);
             case ZapMessageType.BUNDLED_REPORT_NUMBER :
                 return BundledReportMessage.bundledReportMessageFromByteBuffer(byteBuffer);
             case ZapMessageType.ACK_MESSAGE_NUMBER:
@@ -47,7 +49,14 @@ public class ZapMessageFactory implements MessageFactory<ZapMessage> {
                 return DemandPollControl.messageFromByteBuffer(byteBuffer);
             case ZapMessageType.OTAD_REQUEST_NUMBER :
                 return OtadRequestControl.fromByteBuffer(byteBuffer);
-            case ZapMessageType.CONFIGUR_UPDATE_MESSAGE_NUMBER :
+            case ZapMessageType.SCRUB_NUMBER :
+            	return ScrubControl.scrubControlFromByteBuffer(byteBuffer);
+            case ZapMessageType.CONFIGURE_NUMBER : 
+                if (fieldTypeLibrary == null)
+                    logger.error("Unable to decode ConfigureUpdateMessage because no FieldTypeLibrary is available");
+                else
+                	return ConfigureControl.configureControlFromByteBuffer(byteBuffer, fieldTypeLibrary);
+            case ZapMessageType.CONFIGURE_UPDATE_MESSAGE_NUMBER :
                 if (fieldTypeLibrary == null)
                     logger.error("Unable to decode ConfigureUpdateMessage because no FieldTypeLibrary is available");
                 else

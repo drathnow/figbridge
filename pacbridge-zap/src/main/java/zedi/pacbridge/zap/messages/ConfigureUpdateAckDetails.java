@@ -31,5 +31,9 @@ public class ConfigureUpdateAckDetails extends AckDetails {
         json.put("Status", responseStatus.getName());
         return json;
     }
-
+    
+    @Override
+    public String toString() {
+        return asJSONObject().toString();
+    }
 }
