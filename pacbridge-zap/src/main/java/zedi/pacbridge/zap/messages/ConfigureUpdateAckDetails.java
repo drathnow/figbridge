@@ -1,5 +1,7 @@
 package zedi.pacbridge.zap.messages;
 
+import java.nio.ByteBuffer;
+
 import org.json.JSONObject;
 
 import zedi.pacbridge.zap.reporting.ResponseStatus;
@@ -35,5 +37,12 @@ public class ConfigureUpdateAckDetails extends AckDetails {
     @Override
     public String toString() {
         return asJSONObject().toString();
+    }
+    
+    public static AckDetails configureUpdateAckDetailsFromByteBuffer(ByteBuffer byteBuffer)
+    {
+        int number = byteBuffer.get();
+        ResponseStatus status = ResponseStatus.reportStatusForNumber(number);
+        return new ConfigureUpdateAckDetails(status);
     }
 }

@@ -1,8 +1,9 @@
 package zedi.fg.tester.util;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,13 +14,13 @@ import zedi.pacbridge.utl.JDomUtilities;
 @XmlRootElement(name = "FgTester")
 public class Configuration
 {
+    private File configFile;
 	private String listeningAddress;
 	private Integer port;
 	
-	public Configuration()
+	public Configuration(File configFile)
 	{
-		this.listeningAddress = "192.168.1.1";
-		this.port = 3100;
+	    this.configFile = configFile;
 	}
 	
 	public String getListeningAddress()
@@ -32,20 +33,25 @@ public class Configuration
 		return port;
 	}
 
-	public void serialize(InputStream inputStream) throws Exception 
+	public void load() throws Exception 
 	{
-		Element element = JDomUtilities.elementForInputStream(inputStream);
+	    
+		Element element = JDomUtilities.elementForInputStream(new FileInputStream(configFile));
 		listeningAddress = element.getChild("Listener").getChild("Address").getText();
-		port = Integer.parseInt(element.getChild("Listener").getChild("Port").getText());
+		String portStr = element.getChild("Listener").getChild("Port").getText();
+		if (portStr.length() > 0)
+		    port = Integer.parseInt(element.getChild("Listener").getChild("Port").getText());
 	}
 	
-	public void serialize(OutputStream outputStream) throws IOException
+	public void save() throws IOException
 	{
 		Element rootElement = new Element("FgTester");
 		Element listenerElement = new Element("Listener");
-		listenerElement.addContent(new Element("Address").setText(listeningAddress));
-		listenerElement.addContent(new Element("Port").setText(port.toString()));
+		listenerElement.addContent(new Element("Address").setText(listeningAddress == null ? "" : listeningAddress));
+		listenerElement.addContent(new Element("Port").setText(port == null ? "" : port.toString()));
 		rootElement.addContent(listenerElement);
+		FileOutputStream outputStream = new FileOutputStream(configFile);
 		outputStream.write(JDomUtilities.xmlStringForElement(rootElement).getBytes());
+		outputStream.close();
 	}
 }

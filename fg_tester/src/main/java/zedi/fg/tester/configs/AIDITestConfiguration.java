@@ -22,8 +22,11 @@ public class AIDITestConfiguration extends BaseTestConfiguration implements Conf
 
     public static final int AI_CORR_ID = 10005;
     public static final int DI_CORR_ID = 10006;
+    public static final int RTD_CORR_ID = 10007;
     public static final Integer DI_POLLSET_ID = 500;
     public static final Integer AI_POLLSET_ID = 501;
+    public static final Integer DO_POLLSET_ID = 502;
+    public static final Integer RTD_POLLSET_ID = 503;
 
     enum State
     {
@@ -33,6 +36,7 @@ public class AIDITestConfiguration extends BaseTestConfiguration implements Conf
     private Deque<ConfigureControl> configureControlsList = new ArrayDeque<ConfigureControl>();
     private Integer aiSiteId = 0;
     private Integer diSiteId = 0;
+    private Integer rtdSiteId = 0;
     private State currentState = State.INIT;
 
     public AIDITestConfiguration(FieldTypeLibrary fieldTypeLibrary)
@@ -115,6 +119,11 @@ public class AIDITestConfiguration extends BaseTestConfiguration implements Conf
         fields.add(fieldForFieldNameAndValue("CorrelationId", new Long(DI_CORR_ID)));
         fields.add(fieldForFieldNameAndValue("Name", "Dave's DI Site"));
         actions.add(new Action(ActionType.ADD, fields));
+
+        fields = new ArrayList<Field<?>>();
+        fields.add(fieldForFieldNameAndValue("CorrelationId", new Long(RTD_CORR_ID)));
+        fields.add(fieldForFieldNameAndValue("Name", "Dave's RTD Site"));
+        actions.add(new Action(ActionType.ADD, fields));
     }
 
     private void addEventActionsToList(List<Action> actions)
@@ -135,18 +144,31 @@ public class AIDITestConfiguration extends BaseTestConfiguration implements Conf
     {
         for (int i = 1; i < 9; i++)
         {
-            actions.add(addIoPointAction(ActionType.ADD, "AI." + i, "AI." + i, AI_POLLSET_ID, aiSiteId));
-            actions.add(addIoPointAction(ActionType.ADD, "DI." + i, "DI." + i, DI_POLLSET_ID, diSiteId));
+            actions.add(addIoPointAction(ActionType.ADD, "AI." + i, "AI." + i, AI_POLLSET_ID, aiSiteId, true));
+            if (i % 2 == 1) 
+            {
+                actions.add(addIoPointAction(ActionType.ADD, "DI." + i, "DI." + i, DI_POLLSET_ID, diSiteId, true));
+                actions.add(addIoPointAction(ActionType.ADD, "DI." + (i+8), "DI." + (i+8), DI_POLLSET_ID, diSiteId, true));
+            }
+            else
+            {
+                actions.add(addIoPointAction(ActionType.ADD, "DI." + i + "*", "DI." + i + "*", DI_POLLSET_ID, diSiteId, true));
+                actions.add(addIoPointAction(ActionType.ADD, "DI." + (i+8) + "*", "DI." + (i+8) + "*", DI_POLLSET_ID, diSiteId, true));
+            }
+            actions.add(addIoPointAction(ActionType.ADD, "DO." + (i+8), "DO." + (i+8), DO_POLLSET_ID, diSiteId, false));
         }
+
+        actions.add(addIoPointAction(ActionType.ADD, "RTD.1", "RTD.1", RTD_POLLSET_ID, rtdSiteId, true));
+        actions.add(addIoPointAction(ActionType.ADD, "RTD.2", "RTD.2", RTD_POLLSET_ID, rtdSiteId, true));
     }
 
-    private Action addIoPointAction(ActionType actionType, String sourceAddress, String tag, Integer pollsetId, Integer siteId)
+    private Action addIoPointAction(ActionType actionType, String sourceAddress, String tag, Integer pollsetId, Integer siteId, boolean readonly)
     {
         List<Field<?>> fields = new ArrayList<Field<?>>();
         fields.add(fieldForFieldNameAndValue("CorrelationId", correlationId.getAndIncrement()));
         fields.add(fieldForFieldNameAndValue("ExternalDeviceId", 0));
         fields.add(fieldForFieldNameAndValue("PollSetId", pollsetId));
-        fields.add(fieldForFieldNameAndValue("IsReadOnly", 1));
+        fields.add(fieldForFieldNameAndValue("IsReadOnly", readonly ? 1 : 0));
         fields.add(fieldForFieldNameAndValue("SensorClassName", "INT"));
         fields.add(fieldForFieldNameAndValue("IOPointClass", 3));        
         fields.add(fieldForFieldNameAndValue("SiteId", siteId));
@@ -178,6 +200,10 @@ public class AIDITestConfiguration extends BaseTestConfiguration implements Conf
                 
             case DI_CORR_ID :
                 diSiteId = siteId;
+                break;
+
+            case RTD_CORR_ID :
+                rtdSiteId = siteId;
                 break;
         }
     }

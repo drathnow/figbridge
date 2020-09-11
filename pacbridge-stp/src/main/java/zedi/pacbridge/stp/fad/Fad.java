@@ -121,7 +121,7 @@ public class Fad implements TransportLayer, ThreadContextHandler {
 
             @Override
             public void handleData(ByteBuffer byteBuffer) throws ProtocolException {
-                securityLayer.handleReceivedData(byteBuffer);
+//                securityLayer.handleReceivedData(byteBuffer);
             }
         };
         
@@ -279,7 +279,7 @@ public class Fad implements TransportLayer, ThreadContextHandler {
 
         @Override
         public void transmitByteBuffer(ByteBuffer byteBuffer) throws IOException {
-            framingLayer.transmitData(byteBuffer);
+//            framingLayer.transmitData(byteBuffer);
         }
     }
 

@@ -1,21 +1,24 @@
 package zedi.pacbridge.messagedecoder;
 
 import java.awt.Dimension;
+import java.io.InputStream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.varia.LevelRangeFilter;
 
+import zedi.pacbridge.app.events.zios.ZiosFieldTypeLibrary;
 import zedi.pacbridge.messagedecoder.ui.MainWindow;
 import zedi.pacbridge.utl.NotificationCenter;
+import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 import zedi.swingutl.beans.TextPaneAppender;
 import zedi.swingutl.beans.utl.SwingUtl;
 
 public class Main
 {
     static NotificationCenter notificationCenter = new NotificationCenter();
-    static MainController mainController = new MainController(notificationCenter);
+    static MainController mainController = new MainController(notificationCenter, loadFieldTypeLibrary());
 
     public static void main( String[] args )
     {
@@ -45,4 +48,12 @@ public class Main
         SwingUtl.centerFrameInScreen(mainWindow);
         mainWindow.setVisible(true);
     }
+    
+    private static FieldTypeLibrary loadFieldTypeLibrary()
+    {
+        InputStream inputStream = FieldTypeLibrary.class.getResourceAsStream("/zedi/pacbridge/zap/messages/FieldTypes.xml");
+        assert (inputStream != null);
+        return new ZiosFieldTypeLibrary(inputStream);
+    }
+    
 }

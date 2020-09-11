@@ -24,9 +24,16 @@ public class TransmissionNotificationHandler implements Notifiable
 	{
 		TransmissionPackage transmissionPackage = notification.getAttachment();
 		String prefix = transmissionPackage.getType() == TransmissionPackage.TYPE.BYTES_TRX ? "TRX>" : "RCV>";
-		logger.info(prefix + HexStringEncoder.bytesAsHexString(transmissionPackage.getBytes(), transmissionPackage.getOffset(), transmissionPackage.getLength()));
+        String hexMsg = HexStringEncoder.bytesAsHexString(transmissionPackage.getBytes(), transmissionPackage.getOffset(), transmissionPackage.getLength());
+		logger.info(prefix + hexMsg);
 
-		String textMessage = messageDecoder.decodePacketBytes(transmissionPackage.getBytes(), transmissionPackage.getOffset()+2, transmissionPackage.getLength()-2);
-		traceLogger.trace(prefix+'\n'+textMessage);
+		try 
+		{
+		    String textMessage = messageDecoder.decodePacketBytes(transmissionPackage.getBytes(), transmissionPackage.getOffset()+2, transmissionPackage.getLength()-2);
+		    traceLogger.trace(prefix+'\n'+textMessage);
+		} catch (Exception e)
+		{
+		    logger.error("Unable to translate message\nMSG: " + hexMsg, e);
+		}
 	}	
 }

@@ -18,6 +18,7 @@ import zedi.fg.tester.net.ConnectionListener;
 import zedi.fg.tester.net.ZapMessageOrchastrator;
 import zedi.fg.tester.ui.MainFrame;
 import zedi.fg.tester.ui.TextPaneAppender;
+import zedi.fg.tester.util.AckDecoderNotificationHandler;
 import zedi.fg.tester.util.AppController;
 import zedi.fg.tester.util.Configuration;
 import zedi.fg.tester.util.ConfigurationSerializer;
@@ -34,6 +35,7 @@ public class Main
     private static NotificationCenter notificationCenter;
     private static ZapMessageOrchastrator messageOrchastrator;
     private static TransmissionNotificationHandler notificationHandler;
+    private static AckDecoderNotificationHandler ackDecoderNotificationHandler;
     private static FieldTypeLibrary fieldTypeLibrary;
 
     public static void main(String[] args)
@@ -48,14 +50,14 @@ public class Main
             fieldTypeLibrary = injector.getInstance(FieldTypeLibrary.class);
             
             Configuration configuration = injector.getInstance(Configuration.class);
-            ConfigurationSerializer configurationSerializer = injector.getInstance(ConfigurationSerializer.class);
+            configuration.load();
             
             ConnectionListener connectionListener = new ConnectionListener(notificationCenter, configuration.getListeningAddress(), configuration.getPort(), fieldTypeLibrary);
             TestConfigurationSetupCoordinator coordinator = new TestConfigurationSetupCoordinator(connectionListener);
             coordinator.start();
             TestConfigurator configurationFactory = new TestConfigurator(fieldTypeLibrary, coordinator);
 
-            AppController appController = new AppController(notificationCenter, configuration, connectionListener, configurationFactory, configurationSerializer);
+            AppController appController = new AppController(notificationCenter, configuration, connectionListener, configurationFactory);
             messageOrchastrator = ZapMessageOrchastrator.buildZapMessageOrchastratorWithFgMessageSender(connectionListener);
             notificationCenter.addObserver(messageOrchastrator, Constants.ZAP_MSG_RECEVIED);
             notificationCenter.addObserver(coordinator, Constants.ZAP_MSG_RECEVIED);
@@ -78,6 +80,9 @@ public class Main
 
             notificationHandler = new TransmissionNotificationHandler(new ZapMessageDecoder(fieldTypeLibrary));
             notificationCenter.addObserver(notificationHandler, Constants.TRANSMISSION_NOTIFICATION_NAME);
+            
+            ackDecoderNotificationHandler = new AckDecoderNotificationHandler(fieldTypeLibrary);
+            notificationCenter.addObserver(ackDecoderNotificationHandler, Constants.TRANSMISSION_NOTIFICATION_NAME);
 
             window.setVisible(true);
             appController.startConnectionListener();

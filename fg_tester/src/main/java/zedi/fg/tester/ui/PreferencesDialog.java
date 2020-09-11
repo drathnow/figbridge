@@ -26,6 +26,7 @@ public class PreferencesDialog extends JDialog
     
     public PreferencesDialog()
     {
+        setResizable(false);
         setBounds(100, 100, 356, 231);
         setModalityType(ModalityType.APPLICATION_MODAL);
         setTitle("Preferences");

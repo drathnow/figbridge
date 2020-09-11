@@ -10,7 +10,7 @@ import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 public abstract class BaseTestConfiguration
 {
 	public static final Integer EVENT_ID = 40;
-
+	
 	protected static AtomicLong eventId = new AtomicLong(1);
 	protected static AtomicLong correlationId = new AtomicLong(1);
 	protected static AtomicInteger id = new AtomicInteger(100);

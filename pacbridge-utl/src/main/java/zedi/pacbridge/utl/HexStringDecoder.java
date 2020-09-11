@@ -1,6 +1,7 @@
 package zedi.pacbridge.utl;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class HexStringDecoder {
@@ -8,27 +9,23 @@ public class HexStringDecoder {
     public static byte[] hexStringAsBytes(String aHexString) {
         String hexString = aHexString.trim();
         if (hexString.charAt(0) == '|')
-            return hexStringWithDelimiterAsBytes(hexString,"|");
+            return hexStringWithDelimiterAsBytes(hexString,"\\|");
         if (hexString.length() == 2 || hexString.indexOf(" ") != -1)
             return hexStringWithDelimiterAsBytes(hexString," ");
         return hexStringWithNoDelimiterAsBytes(aHexString);
     }
 
     public static byte[] hexStringWithDelimiterAsBytes(String aHexString, String aDelimiter) {
-        byte[] bytes = new byte[(aHexString.length()+1)/3];
-        int index = 0;
-        char[] hexByte = new char[2]; 
-        if (aHexString.substring(0,1).equals(aDelimiter))
-            index++;
-        int i = 0;
-        String hexString = aHexString.trim(); 
-        while (index < hexString.length()) {
-            hexByte[0] = hexString.charAt(index++);
-            hexByte[1] = hexString.charAt(index++);
-            index++;
-            bytes[i++] = (byte)Short.parseShort(new String(hexByte),16);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        String ss[] = aHexString.split(aDelimiter);
+        for (int i = 0; i < ss.length; i++)
+        {
+            String hexString = ss[i].trim();
+            if (hexString.length() != 2)
+                continue;
+            byteArrayOutputStream.write((byte)Short.parseShort(hexString,16));
         }
-        return bytes;
+        return byteArrayOutputStream.toByteArray();
     }
 
     public static byte[] hexStringWithNoDelimiterAsBytes(String aHexString) {

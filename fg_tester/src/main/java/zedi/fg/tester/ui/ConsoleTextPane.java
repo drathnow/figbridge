@@ -181,7 +181,7 @@ public class ConsoleTextPane extends JTextPane
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e)
+		public void mousePressed(MouseEvent e)
 		{
 			if (e.isPopupTrigger())
 			{

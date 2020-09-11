@@ -66,9 +66,10 @@ public class MainWindow extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         outputScrollPane = new javax.swing.JScrollPane();
         outputTextPane = new zedi.swingutl.beans.ConsoleTextPane();
-        outputTextPane.setFont(new Font("Consolas", Font.PLAIN, 12));
+        outputTextPane.setFont(new Font("Courier", Font.PLAIN, 12));
         traceScrollPane = new javax.swing.JScrollPane();
         traceTextPane = new zedi.swingutl.beans.ConsoleTextPane();
+        traceTextPane.setFont(new Font("Courier", Font.PLAIN, 12));
         statusPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();

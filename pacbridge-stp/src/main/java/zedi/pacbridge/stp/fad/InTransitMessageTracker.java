@@ -189,8 +189,8 @@ class InTransitMessageTracker extends BaseTracker {
 
     private void scheduleTimerForInTansitMessageWithMessageId(int messageId) {
         RetransmitRunner runner = timeoutContainerFactory.retransmitContainerForMessage(retransmitEventHandler, messageId);
-        ScheduledFuture<?> future = inactivityStrategy.scheduleInactivityRunner(runner);
-        inTransmitMessagesTimerMap.put(messageId, future);
+//        ScheduledFuture<?> future = inactivityStrategy.scheduleInactivityRunner(runner);
+//        inTransmitMessagesTimerMap.put(messageId, future);
     }
 
     private void handleAckMessage(AckMessage ackMessage) {

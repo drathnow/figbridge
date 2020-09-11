@@ -17,9 +17,9 @@ import zedi.pacbridge.zap.messages.ObjectType;
 import zedi.pacbridge.zap.messages.TimedEventType;
 import zedi.pacbridge.zap.values.ZapDataType;
 
-public class ModbusTestConfiguration extends BaseTestConfiguration implements ConfigurationSetup
+public class StoreAndForwardTestConfiguration extends BaseTestConfiguration implements ConfigurationSetup
 {
-    private static final Logger logger = Logger.getLogger(ModbusTestConfiguration.class);
+    private static final Logger logger = Logger.getLogger(StoreAndForwardTestConfiguration.class);
 
     public static final Integer NO_ALARM_ACTIVE = 0x0;
     public static final Integer LOW_LOW_ALARM_ACTIVE = 0x01;
@@ -50,13 +50,15 @@ public class ModbusTestConfiguration extends BaseTestConfiguration implements Co
     }
 
     private Deque<ConfigureControl> configureControlsList = new ArrayDeque<ConfigureControl>();
-    private Integer siteId;
+    private Integer siteId1;
+    private Integer siteId2;
     private State currentState;
 
-    public ModbusTestConfiguration(FieldTypeLibrary fieldTypeLibrary)
+    public StoreAndForwardTestConfiguration(FieldTypeLibrary fieldTypeLibrary)
     {
         super(fieldTypeLibrary);
-        this.siteId = 0;
+        this.siteId1 = 0;
+        this.siteId2 = 0;
         this.currentState = State.INIT;
     }
 
@@ -73,10 +75,25 @@ public class ModbusTestConfiguration extends BaseTestConfiguration implements Co
                 {
                     if (field.getFieldType().getName().equals("Id"))
                     {
-                        siteId = ((Long)field.getValue()).intValue();
+                        siteId1 = ((Long)field.getValue()).intValue();
+                        logger.info("Got site1 site Id: " + siteId1);
                     }
                 }
             }
+            
+            if (actions.get(1).getActionType().getNumber() == ActionType.ADD.getNumber())
+            {
+                List<Field<?>> fields = actions.get(1).getFields();
+                for (Field<?> field : fields)
+                {
+                    if (field.getFieldType().getName().equals("Id"))
+                    {
+                        siteId2 = ((Long)field.getValue()).intValue();
+                        logger.info("Got site2 site Id: " + siteId2);
+                    }
+                }
+            }
+            
         }
     }
 
@@ -114,11 +131,25 @@ public class ModbusTestConfiguration extends BaseTestConfiguration implements Co
 
             case ADD_SITE:
             {
+                List<Action> actions = new ArrayList<Action>();
+                int startAddress = 41001;
+
                 logger.info("Adding IO points....");
                 currentState = State.ADD_IO_POINTS;
-                List<Action> actions = new ArrayList<Action>();
-                addIoPointActionsToList(actions);
+
+                while (startAddress < 41115)
+                {
+                    int count = Math.min(410115 - startAddress, 25);
+                    actions = new ArrayList<Action>();
+                    startAddress = addIoPointActionsToList(actions, startAddress, count, DEVICE1_ID, siteId1, 300);
+                    System.out.println("StartAddress: " + startAddress);
+                    configureControlsList.add(new ConfigureControl(eventId.getAndIncrement(), ObjectType.IO_POINT, actions));
+                }
+
+                actions = new ArrayList<Action>();
+                addIoPointActionsToList(actions, 42001, 6, DEVICE2_ID, siteId2, 200);
                 configureControlsList.add(new ConfigureControl(eventId.getAndIncrement(), ObjectType.IO_POINT, actions));
+                
                 return nextConfigureControl();
             }
 
@@ -172,7 +203,12 @@ public class ModbusTestConfiguration extends BaseTestConfiguration implements Co
     {
         List<Field<?>> fields = new ArrayList<Field<?>>();
         fields.add(fieldForFieldNameAndValue("CorrelationId", correlationId.getAndIncrement()));
-        fields.add(fieldForFieldNameAndValue("Name", "Dave's Site"));
+        fields.add(fieldForFieldNameAndValue("Name", "Dave's Site 1"));
+        actions.add(new Action(ActionType.ADD, fields));
+
+        fields = new ArrayList<Field<?>>();
+        fields.add(fieldForFieldNameAndValue("CorrelationId", correlationId.getAndIncrement()));
+        fields.add(fieldForFieldNameAndValue("Name", "Dave's Site 2"));
         actions.add(new Action(ActionType.ADD, fields));
     }
 
@@ -202,27 +238,28 @@ public class ModbusTestConfiguration extends BaseTestConfiguration implements Co
 
     }
 
-    private void addIoPointActionsToList(List<Action> actions)
-    { 
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE1_ID, "MBS;41002;NONE", "U32", 7, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE1_ID, "MBS;41004;NONE", "U16", 5, true));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE1_ID, "MBS;41005;NONE", "Float_NONE", 8, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE2_ID, "MBS;41007;3412", "Float_3412", 8, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE2_ID, "MBS;41009;2143", "Float_2143", 8, false));
-        actions.add(addIoPointAction(ActionType.ADD, 0, "MBS;41009;2143", "Orphan_105", 8, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE2_ID, "MBS;41012", "UCHAR", 3, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE2_ID, "MBS;41013", "DISCRETE-Holding", 1, false));
-        actions.add(addIoPointAction(ActionType.ADD, DEVICE2_ID, "MBS;3", "DISCRETE-Coil", 1, false));
+    private int addIoPointActionsToList(List<Action> actions, int startAddress, int count, int deviceId, int siteId, int pollsetId) 
+    {
+        int nextAddress = startAddress;
+        
+        for (int i = 0; i < count; i++)
+        {
+            nextAddress++;
+            String sourceAddress = "MBS;" + nextAddress + ";NONE";
+            actions.add(addIoPointAction(ActionType.ADD, deviceId, sourceAddress, sourceAddress, ZapDataType.UNSIGNED_INTEGER, false, siteId, pollsetId));
+        }
+        
+        return nextAddress;
     }
 
-    private Action addIoPointAction(ActionType actionType, Integer externalDeviceId, String sourceAddress, String tag, Integer dataType, boolean addAlarms)
+    private Action addIoPointAction(ActionType actionType, Integer externalDeviceId, String sourceAddress, String tag, Integer dataType, boolean addAlarms, int siteId, int pollsetId)
     {
         List<Field<?>> fields = new ArrayList<Field<?>>();
         fields.add(fieldForFieldNameAndValue("CorrelationId", correlationId.getAndIncrement()));
         if (actionType.getNumber() != ActionType.DELETE.getNumber())
         {
             fields.add(fieldForFieldNameAndValue("ExternalDeviceId", externalDeviceId));
-            fields.add(fieldForFieldNameAndValue("PollSetId", 300));
+            fields.add(fieldForFieldNameAndValue("PollSetId", pollsetId));
             fields.add(fieldForFieldNameAndValue("IsReadOnly", 0));
             fields.add(fieldForFieldNameAndValue("SensorClassName", "RTU"));
             fields.add(fieldForFieldNameAndValue("IOPointClass", 2));

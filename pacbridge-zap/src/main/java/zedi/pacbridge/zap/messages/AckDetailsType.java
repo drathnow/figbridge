@@ -15,7 +15,7 @@ public class AckDetailsType extends NamedType implements Serializable {
     static final int SERVER_TIME_NUMBER = 6;
     static final int CONFIGURE_RESPONSE_NUMBER = 7;
     static final int SCRUB_RESULT_NUMBER = 8;
-    static final int CONFIGURE_UPDATE_RESPONSE_NUMBER = 9;
+    static final int CONFIGURE_UPDATE_RESPONSE_NUMBER =  9;
     static final int OTAD_REQUEST_DETAILS_NUMBER = 10;
 
     public static final AckDetailsType BundledReportAck = new AckDetailsType("Bundled Report ACK", BUNDLED_REPORT_ACK_NUMBER);

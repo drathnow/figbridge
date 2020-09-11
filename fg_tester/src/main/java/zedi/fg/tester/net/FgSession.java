@@ -79,7 +79,9 @@ public class FgSession implements Runnable
 	public void start()
 	{
 		shutdown = false;
-		new Thread(this, "FgSession").start();
+		Thread thread = new Thread(this, "FgSession");
+        thread.setDaemon(true);
+		thread.start();
 	}
 
 	public void sendMessageWithSession(ZapMessage message) throws IOException
@@ -231,7 +233,7 @@ public class FgSession implements Runnable
 			throw new ClosedChannelException();
 		
 		if (rcvByteBuffer.position() > 2 && expectedBytes == Integer.MAX_VALUE)
-			expectedBytes = rcvBuffer[0] << 8 | rcvBuffer[1];
+			expectedBytes = rcvBuffer[0] << 8 | (0xff & rcvBuffer[1]);
 		
 		if (expectedBytes > rcvByteBuffer.capacity())
 			expandRcvBuffer(expectedBytes+2);

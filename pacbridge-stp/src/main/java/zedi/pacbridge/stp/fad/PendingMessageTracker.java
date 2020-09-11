@@ -123,7 +123,7 @@ public class PendingMessageTracker extends BaseTracker {
     private void trackPendingMessage(PendingMessage pendingMessage) {
         int messageId = pendingMessage.getMessageId();
         PendingTimeoutContainer container = timeoutContainerFactory.newPendingTimeoutContainer(this, messageId);
-        ScheduledFuture<?> future = inactivityStrategy.scheduleInactivityRunner(container);
-        pendingMessagesTimerMap.put(messageId, future);
+//        ScheduledFuture<?> future = inactivityStrategy.scheduleInactivityRunner(container);
+//        pendingMessagesTimerMap.put(messageId, future);
     }    
 }

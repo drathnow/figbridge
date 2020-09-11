@@ -9,5 +9,4 @@ public interface ConfigurationSetup
 	void handleConfigurationResponse(ConfigureResponseAckDetails ackDetails);
 
 	ConfigureControl nextConfigureControl();
-
 }

@@ -46,4 +46,16 @@ public class ZapPacketTest extends BaseTestCase {
         System.out.println(decoder.formattedMessage(packet.getMessage()));
     }
 
+    private static final String ACK_STRING = "01 FF FF 00 00 00 01 00 07 01 00 0B 00 01 00 02 09 01"; 
+    
+    @Test
+    public void shouldDeserializeConfigureUpdateAckDetails() 
+    {
+        byte[] bytes = HexStringDecoder.hexStringAsBytes(ACK_STRING);
+        ZapPacket packet = ZapPacket.packetFromByteBuffer(ByteBuffer.wrap(bytes));
+        
+        ZapMessageDecoder decoder = new ZapMessageDecoder();
+        System.out.println(decoder.formattedMessage(packet.getMessage()));
+        
+    }
 }

@@ -11,13 +11,11 @@ import zedi.pacbridge.net.ByteBufferManager;
 import zedi.pacbridge.net.FramingLayer;
 import zedi.pacbridge.net.NetworkAdapter;
 import zedi.pacbridge.net.ProtocolException;
-import zedi.pacbridge.net.ProtocolPacket;
+import zedi.pacbridge.net.TransmitProtocolPacket;
 import zedi.pacbridge.net.TransportLayer;
-import zedi.pacbridge.net.annotations.ProtocolLayer;
 import zedi.pacbridge.utl.IntegerSystemProperty;
 import zedi.pacbridge.utl.crc.CheckSumException;
 
-@ProtocolLayer(name="APL")
 public class Apl implements FramingLayer {
 
     private static Logger logger = LoggerFactory.getLogger(Apl.class);
@@ -77,24 +75,6 @@ public class Apl implements FramingLayer {
     }
 
     @Override
-    public void transmit(ProtocolPacket protocolPacket) {
-        throw new UnsupportedOperationException("Method not implemented");
-    }    
-
-    @Override
-    public void transmitData(ByteBuffer byteBuffer) throws IOException {
-        if (byteBuffer.remaining() > maxPacketSize)
-            throw new IOException("Unable to send message. Data size exceeds max packet size.");
-        if (byteBuffer.remaining() * 2 > transmitBuffer.capacity()) {
-            logger.debug("Reallocating transmit buffer to " + byteBuffer.remaining() * 2 + " bytes");
-            transmitBuffer = byteBufferManager.allocateByteBufferWithSize(byteBuffer.remaining() * 2);
-        }
-        aplEncoder.encodeDataFromSrcBufferToDstBuffer(byteBuffer, transmitBuffer);
-        transmitBuffer.flip();
-        networkAdapter.transmitData(transmitBuffer);
-    }
-
-    @Override
     public void receive(ByteBuffer byteBuffer) throws ProtocolException {
         try {
             aplDecoder.decodeBytesFromByteBuffer(byteBuffer);
@@ -103,8 +83,8 @@ public class Apl implements FramingLayer {
         }
 
         byte[] nextMessage = null;
-        while ((nextMessage = aplDecoder.nextMessage()) != null)
-            transportLayer.handleReceivedData(ByteBuffer.wrap(nextMessage).order(ByteOrder.LITTLE_ENDIAN));
+//        while ((nextMessage = aplDecoder.nextMessage()) != null)
+//            transportLayer.handleReceivedData(ByteBuffer.wrap(nextMessage).order(ByteOrder.LITTLE_ENDIAN));
     }
 
     public static boolean isFramingChar(int aByte) {
@@ -147,6 +127,13 @@ public class Apl implements FramingLayer {
     @Override
     public void setTransportLayer(TransportLayer transportLayer) {
         this.transportLayer = transportLayer;
+    }
+
+    @Override
+    public void transmit(TransmitProtocolPacket protocolPacket) throws IOException
+    {
+        // TODO Auto-generated method stub
+        
     }
 
 }

@@ -9,6 +9,7 @@ import zedi.pacbridge.utl.Notifiable;
 import zedi.pacbridge.utl.Notification;
 import zedi.pacbridge.utl.NotificationCenter;
 import zedi.pacbridge.utl.StringUtilities;
+import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 
 public class MainController implements Notifiable {
     private static final Logger logger = LoggerFactory.getLogger(MainController.class.getName());
@@ -17,9 +18,9 @@ public class MainController implements Notifiable {
     private ProtocolDecoder protocolDecoder;
     private Decoder decoder;
 
-    public MainController(NotificationCenter notificationCenter) {
+    public MainController(NotificationCenter notificationCenter, FieldTypeLibrary fieldTypeLibrary) {
         this.notificationCenter = notificationCenter;
-        this.decoder = new Decoder();
+        this.decoder = new Decoder(fieldTypeLibrary);
         notificationCenter.addObserver(this, MainWindow.DECODE_BYTES_NOTIFICATION);
     }
 

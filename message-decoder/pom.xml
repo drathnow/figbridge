@@ -23,6 +23,21 @@
         </dependency>
         <dependency>
             <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-app</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-stp</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
+            <artifactId>pacbridge-app</artifactId>
+            <version>${pacbridge.global.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>zedi.pacbridge</groupId>
             <artifactId>figbridge-testbase</artifactId>
             <version>1.0.0</version>
             <scope>test</scope>

@@ -1,10 +1,7 @@
 package zedi.fg.tester;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
-
-import javax.ws.rs.NotSupportedException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +14,6 @@ import zedi.fg.tester.util.Configuration;
 import zedi.fg.tester.util.ConfigurationFileSerializer;
 import zedi.fg.tester.util.ConfigurationSerializer;
 import zedi.pacbridge.app.events.zios.ZiosFieldTypeLibrary;
-import zedi.pacbridge.utl.DependencyResolver;
 import zedi.pacbridge.utl.NotificationCenter;
 import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 
@@ -62,8 +58,7 @@ public class InjectorModel extends AbstractModule
 			try
 			{
 			    File configFile = new File("fgtester.xml");
-			    ConfigurationFileSerializer serializer = new ConfigurationFileSerializer(configFile);
-				configuration = serializer.loadConfiguration();
+				configuration = new Configuration(configFile);
 			} catch (Exception e)
 			{
 				logger.error("Unable to load configuration", e);

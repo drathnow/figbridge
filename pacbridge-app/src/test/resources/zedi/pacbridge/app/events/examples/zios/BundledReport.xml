@@ -1,0 +1,34 @@
+<Event name='BundledReport' qualifier='ZIOS'>
+    <EventId>1235</EventId>
+    <ReadingCollection>
+        <Readings timestamp="1234568">
+            <Reading index='1'>
+                <Value>1.23</Value>
+                <AlarmStatus>OK</AlarmStatus>
+            </Reading>
+            <Reading index='2'>
+                <Value>4.56</Value>
+                <AlarmStatus>OK</AlarmStatus>
+            </Reading>
+            <Reading index='3'>
+                <Value>7.89</Value>
+                <AlarmStatus>HIHI</AlarmStatus>
+            </Reading>
+        </Readings>
+        
+        <Readings timestamp="1234895">
+            <Reading index='1'>
+                <Value>1.23</Value>
+                <AlarmStatus>OK</AlarmStatus>
+            </Reading>
+            <Reading index='2'>
+                <Value>3.4</Value>
+                <AlarmStatus>OK</AlarmStatus>
+            </Reading>
+            <Reading index='3'>
+                <Value>2.33</Value>
+                <AlarmStatus>OK</AlarmStatus>
+            </Reading>
+        </Readings>
+    </ReadingColletion>
+</Event>

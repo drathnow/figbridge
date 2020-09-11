@@ -31,7 +31,10 @@ public class MainFrame extends JFrame implements ActionListener
     private JMenu testSetupMenu = new JMenu("Test Setup");
     private DemandPollDialog demandPollDialog;
     private ScrubDialog srubDialog;
+    private AddEventDialog addEventDialog;
+    private DeleteEventDialog deleteEventDialog;
     private PreferencesDialog preferenceDialog;
+    private AddSiteDialog addSiteDialog;
 
 	private JMenuBar menuBar = new JMenuBar();
 
@@ -121,6 +124,14 @@ public class MainFrame extends JFrame implements ActionListener
         });
         testSetupMenu.add(modbusSetupMenuItem);
 		
+        JMenuItem reportSystemIOsMenuItem = new JMenuItem("Report System IOs Test");
+        reportSystemIOsMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                appController.setupReportSystemIOsTest();
+            }
+        });
+        testSetupMenu.add(reportSystemIOsMenuItem);
+
         JMenuItem aidiSetupMenuItem = new JMenuItem("AIDI Test");
         aidiSetupMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -129,6 +140,22 @@ public class MainFrame extends JFrame implements ActionListener
         });
         testSetupMenu.add(aidiSetupMenuItem);
 
+        JMenuItem snfSetupMenuItem = new JMenuItem("S&F Test");
+        snfSetupMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                appController.setupSNFTest();
+            }
+        });
+        testSetupMenu.add(snfSetupMenuItem);
+
+        JMenuItem a1000SetupMenuItem = new JMenuItem("A1000 Test");
+        a1000SetupMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                appController.setupA100Test();
+            }
+        });
+        testSetupMenu.add(a1000SetupMenuItem);
+        
         testSetupMenu.setEnabled(false);
 		return testSetupMenu;
 	}
@@ -141,6 +168,7 @@ public class MainFrame extends JFrame implements ActionListener
             public void actionPerformed(ActionEvent e) {
             	if (demandPollDialog == null)
             		demandPollDialog = new DemandPollDialog(appController);
+            	demandPollDialog.setLocationRelativeTo(MainFrame.this);
                 demandPollDialog.setVisible(true);
             }
         });
@@ -149,13 +177,47 @@ public class MainFrame extends JFrame implements ActionListener
         JMenuItem scrubMenuItem = new JMenuItem("Scrub...");
         scrubMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	if (srubDialog == null)
-            		srubDialog = new ScrubDialog(appController);
-            	srubDialog.setVisible(true);
+                if (srubDialog == null)
+                    srubDialog = new ScrubDialog(appController);
+                srubDialog.setLocationRelativeTo(MainFrame.this);
+                srubDialog.setVisible(true);
             }
         });
         sendMenu.add(scrubMenuItem);
+
+        JMenuItem addEventMenuItem = new JMenuItem("Add Event...");
+        addEventMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	if (addEventDialog == null)
+            	    addEventDialog = new AddEventDialog(appController);
+            	addEventDialog.setLocationRelativeTo(MainFrame.this);
+            	addEventDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(addEventMenuItem);
         
+        JMenuItem deleteEventMenuItem = new JMenuItem("Delete Event...");
+        deleteEventMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (deleteEventDialog == null)
+                    deleteEventDialog = new DeleteEventDialog(appController);
+                deleteEventDialog.setLocationRelativeTo(MainFrame.this);
+                deleteEventDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(deleteEventMenuItem);
+
+        JMenuItem addSiteMenuItem = new JMenuItem("Add Site...");
+        addSiteMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (addSiteDialog == null)
+                    addSiteDialog = new AddSiteDialog(appController);
+                addSiteDialog.setLocationRelativeTo(MainFrame.this);
+                addSiteDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(addSiteMenuItem);
+
         sendMenu.setEnabled(false);
         
         return sendMenu;
@@ -171,7 +233,7 @@ public class MainFrame extends JFrame implements ActionListener
             public void actionPerformed(ActionEvent e) {
             	if (preferenceDialog == null)
             		preferenceDialog = new PreferencesDialog();
-            	SwingUtl.centerWindowInWindow(MainFrame.this, preferenceDialog);
+            	preferenceDialog.setLocationRelativeTo(MainFrame.this);
             	preferenceDialog.setVisible(true);
             }
         });

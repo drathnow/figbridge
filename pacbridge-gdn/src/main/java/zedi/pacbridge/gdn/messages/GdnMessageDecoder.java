@@ -32,8 +32,8 @@ import zedi.pacbridge.net.MessageDecoder;
 public class GdnMessageDecoder implements MessageDecoder {
     private static Logger logger = Logger.getLogger(GdnMessageDecoder.class);
 
-    protected static String FORMAT_HEADER = "    Index     Type                   Value             Alarm Status ";
-    protected static String FORMAT_ULINE = "    -------   ------------------     ----------------  ------------ ";
+    protected static String FORMAT_HEADER = "    Index        Type                  Value             Alarm Status ";
+    protected static String FORMAT_ULINE = "    -------      ------------------    ----------------  ------------ ";
     private static String FORMAT_STRING = "    {0}       {1} {2}  {3}";
 
     protected static String EVENT_FORMAT_HEADER = "    Index     Status";
@@ -62,7 +62,6 @@ public class GdnMessageDecoder implements MessageDecoder {
     public String decodedMessage(byte[] byteMessage) {
         return decodePacket(GdnPacket.packetFromBuffer(ByteBuffer.wrap(byteMessage)));
     }
-
     
     public String decodePacket(GdnPacket gdnPacket) {
         StringBuilder stringBuffer = new StringBuilder();
@@ -555,14 +554,18 @@ public class GdnMessageDecoder implements MessageDecoder {
         if (gdnValue.isNumeric())
             decimalFormatString = decimalFormat.format((Number)gdnValue.getValue());
         else
+        {
             decimalFormatString = gdnValue.toString();
+            if (decimalFormatString == null)
+                decimalFormatString = "null";
+        }
 
         Integer index = new Integer(reportItem.getIndex());
         String valueName = gdnValue.dataType().getName();
         String ljGdnValueString = leftJustifiedPaddedString(valueName, 20);
         String rjPaddedString = rightJustifiedPaddedString(decimalFormatString, 17);
         GdnAlarmStatus alarmStatus = reportItem.getAlarmStatus();
-        String lgIntegerString = leftJustifiedPaddedString(integerFormat.format(index), 4);
+        String lgIntegerString = leftJustifiedPaddedString(integerFormat.format(index), 6);
         Object[] args = new Object[]{lgIntegerString, ljGdnValueString, rjPaddedString, alarmStatus};
         stringBuffer.append(messageFormat.format(args)).append("\n");
         return stringBuffer.toString();

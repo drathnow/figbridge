@@ -62,6 +62,12 @@ public class ZapMessageDecoder
 	public String decodePacketBytes(ByteBuffer byteBuffer)
 	{
 		((Buffer) byteBuffer).mark();
+		
+		//
+		// First check to see if the first two bytes contain the length of the entire packet.  If it does
+		// then we can assume it's the length.  If it doesn't, we'll assume this is a packet without the
+		// length field.
+		//
 		int len = Unsigned.getUnsignedShort(byteBuffer);
 		if (len != byteBuffer.limit() - 2)
 			((Buffer) byteBuffer).reset();
