@@ -5,16 +5,18 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
 
+import zedi.fg.tester.configs.ConfigureIOPointsEventGnerator;
 import zedi.fg.tester.configs.TestConfigurator;
 import zedi.fg.tester.net.ConnectionListener;
 import zedi.fg.tester.ui.MainFrame;
-import zedi.fg.tester.util.AppController.EventType;
 import zedi.pacbridge.utl.Notifiable;
 import zedi.pacbridge.utl.Notification;
 import zedi.pacbridge.utl.NotificationCenter;
+import zedi.pacbridge.zap.messages.ConfigureControl;
 import zedi.pacbridge.zap.messages.DemandPollControl;
 import zedi.pacbridge.zap.messages.ScrubControl;
 import zedi.pacbridge.zap.messages.TimedEventType;
+import zedi.pacbridge.zap.values.ZapDataType;
 
 public class AppController implements Notifiable
 {
@@ -45,7 +47,7 @@ public class AppController implements Notifiable
     {
         this.mainFrame = mainFrame;
     }
-
+    
     public void startConnectionListener()
     {
         try
@@ -174,5 +176,15 @@ public class AppController implements Notifiable
     public void setupA100Test()
     {
         configurator.setupA100TestConfiguration();
+    }
+
+    public void sendIOPointsToSite(long siteId, int numberOfIOPoints)
+    {
+        configurator.addIOPoints(siteId, numberOfIOPoints);
+    }
+
+    public void updateIOPoint(long siteId, long ioId, String tag, ZapDataType dataType)
+    {
+        configurator.updateIOPoint(siteId, ioId, tag, dataType);
     }
 }

@@ -2,6 +2,7 @@ package zedi.fg.tester.configs;
 
 import zedi.pacbridge.zap.messages.FieldTypeLibrary;
 import zedi.pacbridge.zap.messages.TimedEventType;
+import zedi.pacbridge.zap.values.ZapDataType;
 
 public class TestConfigurator
 {
@@ -49,6 +50,12 @@ public class TestConfigurator
         ConfigurationSetup config = new AddSiteConfiguration(fieldTypeLibrary, name);
         setupCoordinator.submitConfigurationSetup(config);
     }
+    
+    public void addIOPoints(long siteId, int count)
+    {
+        ConfigurationSetup config = new AddIOPointsConfiguration(fieldTypeLibrary, siteId, count);
+        setupCoordinator.submitConfigurationSetup(config);
+    }
 
     public void setupSNFTestConfiguration()
     {
@@ -60,5 +67,12 @@ public class TestConfigurator
     {
         ConfigurationSetup config = new A1000TestConfiguration(fieldTypeLibrary);
         setupCoordinator.submitConfigurationSetup(config);
+    }
+
+    public void updateIOPoint(long siteId, long ioId, String tag, ZapDataType dataType)
+    {
+        ConfigurationSetup config = new UpdateIOPointConfiguration(fieldTypeLibrary, siteId, ioId, tag, dataType);
+        setupCoordinator.submitConfigurationSetup(config);
+        
     }
 }

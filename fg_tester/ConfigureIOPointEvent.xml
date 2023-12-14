@@ -1,0 +1,57 @@
+<Event name="Configure" qualifier="ZIOS">
+  <EventId>28348319</EventId>
+  <Nuid>ZFG0000552</Nuid>
+  <Configure object="ioPoint">
+    <Action type="add">
+      <IOPointClass>2</IOPointClass>
+      <DataType>4</DataType>
+      <PollSetId>8</PollSetId>
+      <ExternalDeviceId>138</ExternalDeviceId>
+      <Tag>XA_KA</Tag>
+      <SiteId>2</SiteId>
+      <SourceAddress>MBS;40251/4</SourceAddress>
+      <SensorClassName>RTU</SensorClassName>
+      <IsReadOnly>0</IsReadOnly>
+      <AlarmMask>20</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <HighSet>1</HighSet>
+      <HighHysteresis>0</HighHysteresis>
+      <CorrelationId>559311</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>2</IOPointClass>
+      <DataType>4</DataType>
+      <PollSetId>8</PollSetId>
+      <ExternalDeviceId>138</ExternalDeviceId>
+      <Tag>XA_KB</Tag>
+      <SiteId>2</SiteId>
+      <SourceAddress>MBS;40255/6</SourceAddress>
+      <SensorClassName>RTU</SensorClassName>
+      <IsReadOnly>0</IsReadOnly>
+      <AlarmMask>20</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <HighSet>1</HighSet>
+      <HighHysteresis>0</HighHysteresis>
+      <CorrelationId>559312</CorrelationId>
+    </Action>
+    <Action type="add">
+      <IOPointClass>2</IOPointClass>
+      <DataType>4</DataType>
+      <PollSetId>8</PollSetId>
+      <ExternalDeviceId>136</ExternalDeviceId>
+      <Tag>XA_KA2</Tag>
+      <SiteId>2</SiteId>
+      <SourceAddress>MBS;40253/4</SourceAddress>
+      <SensorClassName>RTU</SensorClassName>
+      <IsReadOnly>0</IsReadOnly>
+      <AlarmMask>20</AlarmMask>
+      <AlarmSetHysteresis>0</AlarmSetHysteresis>
+      <AlarmClearHysteresis>0</AlarmClearHysteresis>
+      <HighSet>1</HighSet>
+      <HighHysteresis>0</HighHysteresis>
+      <CorrelationId>559313</CorrelationId>
+    </Action>
+  </Configure>
+</Event>

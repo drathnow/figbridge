@@ -30,5 +30,5 @@
                 <AlarmStatus>OK</AlarmStatus>
             </Reading>
         </Readings>
-    </ReadingColletion>
+    </ReadingCollection>
 </Event>

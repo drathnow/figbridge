@@ -13,7 +13,6 @@ import javax.swing.SwingConstants;
 import com.google.inject.Inject;
 
 import zedi.fg.tester.util.AppController;
-import zedi.fg.tester.util.AppController.EventType;
 import zedi.pacbridge.utl.StringUtilities;
 import zedi.pacbridge.zap.messages.TimedEventType;
 

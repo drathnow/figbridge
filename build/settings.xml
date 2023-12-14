@@ -1,6 +1,9 @@
-<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
     <localRepository>${env.M2_REPO}</localRepository>
+    <!-- 
     <proxies>
         <proxy>
             <active>true</active>
@@ -9,10 +12,19 @@
             <port>9090</port>
         </proxy>
     </proxies>
-    
+    -->
+
+    <mirrors>
+        <mirror>
+            <id>maven-default-http-blocker</id>
+            <url>http://127.0.0.1/dont-go-here</url>
+            <mirrorOf>dummy</mirrorOf>
+            <blocked>false</blocked>
+        </mirror>
+    </mirrors>
     
     <profiles>
-    
+
         <profile>
             <id>quarterly</id>
             <activation>
@@ -24,7 +36,7 @@
                 <maven.compile.source>1.7</maven.compile.source>
                 <maven.compile.target>1.7</maven.compile.target>
             </properties>
-            
+
             <repositories>
                 <repository>
                     <id>guiceyfruit.release</id>
@@ -39,7 +51,8 @@
                 </repository>
                 <repository>
                     <id>jboss-community-repository</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+                    <url>
+                        http://repository.jboss.org/nexus/content/groups/public/</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
@@ -50,25 +63,27 @@
                 <repository>
                     <id>Maven2</id>
                     <name>Maven Central Repository</name>
-                    <url>http://repo1.maven.apache.org/maven2/</url>
+                    <url>https://repo.maven.apache.org/maven2/</url>
                 </repository>
                 <repository>
                     <id>JBoss Public</id>
-                    <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+                    <url>
+                        https://repository.jboss.org/nexus/content/repositories/releases/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
                 <repository>
                     <id>repository.jboss.org</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+                    <url>
+                        http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
             </repositories>
         </profile>
-            
+
         <profile>
             <id>integration</id>
             <activation>
@@ -80,7 +95,7 @@
                 <maven.compile.source>1.7</maven.compile.source>
                 <maven.compile.target>1.7</maven.compile.target>
             </properties>
-            
+
             <repositories>
                 <repository>
                     <id>guiceyfruit.release</id>
@@ -95,7 +110,8 @@
                 </repository>
                 <repository>
                     <id>jboss-community-repository</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+                    <url>
+                        http://repository.jboss.org/nexus/content/groups/public/</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
@@ -110,21 +126,23 @@
                 </repository>
                 <repository>
                     <id>JBoss Public</id>
-                    <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+                    <url>
+                        https://repository.jboss.org/nexus/content/repositories/releases/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
                 <repository>
                     <id>repository.jboss.org</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+                    <url>
+                        http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
             </repositories>
         </profile>
-        
+
         <profile>
             <id>main</id>
             <activation>
@@ -136,7 +154,7 @@
                 <maven.compile.source>1.7</maven.compile.source>
                 <maven.compile.target>1.7</maven.compile.target>
             </properties>
-            
+
             <repositories>
                 <repository>
                     <id>guiceyfruit.release</id>
@@ -150,14 +168,10 @@
                     </releases>
                 </repository>
                 <repository>
-                    <id>jboss-community-repository</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
+                    <id>jboss-public-repository-group</id>
+                    <name>JBoss Public Repository Group</name>
+                    <url>
+                        https://repository.jboss.org/nexus/content/groups/public/</url>
                 </repository>
                 <repository>
                     <id>Maven2</id>
@@ -166,19 +180,21 @@
                 </repository>
                 <repository>
                     <id>JBoss Public</id>
-                    <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+                    <url>
+                        https://repository.jboss.org/nexus/content/repositories/releases/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
                 <repository>
                     <id>repository.jboss.org</id>
-                    <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+                    <url>
+                        http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
             </repositories>
-        </profile>        
+        </profile>
     </profiles>
 </settings>

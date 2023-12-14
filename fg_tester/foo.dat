@@ -1,0 +1,1782 @@
+Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+Maven home: /usr/share/maven
+Java version: 17.0.7, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/jdk-17.0.7+7
+Default locale: en_CA, platform encoding: UTF-8
+OS name: "linux", version: "5.15.0-89-generic", arch: "amd64", family: "unix"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /usr/share/maven/conf/settings.xml
+[DEBUG] Reading user settings from /home/fgdev/.m2/settings.xml
+[DEBUG] Reading global toolchains from /usr/share/maven/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /home/fgdev/.m2/toolchains.xml
+[DEBUG] Using local repository at /usr/share/maven-repo
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /usr/share/maven-repo
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project zedi.pacbridge:eventgenerator:jar:1.0.0: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project zedi.pacbridge:pacbridge:pom:6.4.0: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for zedi.pacbridge:eventgenerator:jar:1.0.0
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: log4j:log4j:jar -> version 1.2.17 vs 1.2.16 @ line 99, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: zedi.pacbridge:eventgenerator:jar:1.0.0
+[DEBUG] Tasks:   [clean, install]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] -------------------< zedi.pacbridge:eventgenerator >--------------------
+[INFO] Building Field Gateway Tester 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Creating adapter using nameMapper 'gav' and factory 'rwlock-local'
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       zedi.pacbridge:eventgenerator:1.0.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, runtime, test]
+[DEBUG] Repositories (dependencies): [guiceyfruit.release (http://guiceyfruit.googlecode.com/svn/repo/releases/, default, releases), jboss-community-repository (http://repository.jboss.org/nexus/content/groups/public/, default, releases), Maven2 (https://repo.maven.apache.org/maven2/, default, releases+snapshots), JBoss Public (https://repository.jboss.org/nexus/content/repositories/releases/, default, releases), repository.jboss.org (http://repository.jboss.org/nexus/content/groups/public-jboss/, default, releases), beans-binding (http://download.java.net/maven/2/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases), ibiblio (http://www.ibiblio.org/maven2, default, releases+snapshots), mirror-ibiblio (http://mirrors.ibiblio.org/pub/mirrors/maven2/, default, releases+snapshots), JBoss-Maven2 (http://repository.jboss.com/maven2/, default, releases+snapshots)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-clean-plugin:3.3.2:clean (default-clean)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <directory default-value="${project.build.directory}"/>
+  <excludeDefaultDirectories default-value="false">${maven.clean.excludeDefaultDirectories}</excludeDefaultDirectories>
+  <failOnError default-value="true">${maven.clean.failOnError}</failOnError>
+  <fast default-value="false">${maven.clean.fast}</fast>
+  <fastDir>${maven.clean.fastDir}</fastDir>
+  <fastMode default-value="background">${maven.clean.fastMode}</fastMode>
+  <followSymLinks default-value="false">${maven.clean.followSymLinks}</followSymLinks>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <reportDirectory default-value="${project.build.outputDirectory}"/>
+  <retryOnError default-value="true">${maven.clean.retryOnError}</retryOnError>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.clean.skip}</skip>
+  <testOutputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <verbose>${maven.clean.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">1.8</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">1.8</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac-test"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <project default-value="${project}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">1.8</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">1.8</target>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <useModulePath default-value="true"/>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathDependencies>${maven.test.additionalClasspathDependencies}</additionalClasspathDependencies>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>-Xmx2048m -noverify</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <enableProcessChecker>${surefire.enableProcessChecker}</enableProcessChecker>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludeJUnit5Engines>${surefire.excludeJUnit5Engines}</excludeJUnit5Engines>
+  <excludedEnvironmentVariables>${surefire.excludedEnvironmentVariables}</excludedEnvironmentVariables>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludes>${surefire.excludes}</excludes>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests default-value="true">${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests default-value="false">${failIfNoTests}</failIfNoTests>
+  <failOnFlakeCount default-value="0">${surefire.failOnFlakeCount}</failOnFlakeCount>
+  <forkCount default-value="1">3</forkCount>
+  <forkNode>${surefire.forkNode}</forkNode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includeJUnit5Engines>${surefire.includeJUnit5Engines}</includeJUnit5Engines>
+  <includes>${surefire.includes}</includes>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <jvm>${jvm}</jvm>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <project default-value="${project}"/>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">true</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <runOrderRandomSeed>${surefire.runOrder.random.seed}</runOrderRandomSeed>
+  <session default-value="${session}"/>
+  <shutdown default-value="exit">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <systemPropertiesFile>${surefire.systemPropertiesFile}</systemPropertiesFile>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="false">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useModulePath default-value="true">${surefire.useModulePath}</useModulePath>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.codehaus.mojo:exec-maven-plugin:3.0.0:java (run-application)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addOutputToClasspath default-value="true">${addOutputToClasspath}</addOutputToClasspath>
+  <addResourcesToClasspath default-value="false">${addResourcesToClasspath}</addResourcesToClasspath>
+  <arguments>${exec.arguments}</arguments>
+  <classpathScope default-value="runtime">${exec.classpathScope}</classpathScope>
+  <cleanupDaemonThreads default-value="true">${exec.cleanupDaemonThreads}</cleanupDaemonThreads>
+  <commandlineArgs>${exec.args}</commandlineArgs>
+  <daemonThreadJoinTimeout default-value="15000">${exec.daemonThreadJoinTimeout}</daemonThreadJoinTimeout>
+  <includePluginDependencies default-value="false">${exec.includePluginsDependencies}</includePluginDependencies>
+  <includeProjectDependencies default-value="true">${exec.includeProjectDependencies}</includeProjectDependencies>
+  <keepAlive default-value="false">${exec.keepAlive}</keepAlive>
+  <killAfter default-value="-1">${exec.killAfter}</killAfter>
+  <mainClass>zedi.fg.tester.Main</mainClass>
+  <plugin default-value="${plugin}"/>
+  <pluginDependencies default-value="${plugin.artifacts}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${exec.skip}</skip>
+  <sourceRoot>${sourceRoot}</sourceRoot>
+  <stopUnresponsiveDaemonThreads default-value="false">${exec.stopUnresponsiveDaemonThreads}</stopUnresponsiveDaemonThreads>
+  <testSourceRoot>${testSourceRoot}</testSourceRoot>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar (default-jar)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <forceCreation default-value="false">${maven.jar.forceCreation}</forceCreation>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <outputTimestamp default-value="${project.build.outputTimestamp}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skipIfEmpty default-value="false"/>
+  <useDefaultManifestFile default-value="false">${jar.useDefaultManifestFile}</useDefaultManifestFile>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar (default)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <classifier default-value="tests"/>
+  <finalName default-value="${project.build.finalName}"/>
+  <forceCreation default-value="false">${maven.jar.forceCreation}</forceCreation>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <outputTimestamp default-value="${project.build.outputTimestamp}"/>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <skip>${maven.test.skip}</skip>
+  <skipIfEmpty default-value="false"/>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <useDefaultManifestFile default-value="false">${jar.useDefaultManifestFile}</useDefaultManifestFile>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-install-plugin:3.1.1:install (default-install)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <allowIncompleteProjects default-value="false">${allowIncompleteProjects}</allowIncompleteProjects>
+  <installAtEnd default-value="false">${installAtEnd}</installAtEnd>
+  <pluginDescriptor default-value="${plugin}"/>
+  <project default-value="${project}"/>
+  <reactorProjects default-value="${reactorProjects}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.install.skip}</skip>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=575308, ConflictMarker.markTime=193037, ConflictMarker.nodeCount=129, ConflictIdSorter.graphTime=343451, ConflictIdSorter.topsortTime=183610, ConflictIdSorter.conflictIdCount=52, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=4997822, ConflictResolver.conflictItemCount=121, DfDependencyCollector.collectTime=151809971, DfDependencyCollector.transformTime=7411766}
+[DEBUG] zedi.pacbridge:eventgenerator:jar:1.0.0
+[DEBUG]    org.slf4j:slf4j-api:jar:1.7.13:compile
+[DEBUG]    org.slf4j:slf4j-log4j12:jar:1.7.13:compile
+[DEBUG]    log4j:log4j:jar:1.2.16:compile
+[DEBUG]    com.google.guava:guava:jar:31.1-jre:compile
+[DEBUG]       com.google.guava:failureaccess:jar:1.0.1:compile
+[DEBUG]       com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[DEBUG]       com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[DEBUG]       org.checkerframework:checker-qual:jar:3.12.0:compile
+[DEBUG]       com.google.errorprone:error_prone_annotations:jar:2.11.0:compile
+[DEBUG]       com.google.j2objc:j2objc-annotations:jar:1.3:compile
+[DEBUG]    zedi.pacbridge:pacbridge-app:jar:6.4.0:compile
+[DEBUG]       zedi.pacbridge:pacbridge-domain:jar:6.4.0:compile
+[DEBUG]          org.eclipse.persistence:eclipselink:jar:2.5.0:compile
+[DEBUG]             org.eclipse.persistence:javax.persistence:jar:2.1.0:compile
+[DEBUG]             org.eclipse.persistence:commonj.sdo:jar:2.1.1:compile
+[DEBUG]       org.wildfly:wildfly-parent:pom:10.0.0.Final:compile
+[DEBUG]          org.wildfly.checkstyle:wildfly-checkstyle-config:jar:1.0.4.Final:compile
+[DEBUG]    zedi.pacbridge:pacbridge-net:jar:6.4.0:compile
+[DEBUG]    zedi.pacbridge:pacbridge-utl:jar:6.4.0:compile
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.1.1:compile
+[DEBUG]       org.reflections:reflections:jar:0.9.11:compile
+[DEBUG]          org.javassist:javassist:jar:3.21.0-GA:compile
+[DEBUG]       javax:javaee-api:jar:7.0:compile
+[DEBUG]          com.sun.mail:javax.mail:jar:1.5.0:compile
+[DEBUG]    zedi.pacbridge:pacbridge-utl:jar:tests:6.4.0:compile
+[DEBUG]    zedi.pacbridge:pacbridge-gdn:jar:6.4.0:compile
+[DEBUG]       commons-codec:commons-codec:jar:1.7:compile
+[DEBUG]    zedi.pacbridge:pacbridge-zap:jar:6.4.0:compile
+[DEBUG]    javax.jms:jms:jar:1.1:compile
+[DEBUG]    javax.mail:mail:jar:1.4:compile
+[DEBUG]       javax.activation:activation:jar:1.1:compile
+[DEBUG]    com.google.inject:guice:jar:7.0.0:compile
+[DEBUG]       jakarta.inject:jakarta.inject-api:jar:2.0.1:compile
+[DEBUG]       aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]    junit:junit:jar:4.12:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.3:test
+[DEBUG]    org.yaml:snakeyaml:jar:1.21:compile
+[DEBUG]    org.mockito:mockito-core:jar:3.0.0:compile
+[DEBUG]       net.bytebuddy:byte-buddy:jar:1.9.10:compile
+[DEBUG]       net.bytebuddy:byte-buddy-agent:jar:1.9.10:compile
+[DEBUG]    org.json:json:jar:20151123:compile
+[DEBUG]    org.jdom:jdom:jar:2.0.2:compile
+[DEBUG]    org.powermock:powermock-api-mockito2:jar:2.0.2:test
+[DEBUG]       org.powermock:powermock-api-support:jar:2.0.2:test
+[DEBUG]          org.powermock:powermock-reflect:jar:2.0.2:test
+[DEBUG]          org.powermock:powermock-core:jar:2.0.2:test
+[DEBUG]    org.powermock:powermock-module-junit4:jar:2.0.2:test
+[DEBUG]       org.powermock:powermock-module-junit4-common:jar:2.0.2:test
+[DEBUG]    org.objenesis:objenesis:jar:3.0.1:test
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]    xpp3:xpp3:jar:1.1.4c:compile
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=23051, ConflictMarker.markTime=53435, ConflictMarker.nodeCount=2, ConflictIdSorter.graphTime=6583, ConflictIdSorter.topsortTime=7562, ConflictIdSorter.conflictIdCount=2, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=79362, ConflictResolver.conflictItemCount=2, DfDependencyCollector.collectTime=5829450, DfDependencyCollector.transformTime=180572}
+[DEBUG] org.apache.maven.plugins:maven-clean-plugin:jar:3.3.2
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:4.0.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.3.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.3.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.3.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-clean-plugin:jar:3.3.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:4.0.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-clean-plugin:3.3.2:clean from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-clean-plugin:3.3.2, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-clean-plugin:3.3.2:clean:default-clean' with basic configurator -->
+[DEBUG]   (f) directory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (f) excludeDefaultDirectories = false
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fast = false
+[DEBUG]   (f) fastMode = background
+[DEBUG]   (f) followSymLinks = false
+[DEBUG]   (f) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (f) reportDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (f) retryOnError = true
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) testOutputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG] -- end configuration --
+[INFO] Deleting /home/fgdev/projects/figbridge/fg_tester/target
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0-tests.jar
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/test-classes/zedi/fg/tester/net/WhenFgAuthenticatorIsAskedToAuthenticate.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes/zedi/fg/tester/net
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes/zedi/fg/tester
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes/zedi/fg
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes/zedi
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/compile/default-compile
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/compile
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin/testCompile
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status/maven-compiler-plugin
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-status
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/generated-sources
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/InjectorModel.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/ZapMessageOrchastrator.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/ConnectionListener.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/FgSession$State.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/FgSession.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/ZapProtocolStackFactory.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/FgAuthenticator.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/MockAuthenticationDelegate.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net/FgSession$1.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/net
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/PreferencesDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/TextPaneAppender.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/PreferencesDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ConsoleTextPane$CopyMenuItem.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ScrubDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ScrollingConsolePane.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$5.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$13.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ConsoleTextPane$SelectAllMenuItem.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DeleteEventDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ConsoleTextPane$ClearMenuItem.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$3.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$6.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$MainFrameWindowListener.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$9.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddEventDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ConsoleTextPane$PopupMenuListener.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DeleteEventDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DemandPollDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$12.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddSiteDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ConsoleTextPane.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DemandPollDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DemandPollDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$11.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/TraceWindow$TraceWindowListener.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddEventDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$10.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/TraceWindow.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddSiteDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ScrubDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/PreferencesDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$8.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$7.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/ScrubDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$4.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/TraceWindow$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/DeleteEventDialog.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddEventDialog$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/AddSiteDialog$2.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/StatusPanel.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui/MainFrame$2.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/ui
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/Test.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/StoreAndForwardTestConfiguration$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/TestConfigurationSetupCoordinator$CoordinatorRunner.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/TestConfigurator.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/AIDITestConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/ModbusTestConfiguration$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/ModbusTestConfiguration$State.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/A1000TestConfiguration$State.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/TestConfigurationSetupCoordinator.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/AIDITestConfiguration$State.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/AddSiteConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/A1000TestConfiguration$IOActionLoad.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/AIDITestConfiguration$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/ModbusTestConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/ConfigurationSetup.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/BaseTestConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/SystemIOPointsReportConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/A1000TestConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/StoreAndForwardTestConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/ConfigureIOPointsEventGnerator.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/A1000TestConfiguration$1.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/AddEventConfiguration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/StoreAndForwardTestConfiguration$State.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs/DeleteEventConfiguration.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/configs
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/AppController.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/ConfigurationSerializer.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/ZiosReturnCodes.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/TransmissionPackage$TYPE.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/ZapMessageHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/AckDecoderNotificationHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/TransmissionPackage.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/FgMessageSender.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/Configuration.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/Constants.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/ConfigurationFileSerializer.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/BundledReportMessageHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/HeartbeatMessageHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/TransmissionNotificationHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/ConfigureUpdateHandler.class
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util/SwingUtl.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/util
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester/Main.class
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg/tester
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi/fg
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes/zedi
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/classes
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0.jar
+[INFO] Deleting file /home/fgdev/projects/figbridge/fg_tester/target/maven-archiver/pom.properties
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target/maven-archiver
+[INFO] Deleting directory /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG] Skipping non-existing directory /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG] Skipping non-existing directory /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG] Skipping non-existing directory /home/fgdev/projects/figbridge/fg_tester/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=41922, ConflictMarker.markTime=25427, ConflictMarker.nodeCount=13, ConflictIdSorter.graphTime=21792, ConflictIdSorter.topsortTime=10391, ConflictIdSorter.conflictIdCount=9, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=219573, ConflictResolver.conflictItemCount=13, DfDependencyCollector.collectTime=26127368, DfDependencyCollector.transformTime=332709}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.26:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.5.1:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.3.1:compile
+[DEBUG]       javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]    commons-io:commons-io:jar:2.11.0:compile
+[DEBUG]    org.apache.commons:commons-lang3:jar:3.12.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.1
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.3.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: commons-io:commons-io:jar:2.11.0
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.12.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources:default-resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /home/fgdev/projects/figbridge/fg_tester/src/main/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] classworlds.conf: /usr/share/maven/bin/m2.conf
+[DEBUG] env.COLORTERM: truecolor
+[DEBUG] env.DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+[DEBUG] env.DESKTOP_SESSION: ubuntu
+[DEBUG] env.DISPLAY: :1
+[DEBUG] env.GDMSESSION: ubuntu
+[DEBUG] env.GJS_DEBUG_OUTPUT: stderr
+[DEBUG] env.GJS_DEBUG_TOPICS: JS ERROR;JS LOG
+[DEBUG] env.GNOME_DESKTOP_SESSION_ID: this-is-deprecated
+[DEBUG] env.GNOME_SHELL_SESSION_MODE: ubuntu
+[DEBUG] env.GNOME_TERMINAL_SCREEN: /org/gnome/Terminal/screen/a452684a_184e_4f70_8c68_2252378309c9
+[DEBUG] env.GNOME_TERMINAL_SERVICE: :1.83
+[DEBUG] env.GPG_AGENT_INFO: /run/user/1000/gnupg/S.gpg-agent:0:1
+[DEBUG] env.GTK_MODULES: gail:atk-bridge
+[DEBUG] env.HOME: /home/fgdev
+[DEBUG] env.IM_CONFIG_CHECK_ENV: 1
+[DEBUG] env.IM_CONFIG_PHASE: 1
+[DEBUG] env.INVOCATION_ID: 0231b136bc824844b00220b26ab0d662
+[DEBUG] env.JAVA_HOME: /usr/lib/jvm/jdk-17.0.7+7
+[DEBUG] env.JOURNAL_STREAM: 8:3001554
+[DEBUG] env.LANG: en_CA.UTF-8
+[DEBUG] env.LANGUAGE: en_CA:en
+[DEBUG] env.LESSCLOSE: /usr/bin/lesspipe %s %s
+[DEBUG] env.LESSOPEN: | /usr/bin/lesspipe %s
+[DEBUG] env.LOGNAME: fgdev
+[DEBUG] env.LS_COLORS: rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+[DEBUG] env.M2_REPO: /usr/share/maven-repo
+[DEBUG] env.MANAGERPID: 8233
+[DEBUG] env.MAVEN_CMD_LINE_ARGS:  -X clean install
+[DEBUG] env.MAVEN_PROJECTBASEDIR: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.OLDPWD: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.PATH: /home/fgdev/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+[DEBUG] env.PWD: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.QT_ACCESSIBILITY: 1
+[DEBUG] env.QT_IM_MODULE: ibus
+[DEBUG] env.SESSION_MANAGER: local/fgdev-Precision-5540:@/tmp/.ICE-unix/2452051,unix/fgdev-Precision-5540:/tmp/.ICE-unix/2452051
+[DEBUG] env.SHELL: /bin/bash
+[DEBUG] env.SHLVL: 1
+[DEBUG] env.SSH_AGENT_PID: 8442
+[DEBUG] env.SSH_AUTH_SOCK: /run/user/1000/keyring/ssh
+[DEBUG] env.TERM: xterm-256color
+[DEBUG] env.USER: fgdev
+[DEBUG] env.USERNAME: fgdev
+[DEBUG] env.VTE_VERSION: 6003
+[DEBUG] env.WINDOWPATH: 3
+[DEBUG] env.XAUTHORITY: /run/user/1000/gdm/Xauthority
+[DEBUG] env.XDG_CONFIG_DIRS: /etc/xdg/xdg-ubuntu:/etc/xdg
+[DEBUG] env.XDG_CURRENT_DESKTOP: ubuntu:GNOME
+[DEBUG] env.XDG_DATA_DIRS: /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+[DEBUG] env.XDG_MENU_PREFIX: gnome-
+[DEBUG] env.XDG_RUNTIME_DIR: /run/user/1000
+[DEBUG] env.XDG_SESSION_CLASS: user
+[DEBUG] env.XDG_SESSION_DESKTOP: ubuntu
+[DEBUG] env.XDG_SESSION_TYPE: x11
+[DEBUG] env.XMODIFIERS: @im=ibus
+[DEBUG] env._: /usr/bin/mvn
+[DEBUG] file.encoding: UTF-8
+[DEBUG] file.separator: /
+[DEBUG] hg.repo: quarterly
+[DEBUG] infinispan.version: 8.1.1.Final
+[DEBUG] java.class.path: /usr/share/maven/boot/plexus-classworlds-2.7.0.jar
+[DEBUG] java.class.version: 61.0
+[DEBUG] java.home: /usr/lib/jvm/jdk-17.0.7+7
+[DEBUG] java.io.tmpdir: /tmp
+[DEBUG] java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+[DEBUG] java.runtime.name: OpenJDK Runtime Environment
+[DEBUG] java.runtime.version: 17.0.7+7
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 17
+[DEBUG] java.vendor: Eclipse Adoptium
+[DEBUG] java.vendor.url: https://adoptium.net/
+[DEBUG] java.vendor.url.bug: https://github.com/adoptium/adoptium-support/issues
+[DEBUG] java.vendor.version: Temurin-17.0.7+7
+[DEBUG] java.version: 17.0.7
+[DEBUG] java.version.date: 2023-04-18
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: OpenJDK 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 17
+[DEBUG] java.vm.vendor: Eclipse Adoptium
+[DEBUG] java.vm.version: 17.0.7+7
+[DEBUG] javassist.version: 3.25.0-GA
+[DEBUG] jdk.debug: release
+[DEBUG] jgroups.version: 3.6.4.Final
+[DEBUG] junit.version: 4.12
+[DEBUG] library.jansi.path: /usr/share/maven/lib/jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] maven.build.timestamp: 2023-12-13T14:05:02Z
+[DEBUG] maven.build.version: Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+[DEBUG] maven.compile.source: 1.7
+[DEBUG] maven.compile.target: 1.7
+[DEBUG] maven.compiler.source: 1.8
+[DEBUG] maven.compiler.target: 1.8
+[DEBUG] maven.conf: /usr/share/maven/conf
+[DEBUG] maven.home: /usr/share/maven
+[DEBUG] maven.multiModuleProjectDirectory: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] maven.version: 3.9.6
+[DEBUG] mockito-core.version: 3.0.0
+[DEBUG] native.encoding: UTF-8
+[DEBUG] objenesis.version: 3.0.1
+[DEBUG] os.arch: amd64
+[DEBUG] os.name: Linux
+[DEBUG] os.version: 5.15.0-89-generic
+[DEBUG] pacbridge.global.version: 6.4.0
+[DEBUG] path.separator: :
+[DEBUG] powermock-api-mockito2.version: 2.0.2
+[DEBUG] powermock-module-junit4.version: 2.0.2
+[DEBUG] project.baseUri: file:/home/fgdev/projects/figbridge/fg_tester/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] resteasy.version: 3.0.14.Final
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: /usr/lib/jvm/jdk-17.0.7+7/lib
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.io.unicode.encoding: UnicodeLittle
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher -X clean install
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: UTF-8
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] sun.stderr.encoding: UTF-8
+[DEBUG] user.country: CA
+[DEBUG] user.dir: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] user.home: /home/fgdev
+[DEBUG] user.language: en
+[DEBUG] user.name: fgdev
+[DEBUG] version.hibernate.search: 4.2.0.Final
+[DEBUG] version.wildfly: 10.0.0.Final
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory /home/fgdev/projects/figbridge/fg_tester/src/main/resources
+excludes []
+includes []
+[INFO] skip non existing resourceDirectory /home/fgdev/projects/figbridge/fg_tester/src/main/resources
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=54877, ConflictMarker.markTime=32939, ConflictMarker.nodeCount=17, ConflictIdSorter.graphTime=16783, ConflictIdSorter.topsortTime=15342, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=227880, ConflictResolver.conflictItemCount=17, DfDependencyCollector.collectTime=30073897, DfDependencyCollector.transformTime=362998}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:1.1.2:compile
+[DEBUG]       org.ow2.asm:asm:jar:9.4:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0.3:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.13.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.5.0:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.1.2
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.4
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile:default-compile' with basic configurator -->
+[DEBUG]   (f) basedir = /home/fgdev/projects/figbridge/fg_tester
+[DEBUG]   (f) buildDirectory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (f) compilePath = [/home/fgdev/projects/figbridge/fg_tester/target/classes, /usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar, /usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar, /usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar, /usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar, /usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar, /usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar, /usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar, /usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar, /usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar, /usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar, /usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar, /usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar, /usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar, /usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar, /usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar, /usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar, /usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar, /usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar, /usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar, /usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar, /usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar, /usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar, /usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar, /usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar, /usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar, /usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar, /usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar, /usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar, /usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar, /usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar, /usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar, /usr/share/maven-repo/org/json/json/20151123/json-20151123.jar, /usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar, /usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar, /usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar]
+[DEBUG]   (f) compileSourceRoots = [/home/fgdev/projects/figbridge/fg_tester/src/main/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile {execution: default-compile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (f) parameters = false
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) projectArtifact = zedi.pacbridge:eventgenerator:jar:1.0.0
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations to compile source roots:
+  /home/fgdev/projects/figbridge/fg_tester/src/main/java
+[DEBUG] New compile source roots:
+  /home/fgdev/projects/figbridge/fg_tester/src/main/java
+  /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/TestConfigurationSetupCoordinator.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/SwingUtl.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/DeleteEventDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/AppController.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/FgAuthenticator.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/ConnectionListener.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/ZapProtocolStackFactory.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/StatusPanel.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/TransmissionNotificationHandler.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/MainFrame.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/InjectorModel.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/ZapMessageOrchastrator.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/ConfigureUpdateHandler.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/AckDecoderNotificationHandler.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/ConsoleTextPane.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/ScrollingConsolePane.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/ZiosReturnCodes.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AIDITestConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/SystemIOPointsReportConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/ZapMessageHandler.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/FgSession.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/ConfigureIOPointsEventGnerator.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/ScrubDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/ConfigurationSerializer.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/A1000TestConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/Main.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/BundledReportMessageHandler.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AddEventConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/StoreAndForwardTestConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/ModbusTestConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/DeleteEventConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/ConfigurationSetup.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/Constants.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/TestConfigurator.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/ConfigurationFileSerializer.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/Test.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/PreferencesDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/FgMessageSender.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/DemandPollDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/AddSiteDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/TextPaneAppender.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/BaseTestConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AddSiteConfiguration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/TransmissionPackage.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/net/MockAuthenticationDelegate.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/TraceWindow.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/AddEventDialog.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/Configuration.java
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/util/HeartbeatMessageHandler.java
+[INFO] Changes detected - recompiling the module! :source
+[DEBUG] Classpath:
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]  /usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar
+[DEBUG]  /usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar
+[DEBUG]  /usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[DEBUG]  /usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar
+[DEBUG]  /usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar
+[DEBUG]  /usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar
+[DEBUG]  /usr/share/maven-repo/org/wildfly/wildfly-parent/10.0.0.Final/wildfly-parent-10.0.0.Final.pom
+[DEBUG]  /usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar
+[DEBUG]  /usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[DEBUG]  /usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar
+[DEBUG]  /usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar
+[DEBUG]  /usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar
+[DEBUG]  /usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar
+[DEBUG]  /usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar
+[DEBUG]  /usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar
+[DEBUG]  /usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar
+[DEBUG]  /usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar
+[DEBUG]  /usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+[DEBUG]  /usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar
+[DEBUG]  /usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar
+[DEBUG]  /usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar
+[DEBUG]  /usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar
+[DEBUG]  /usr/share/maven-repo/org/json/json/20151123/json-20151123.jar
+[DEBUG]  /usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[DEBUG]  /usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar
+[DEBUG] Source roots:
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/src/main/java
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations
+[DEBUG] Command line options:
+[DEBUG] -d /home/fgdev/projects/figbridge/fg_tester/target/classes -classpath /home/fgdev/projects/figbridge/fg_tester/target/classes:/usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar:/usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar:/usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar:/usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar:/usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar:/usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar:/usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar:/usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar:/usr/share/maven-repo/org/wildfly/wildfly-parent/10.0.0.Final/wildfly-parent-10.0.0.Final.pom:/usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar:/usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar:/usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar:/usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar:/usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar:/usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar:/usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar:/usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar:/usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar:/usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar:/usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar:/usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar:/usr/share/maven-repo/org/json/json/20151123/json-20151123.jar:/usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar:/usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar: -sourcepath /home/fgdev/projects/figbridge/fg_tester/src/main/java:/home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations: -s /home/fgdev/projects/figbridge/fg_tester/target/generated-sources/annotations -g -target 1.8 -source 1.8 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 49 source files with javac [debug target 1.8] to target/classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AIDITestConfiguration.java:[114,63] Long(long) in java.lang.Long has been deprecated and marked for removal
+[WARNING] /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AIDITestConfiguration.java:[119,63] Long(long) in java.lang.Long has been deprecated and marked for removal
+[WARNING] /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/configs/AIDITestConfiguration.java:[124,63] Long(long) in java.lang.Long has been deprecated and marked for removal
+[INFO] /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/AddEventDialog.java: /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/AddEventDialog.java uses unchecked or unsafe operations.
+[INFO] /home/fgdev/projects/figbridge/fg_tester/src/main/java/zedi/fg/tester/ui/AddEventDialog.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ eventgenerator ---
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources:default-testResources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /home/fgdev/projects/figbridge/fg_tester/src/test/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] classworlds.conf: /usr/share/maven/bin/m2.conf
+[DEBUG] env.COLORTERM: truecolor
+[DEBUG] env.DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+[DEBUG] env.DESKTOP_SESSION: ubuntu
+[DEBUG] env.DISPLAY: :1
+[DEBUG] env.GDMSESSION: ubuntu
+[DEBUG] env.GJS_DEBUG_OUTPUT: stderr
+[DEBUG] env.GJS_DEBUG_TOPICS: JS ERROR;JS LOG
+[DEBUG] env.GNOME_DESKTOP_SESSION_ID: this-is-deprecated
+[DEBUG] env.GNOME_SHELL_SESSION_MODE: ubuntu
+[DEBUG] env.GNOME_TERMINAL_SCREEN: /org/gnome/Terminal/screen/a452684a_184e_4f70_8c68_2252378309c9
+[DEBUG] env.GNOME_TERMINAL_SERVICE: :1.83
+[DEBUG] env.GPG_AGENT_INFO: /run/user/1000/gnupg/S.gpg-agent:0:1
+[DEBUG] env.GTK_MODULES: gail:atk-bridge
+[DEBUG] env.HOME: /home/fgdev
+[DEBUG] env.IM_CONFIG_CHECK_ENV: 1
+[DEBUG] env.IM_CONFIG_PHASE: 1
+[DEBUG] env.INVOCATION_ID: 0231b136bc824844b00220b26ab0d662
+[DEBUG] env.JAVA_HOME: /usr/lib/jvm/jdk-17.0.7+7
+[DEBUG] env.JOURNAL_STREAM: 8:3001554
+[DEBUG] env.LANG: en_CA.UTF-8
+[DEBUG] env.LANGUAGE: en_CA:en
+[DEBUG] env.LESSCLOSE: /usr/bin/lesspipe %s %s
+[DEBUG] env.LESSOPEN: | /usr/bin/lesspipe %s
+[DEBUG] env.LOGNAME: fgdev
+[DEBUG] env.LS_COLORS: rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+[DEBUG] env.M2_REPO: /usr/share/maven-repo
+[DEBUG] env.MANAGERPID: 8233
+[DEBUG] env.MAVEN_CMD_LINE_ARGS:  -X clean install
+[DEBUG] env.MAVEN_PROJECTBASEDIR: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.OLDPWD: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.PATH: /home/fgdev/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+[DEBUG] env.PWD: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] env.QT_ACCESSIBILITY: 1
+[DEBUG] env.QT_IM_MODULE: ibus
+[DEBUG] env.SESSION_MANAGER: local/fgdev-Precision-5540:@/tmp/.ICE-unix/2452051,unix/fgdev-Precision-5540:/tmp/.ICE-unix/2452051
+[DEBUG] env.SHELL: /bin/bash
+[DEBUG] env.SHLVL: 1
+[DEBUG] env.SSH_AGENT_PID: 8442
+[DEBUG] env.SSH_AUTH_SOCK: /run/user/1000/keyring/ssh
+[DEBUG] env.TERM: xterm-256color
+[DEBUG] env.USER: fgdev
+[DEBUG] env.USERNAME: fgdev
+[DEBUG] env.VTE_VERSION: 6003
+[DEBUG] env.WINDOWPATH: 3
+[DEBUG] env.XAUTHORITY: /run/user/1000/gdm/Xauthority
+[DEBUG] env.XDG_CONFIG_DIRS: /etc/xdg/xdg-ubuntu:/etc/xdg
+[DEBUG] env.XDG_CURRENT_DESKTOP: ubuntu:GNOME
+[DEBUG] env.XDG_DATA_DIRS: /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+[DEBUG] env.XDG_MENU_PREFIX: gnome-
+[DEBUG] env.XDG_RUNTIME_DIR: /run/user/1000
+[DEBUG] env.XDG_SESSION_CLASS: user
+[DEBUG] env.XDG_SESSION_DESKTOP: ubuntu
+[DEBUG] env.XDG_SESSION_TYPE: x11
+[DEBUG] env.XMODIFIERS: @im=ibus
+[DEBUG] env._: /usr/bin/mvn
+[DEBUG] file.encoding: UTF-8
+[DEBUG] file.separator: /
+[DEBUG] hg.repo: quarterly
+[DEBUG] infinispan.version: 8.1.1.Final
+[DEBUG] java.class.path: /usr/share/maven/boot/plexus-classworlds-2.7.0.jar
+[DEBUG] java.class.version: 61.0
+[DEBUG] java.home: /usr/lib/jvm/jdk-17.0.7+7
+[DEBUG] java.io.tmpdir: /tmp
+[DEBUG] java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+[DEBUG] java.runtime.name: OpenJDK Runtime Environment
+[DEBUG] java.runtime.version: 17.0.7+7
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 17
+[DEBUG] java.vendor: Eclipse Adoptium
+[DEBUG] java.vendor.url: https://adoptium.net/
+[DEBUG] java.vendor.url.bug: https://github.com/adoptium/adoptium-support/issues
+[DEBUG] java.vendor.version: Temurin-17.0.7+7
+[DEBUG] java.version: 17.0.7
+[DEBUG] java.version.date: 2023-04-18
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: OpenJDK 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 17
+[DEBUG] java.vm.vendor: Eclipse Adoptium
+[DEBUG] java.vm.version: 17.0.7+7
+[DEBUG] javassist.version: 3.25.0-GA
+[DEBUG] jdk.debug: release
+[DEBUG] jgroups.version: 3.6.4.Final
+[DEBUG] junit.version: 4.12
+[DEBUG] library.jansi.path: /usr/share/maven/lib/jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] maven.build.timestamp: 2023-12-13T14:05:03Z
+[DEBUG] maven.build.version: Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+[DEBUG] maven.compile.source: 1.7
+[DEBUG] maven.compile.target: 1.7
+[DEBUG] maven.compiler.source: 1.8
+[DEBUG] maven.compiler.target: 1.8
+[DEBUG] maven.conf: /usr/share/maven/conf
+[DEBUG] maven.home: /usr/share/maven
+[DEBUG] maven.multiModuleProjectDirectory: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] maven.version: 3.9.6
+[DEBUG] mockito-core.version: 3.0.0
+[DEBUG] native.encoding: UTF-8
+[DEBUG] objenesis.version: 3.0.1
+[DEBUG] os.arch: amd64
+[DEBUG] os.name: Linux
+[DEBUG] os.version: 5.15.0-89-generic
+[DEBUG] pacbridge.global.version: 6.4.0
+[DEBUG] path.separator: :
+[DEBUG] powermock-api-mockito2.version: 2.0.2
+[DEBUG] powermock-module-junit4.version: 2.0.2
+[DEBUG] project.baseUri: file:/home/fgdev/projects/figbridge/fg_tester/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] resteasy.version: 3.0.14.Final
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: /usr/lib/jvm/jdk-17.0.7+7/lib
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.io.unicode.encoding: UnicodeLittle
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher -X clean install
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: UTF-8
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] sun.stderr.encoding: UTF-8
+[DEBUG] user.country: CA
+[DEBUG] user.dir: /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] user.home: /home/fgdev
+[DEBUG] user.language: en
+[DEBUG] user.name: fgdev
+[DEBUG] version.hibernate.search: 4.2.0.Final
+[DEBUG] version.wildfly: 10.0.0.Final
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory /home/fgdev/projects/figbridge/fg_tester/src/test/resources
+excludes []
+includes []
+[INFO] skip non existing resourceDirectory /home/fgdev/projects/figbridge/fg_tester/src/test/resources
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ eventgenerator ---
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile:default-testCompile' with basic configurator -->
+[DEBUG]   (f) basedir = /home/fgdev/projects/figbridge/fg_tester
+[DEBUG]   (f) buildDirectory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (f) compileSourceRoots = [/home/fgdev/projects/figbridge/fg_tester/src/test/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac-test
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedTestSourcesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile {execution: default-testCompile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG]   (f) parameters = false
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) testPath = [/home/fgdev/projects/figbridge/fg_tester/target/test-classes, /home/fgdev/projects/figbridge/fg_tester/target/classes, /usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar, /usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar, /usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar, /usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar, /usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar, /usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar, /usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar, /usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar, /usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar, /usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar, /usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar, /usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar, /usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar, /usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar, /usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar, /usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar, /usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar, /usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar, /usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar, /usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar, /usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar, /usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar, /usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar, /usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar, /usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar, /usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar, /usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar, /usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar, /usr/share/maven-repo/junit/junit/4.12/junit-4.12.jar, /usr/share/maven-repo/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar, /usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar, /usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar, /usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar, /usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar, /usr/share/maven-repo/org/json/json/20151123/json-20151123.jar, /usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-api-mockito2/2.0.2/powermock-api-mockito2-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-api-support/2.0.2/powermock-api-support-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-reflect/2.0.2/powermock-reflect-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-core/2.0.2/powermock-core-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-module-junit4/2.0.2/powermock-module-junit4-2.0.2.jar, /usr/share/maven-repo/org/powermock/powermock-module-junit4-common/2.0.2/powermock-module-junit4-common-2.0.2.jar, /usr/share/maven-repo/org/objenesis/objenesis/3.0.1/objenesis-3.0.1.jar, /usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar, /usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar]
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) useModulePath = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations to test-compile source roots:
+  /home/fgdev/projects/figbridge/fg_tester/src/test/java
+[DEBUG] New test-compile source roots:
+  /home/fgdev/projects/figbridge/fg_tester/src/test/java
+  /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] New dependency detected: /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG] Stale source detected: /home/fgdev/projects/figbridge/fg_tester/src/test/java/zedi/fg/tester/net/WhenFgAuthenticatorIsAskedToAuthenticate.java
+[INFO] Changes detected - recompiling the module! :dependency
+[DEBUG] Classpath:
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]  /usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar
+[DEBUG]  /usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar
+[DEBUG]  /usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
+[DEBUG]  /usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[DEBUG]  /usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar
+[DEBUG]  /usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar
+[DEBUG]  /usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar
+[DEBUG]  /usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar
+[DEBUG]  /usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar
+[DEBUG]  /usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[DEBUG]  /usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar
+[DEBUG]  /usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar
+[DEBUG]  /usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar
+[DEBUG]  /usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar
+[DEBUG]  /usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar
+[DEBUG]  /usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar
+[DEBUG]  /usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar
+[DEBUG]  /usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar
+[DEBUG]  /usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar
+[DEBUG]  /usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar
+[DEBUG]  /usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+[DEBUG]  /usr/share/maven-repo/junit/junit/4.12/junit-4.12.jar
+[DEBUG]  /usr/share/maven-repo/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[DEBUG]  /usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar
+[DEBUG]  /usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar
+[DEBUG]  /usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar
+[DEBUG]  /usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar
+[DEBUG]  /usr/share/maven-repo/org/json/json/20151123/json-20151123.jar
+[DEBUG]  /usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-api-mockito2/2.0.2/powermock-api-mockito2-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-api-support/2.0.2/powermock-api-support-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-reflect/2.0.2/powermock-reflect-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-core/2.0.2/powermock-core-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-module-junit4/2.0.2/powermock-module-junit4-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/powermock/powermock-module-junit4-common/2.0.2/powermock-module-junit4-common-2.0.2.jar
+[DEBUG]  /usr/share/maven-repo/org/objenesis/objenesis/3.0.1/objenesis-3.0.1.jar
+[DEBUG]  /usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[DEBUG]  /usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar
+[DEBUG] Source roots:
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/src/test/java
+[DEBUG]  /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations
+[DEBUG] Command line options:
+[DEBUG] -d /home/fgdev/projects/figbridge/fg_tester/target/test-classes -classpath /home/fgdev/projects/figbridge/fg_tester/target/test-classes:/home/fgdev/projects/figbridge/fg_tester/target/classes:/usr/share/maven-repo/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar:/usr/share/maven-repo/org/slf4j/slf4j-log4j12/1.7.13/slf4j-log4j12-1.7.13.jar:/usr/share/maven-repo/log4j/log4j/1.2.16/log4j-1.2.16.jar:/usr/share/maven-repo/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/usr/share/maven-repo/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/usr/share/maven-repo/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/share/maven-repo/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/usr/share/maven-repo/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/usr/share/maven-repo/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar:/usr/share/maven-repo/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-app/6.4.0/pacbridge-app-6.4.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-domain/6.4.0/pacbridge-domain-6.4.0.jar:/usr/share/maven-repo/org/eclipse/persistence/eclipselink/2.5.0/eclipselink-2.5.0.jar:/usr/share/maven-repo/org/eclipse/persistence/javax.persistence/2.1.0/javax.persistence-2.1.0.jar:/usr/share/maven-repo/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar:/usr/share/maven-repo/org/wildfly/checkstyle/wildfly-checkstyle-config/1.0.4.Final/wildfly-checkstyle-config-1.0.4.Final.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-net/6.4.0/pacbridge-net-6.4.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0.jar:/usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/usr/share/maven-repo/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/usr/share/maven-repo/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/usr/share/maven-repo/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/usr/share/maven-repo/javax/javaee-api/7.0/javaee-api-7.0.jar:/usr/share/maven-repo/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-utl/6.4.0/pacbridge-utl-6.4.0-tests.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-gdn/6.4.0/pacbridge-gdn-6.4.0.jar:/usr/share/maven-repo/commons-codec/commons-codec/1.7/commons-codec-1.7.jar:/usr/share/maven-repo/zedi/pacbridge/pacbridge-zap/6.4.0/pacbridge-zap-6.4.0.jar:/usr/share/maven-repo/javax/jms/jms/1.1/jms-1.1.jar:/usr/share/maven-repo/javax/mail/mail/1.4/mail-1.4.jar:/usr/share/maven-repo/javax/activation/activation/1.1/activation-1.1.jar:/usr/share/maven-repo/com/google/inject/guice/7.0.0/guice-7.0.0.jar:/usr/share/maven-repo/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/usr/share/maven-repo/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/usr/share/maven-repo/junit/junit/4.12/junit-4.12.jar:/usr/share/maven-repo/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/usr/share/maven-repo/org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar:/usr/share/maven-repo/org/mockito/mockito-core/3.0.0/mockito-core-3.0.0.jar:/usr/share/maven-repo/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar:/usr/share/maven-repo/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar:/usr/share/maven-repo/org/json/json/20151123/json-20151123.jar:/usr/share/maven-repo/org/jdom/jdom/2.0.2/jdom-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-api-mockito2/2.0.2/powermock-api-mockito2-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-api-support/2.0.2/powermock-api-support-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-reflect/2.0.2/powermock-reflect-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-core/2.0.2/powermock-core-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-module-junit4/2.0.2/powermock-module-junit4-2.0.2.jar:/usr/share/maven-repo/org/powermock/powermock-module-junit4-common/2.0.2/powermock-module-junit4-common-2.0.2.jar:/usr/share/maven-repo/org/objenesis/objenesis/3.0.1/objenesis-3.0.1.jar:/usr/share/maven-repo/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/usr/share/maven-repo/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar: -sourcepath /home/fgdev/projects/figbridge/fg_tester/src/test/java:/home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations: -s /home/fgdev/projects/figbridge/fg_tester/target/generated-test-sources/test-annotations -g -target 1.8 -source 1.8 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 1 source file with javac [debug target 1.8] to target/test-classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=196812, ConflictMarker.markTime=75043, ConflictMarker.nodeCount=78, ConflictIdSorter.graphTime=80180, ConflictIdSorter.topsortTime=27998, ConflictIdSorter.conflictIdCount=39, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1107584, ConflictResolver.conflictItemCount=76, DfDependencyCollector.collectTime=70808897, DfDependencyCollector.transformTime=1506701}
+[DEBUG] org.apache.maven.plugins:maven-surefire-plugin:jar:3.2.2
+[DEBUG]    org.apache.maven.surefire:maven-surefire-common:jar:3.2.2:compile
+[DEBUG]       org.apache.maven.surefire:surefire-api:jar:3.2.2:compile
+[DEBUG]          org.apache.maven.surefire:surefire-logger-api:jar:3.2.2:compile
+[DEBUG]       org.apache.maven.surefire:surefire-extensions-api:jar:3.2.2:compile
+[DEBUG]       org.apache.maven.surefire:surefire-booter:jar:3.2.2:compile
+[DEBUG]          org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.2:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile
+[DEBUG]          org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1:compile (version managed from default) (exclusions managed from default)
+[DEBUG]          org.apache.maven:maven-artifact:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]             org.codehaus.plexus:plexus-utils:jar:4.0.0:provided (version managed from default)
+[DEBUG]          org.apache.maven:maven-core:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]             org.apache.maven:maven-settings:jar:3.2.5:provided (version managed from default)
+[DEBUG]             org.apache.maven:maven-settings-builder:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-repository-metadata:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-model-builder:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-aether-provider:jar:3.2.5:provided
+[DEBUG]                org.eclipse.aether:aether-spi:jar:1.0.0.v20140518:provided
+[DEBUG]             org.eclipse.aether:aether-impl:jar:1.0.0.v20140518:provided
+[DEBUG]             org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.9.0.M2:provided (version managed from default)
+[DEBUG]                javax.annotation:javax.annotation-api:jar:1.2:provided
+[DEBUG]                javax.enterprise:cdi-api:jar:1.2:provided
+[DEBUG]                org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.9.0.M2:provided (version managed from default)
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:no_aop:3.2.3:provided
+[DEBUG]                javax.inject:javax.inject:jar:1:provided
+[DEBUG]                aopalliance:aopalliance:jar:1.0:provided
+[DEBUG]                com.google.guava:guava:jar:16.0.1:provided
+[DEBUG]             org.codehaus.plexus:plexus-interpolation:jar:1.21:provided
+[DEBUG]             org.codehaus.plexus:plexus-classworlds:jar:2.5.2:provided
+[DEBUG]             org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:provided
+[DEBUG]             org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:provided
+[DEBUG]                org.sonatype.plexus:plexus-cipher:jar:1.4:provided
+[DEBUG]          org.apache.maven:maven-plugin-api:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]          commons-io:commons-io:jar:2.12.0:compile (version managed from default)
+[DEBUG]       org.codehaus.plexus:plexus-java:jar:1.2.0:compile (version managed from default)
+[DEBUG]          org.ow2.asm:asm:jar:9.6:compile
+[DEBUG]          com.thoughtworks.qdox:qdox:jar:2.0.3:compile
+[DEBUG]       org.apache.maven.surefire:surefire-shared-utils:jar:3.2.2:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-surefire-plugin:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:maven-surefire-common:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-api:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-logger-api:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-extensions-api:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-booter:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.2
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.12.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.2.0
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.6
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.apache.maven.surefire:surefire-shared-utils:jar:3.2.2
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.2, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test:default-test' with basic configurator -->
+[DEBUG]   (f) additionalClasspathDependencies = []
+[DEBUG]   (s) additionalClasspathElements = []
+[DEBUG]   (s) argLine = -Xmx2048m -noverify
+[DEBUG]   (s) basedir = /home/fgdev/projects/figbridge/fg_tester
+[DEBUG]   (s) childDelegation = false
+[DEBUG]   (f) classesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (s) classpathDependencyExcludes = []
+[DEBUG]   (s) dependenciesToScan = []
+[DEBUG]   (s) disableXmlReport = false
+[DEBUG]   (s) enableAssertions = true
+[DEBUG]   (s) excludeJUnit5Engines = []
+[DEBUG]   (f) excludedEnvironmentVariables = []
+[DEBUG]   (s) excludes = []
+[DEBUG]   (s) failIfNoSpecifiedTests = true
+[DEBUG]   (s) failIfNoTests = false
+[DEBUG]   (s) failOnFlakeCount = 0
+[DEBUG]   (f) forkCount = 3
+[DEBUG]   (s) forkedProcessExitTimeoutInSeconds = 30
+[DEBUG]   (s) includeJUnit5Engines = []
+[DEBUG]   (s) includes = []
+[DEBUG]   (s) junitArtifactName = junit:junit
+[DEBUG]   (f) parallelMavenExecution = false
+[DEBUG]   (s) parallelOptimized = true
+[DEBUG]   (s) perCoreThreadCount = true
+[DEBUG]   (s) pluginArtifactMap = {org.apache.maven.plugins:maven-surefire-plugin=org.apache.maven.plugins:maven-surefire-plugin:maven-plugin:3.2.2:, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:3.2.2:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:3.2.2:compile, org.apache.maven.surefire:surefire-logger-api=org.apache.maven.surefire:surefire-logger-api:jar:3.2.2:compile, org.apache.maven.surefire:surefire-extensions-api=org.apache.maven.surefire:surefire-extensions-api:jar:3.2.2:compile, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:3.2.2:compile, org.apache.maven.surefire:surefire-extensions-spi=org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.2:compile, org.eclipse.aether:aether-util=org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile, org.eclipse.aether:aether-api=org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile, org.apache.maven.shared:maven-common-artifact-filters=org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1:compile, commons-io:commons-io=commons-io:commons-io:jar:2.12.0:compile, org.codehaus.plexus:plexus-java=org.codehaus.plexus:plexus-java:jar:1.2.0:compile, org.ow2.asm:asm=org.ow2.asm:asm:jar:9.6:compile, com.thoughtworks.qdox:qdox=com.thoughtworks.qdox:qdox:jar:2.0.3:compile, org.apache.maven.surefire:surefire-shared-utils=org.apache.maven.surefire:surefire-shared-utils:jar:3.2.2:compile}
+[DEBUG]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugins.maven_surefire_plugin.HelpMojo', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.2.2:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.SurefirePlugin', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test'
+---
+[DEBUG]   (s) printSummary = true
+[DEBUG]   (s) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (s) projectArtifactMap = {org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.13:compile, org.slf4j:slf4j-log4j12=org.slf4j:slf4j-log4j12:jar:1.7.13:compile, log4j:log4j=log4j:log4j:jar:1.2.16:compile, com.google.guava:guava=com.google.guava:guava:jar:31.1-jre:compile, com.google.guava:failureaccess=com.google.guava:failureaccess:jar:1.0.1:compile, com.google.guava:listenablefuture=com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile, com.google.code.findbugs:jsr305=com.google.code.findbugs:jsr305:jar:3.0.2:compile, org.checkerframework:checker-qual=org.checkerframework:checker-qual:jar:3.12.0:compile, com.google.errorprone:error_prone_annotations=com.google.errorprone:error_prone_annotations:jar:2.11.0:compile, com.google.j2objc:j2objc-annotations=com.google.j2objc:j2objc-annotations:jar:1.3:compile, zedi.pacbridge:pacbridge-app=zedi.pacbridge:pacbridge-app:ejb:6.4.0:compile, zedi.pacbridge:pacbridge-domain=zedi.pacbridge:pacbridge-domain:jar:6.4.0:compile, org.eclipse.persistence:eclipselink=org.eclipse.persistence:eclipselink:jar:2.5.0:compile, org.eclipse.persistence:javax.persistence=org.eclipse.persistence:javax.persistence:jar:2.1.0:compile, org.eclipse.persistence:commonj.sdo=org.eclipse.persistence:commonj.sdo:jar:2.1.1:compile, org.wildfly:wildfly-parent=org.wildfly:wildfly-parent:pom:10.0.0.Final:compile, org.wildfly.checkstyle:wildfly-checkstyle-config=org.wildfly.checkstyle:wildfly-checkstyle-config:jar:1.0.4.Final:compile, zedi.pacbridge:pacbridge-net=zedi.pacbridge:pacbridge-net:jar:6.4.0:compile, zedi.pacbridge:pacbridge-utl=zedi.pacbridge:pacbridge-utl:test-jar:tests:6.4.0:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.8.3:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.1.1:compile, org.reflections:reflections=org.reflections:reflections:jar:0.9.11:compile, org.javassist:javassist=org.javassist:javassist:jar:3.21.0-GA:compile, javax:javaee-api=javax:javaee-api:jar:7.0:compile, com.sun.mail:javax.mail=com.sun.mail:javax.mail:jar:1.5.0:compile, zedi.pacbridge:pacbridge-gdn=zedi.pacbridge:pacbridge-gdn:jar:6.4.0:compile, commons-codec:commons-codec=commons-codec:commons-codec:jar:1.7:compile, zedi.pacbridge:pacbridge-zap=zedi.pacbridge:pacbridge-zap:jar:6.4.0:compile, javax.jms:jms=javax.jms:jms:jar:1.1:compile, javax.mail:mail=javax.mail:mail:jar:1.4:compile, javax.activation:activation=javax.activation:activation:jar:1.1:compile, com.google.inject:guice=com.google.inject:guice:jar:7.0.0:compile, jakarta.inject:jakarta.inject-api=jakarta.inject:jakarta.inject-api:jar:2.0.1:compile, aopalliance:aopalliance=aopalliance:aopalliance:jar:1.0:compile, junit:junit=junit:junit:jar:4.12:test, org.hamcrest:hamcrest-core=org.hamcrest:hamcrest-core:jar:1.3:test, org.yaml:snakeyaml=org.yaml:snakeyaml:jar:1.21:compile, org.mockito:mockito-core=org.mockito:mockito-core:jar:3.0.0:compile, net.bytebuddy:byte-buddy=net.bytebuddy:byte-buddy:jar:1.9.10:compile, net.bytebuddy:byte-buddy-agent=net.bytebuddy:byte-buddy-agent:jar:1.9.10:compile, org.json:json=org.json:json:jar:20151123:compile, org.jdom:jdom=org.jdom:jdom:jar:2.0.2:compile, org.powermock:powermock-api-mockito2=org.powermock:powermock-api-mockito2:jar:2.0.2:test, org.powermock:powermock-api-support=org.powermock:powermock-api-support:jar:2.0.2:test, org.powermock:powermock-reflect=org.powermock:powermock-reflect:jar:2.0.2:test, org.powermock:powermock-core=org.powermock:powermock-core:jar:2.0.2:test, org.powermock:powermock-module-junit4=org.powermock:powermock-module-junit4:jar:2.0.2:test, org.powermock:powermock-module-junit4-common=org.powermock:powermock-module-junit4-common:jar:2.0.2:test, org.objenesis:objenesis=org.objenesis:objenesis:jar:3.0.1:test, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, xpp3:xpp3=xpp3:xpp3:jar:1.1.4c:compile}
+[DEBUG]   (s) projectBuildDirectory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (s) redirectTestOutputToFile = false
+[DEBUG]   (s) reportFormat = brief
+[DEBUG]   (s) reportsDirectory = /home/fgdev/projects/figbridge/fg_tester/target/surefire-reports
+[DEBUG]   (f) rerunFailingTestsCount = 0
+[DEBUG]   (f) reuseForks = true
+[DEBUG]   (s) runOrder = filesystem
+[DEBUG]   (s) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) shutdown = exit
+[DEBUG]   (s) skip = false
+[DEBUG]   (f) skipAfterFailureCount = 0
+[DEBUG]   (s) skipTests = false
+[DEBUG]   (s) suiteXmlFiles = []
+[DEBUG]   (s) tempDir = surefire
+[DEBUG]   (s) testClassesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG]   (s) testFailureIgnore = false
+[DEBUG]   (s) testNGArtifactName = org.testng:testng
+[DEBUG]   (s) testSourceDirectory = /home/fgdev/projects/figbridge/fg_tester/src/test/java
+[DEBUG]   (s) threadCountClasses = 0
+[DEBUG]   (s) threadCountMethods = 0
+[DEBUG]   (s) threadCountSuites = 0
+[DEBUG]   (s) trimStackTrace = false
+[DEBUG]   (s) useFile = true
+[DEBUG]   (s) useManifestOnlyJar = true
+[DEBUG]   (f) useModulePath = true
+[DEBUG]   (s) useSystemClassLoader = true
+[DEBUG]   (s) useUnlimitedThreads = false
+[DEBUG]   (s) workingDirectory = /home/fgdev/projects/figbridge/fg_tester
+[DEBUG] -- end configuration --
+[DEBUG] Using JVM: /usr/lib/jvm/jdk-17.0.7+7/bin/java with Java version 17.0
+[DEBUG] Resolved included and excluded patterns: **/Test*.java, **/*Test.java, **/*Tests.java, **/*TestCase.java, !**/*$*
+[INFO] 
+[INFO] --- exec:3.0.0:java (run-application) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=212452, ConflictMarker.markTime=71563, ConflictMarker.nodeCount=127, ConflictIdSorter.graphTime=109658, ConflictIdSorter.topsortTime=25362, ConflictIdSorter.conflictIdCount=30, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=662900, ConflictResolver.conflictItemCount=74, DfDependencyCollector.collectTime=59400124, DfDependencyCollector.transformTime=1101466}
+[DEBUG] org.codehaus.mojo:exec-maven-plugin:jar:3.0.0
+[DEBUG]    org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]       org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]       org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]       org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[DEBUG]    org.codehaus.plexus:plexus-component-annotations:jar:1.6:compile (optional)
+[DEBUG]    org.apache.commons:commons-exec:jar:1.3:compile
+[DEBUG]    org.apache.maven.shared:maven-artifact-transfer:jar:0.10.1:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:3.0.1:compile
+[DEBUG]          org.apache.maven.shared:maven-shared-utils:jar:3.1.0:compile
+[DEBUG]             commons-io:commons-io:jar:2.5:compile
+[DEBUG]       commons-codec:commons-codec:jar:1.11:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.5:compile
+[DEBUG] Created new class realm plugin>org.codehaus.mojo:exec-maven-plugin:3.0.0
+[DEBUG] Importing foreign packages into class realm plugin>org.codehaus.mojo:exec-maven-plugin:3.0.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.codehaus.mojo:exec-maven-plugin:3.0.0
+[DEBUG]   Included: org.codehaus.mojo:exec-maven-plugin:jar:3.0.0
+[DEBUG]   Included: org.sonatype.aether:aether-util:jar:1.7
+[DEBUG]   Included: org.sonatype.sisu:sisu-inject-bean:jar:1.4.2
+[DEBUG]   Included: org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.14
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.20
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.6
+[DEBUG]   Included: org.apache.commons:commons-exec:jar:1.3
+[DEBUG]   Included: org.apache.maven.shared:maven-artifact-transfer:jar:0.10.1
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.0.1
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.1.0
+[DEBUG]   Included: commons-io:commons-io:jar:2.5
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.11
+[DEBUG] Loading mojo org.codehaus.mojo:exec-maven-plugin:3.0.0:java from plugin realm ClassRealm[plugin>org.codehaus.mojo:exec-maven-plugin:3.0.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.codehaus.mojo:exec-maven-plugin:3.0.0:java:run-application' with basic configurator -->
+[DEBUG]   (f) addOutputToClasspath = true
+[DEBUG]   (f) addResourcesToClasspath = false
+[DEBUG]   (f) arguments = []
+[DEBUG]   (f) classpathScope = runtime
+[DEBUG]   (f) cleanupDaemonThreads = true
+[DEBUG]   (f) daemonThreadJoinTimeout = 15000
+[DEBUG]   (f) includePluginDependencies = false
+[DEBUG]   (f) includeProjectDependencies = true
+[DEBUG]   (f) keepAlive = false
+[DEBUG]   (f) killAfter = -1
+[DEBUG]   (f) mainClass = zedi.fg.tester.Main
+[DEBUG]   (f) plugin = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.codehaus.mojo.exec.ExecMojo', role hint: 'org.codehaus.mojo:exec-maven-plugin:3.0.0:exec'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.codehaus.mojo.exec.HelpMojo', role hint: 'org.codehaus.mojo:exec-maven-plugin:3.0.0:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.codehaus.mojo.exec.ExecJavaMojo', role hint: 'org.codehaus.mojo:exec-maven-plugin:3.0.0:java'
+---
+[DEBUG]   (f) pluginDependencies = [org.codehaus.mojo:exec-maven-plugin:maven-plugin:3.0.0:, org.apache.maven:maven-model:jar:3.0:compile, org.apache.maven:maven-artifact:jar:3.0:compile, org.apache.maven:maven-core:jar:3.0:compile, org.apache.maven:maven-settings:jar:3.0:compile, org.apache.maven:maven-settings-builder:jar:3.0:compile, org.apache.maven:maven-repository-metadata:jar:3.0:compile, org.apache.maven:maven-model-builder:jar:3.0:compile, org.apache.maven:maven-aether-provider:jar:3.0:runtime, org.sonatype.aether:aether-impl:jar:1.7:compile, org.sonatype.aether:aether-spi:jar:1.7:compile, org.sonatype.aether:aether-api:jar:1.7:compile, org.sonatype.aether:aether-util:jar:1.7:compile, org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile, org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile, org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile, org.codehaus.plexus:plexus-interpolation:jar:1.14:compile, org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile, org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile, org.sonatype.plexus:plexus-cipher:jar:1.4:compile, org.apache.maven:maven-plugin-api:jar:3.0:compile, org.codehaus.plexus:plexus-utils:jar:3.0.20:compile, org.codehaus.plexus:plexus-component-annotations:jar:1.6:compile, org.apache.commons:commons-exec:jar:1.3:compile, org.apache.maven.shared:maven-artifact-transfer:jar:0.10.1:compile, org.apache.maven.shared:maven-common-artifact-filters:jar:3.0.1:compile, org.apache.maven.shared:maven-shared-utils:jar:3.1.0:compile, commons-io:commons-io:jar:2.5:compile, commons-codec:commons-codec:jar:1.11:compile, org.slf4j:slf4j-api:jar:1.7.5:compile]
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) stopUnresponsiveDaemonThreads = false
+[DEBUG] -- end configuration --
+[DEBUG] Invoking : zedi.fg.tester.Main.main()
+[DEBUG] Plugin Dependencies will be excluded.
+[DEBUG] Project Dependencies will be included.
+[DEBUG] Collected project artifacts [org.slf4j:slf4j-api:jar:1.7.13:compile, org.slf4j:slf4j-log4j12:jar:1.7.13:compile, log4j:log4j:jar:1.2.16:compile, com.google.guava:guava:jar:31.1-jre:compile, com.google.guava:failureaccess:jar:1.0.1:compile, com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile, com.google.code.findbugs:jsr305:jar:3.0.2:compile, org.checkerframework:checker-qual:jar:3.12.0:compile, com.google.errorprone:error_prone_annotations:jar:2.11.0:compile, com.google.j2objc:j2objc-annotations:jar:1.3:compile, zedi.pacbridge:pacbridge-app:ejb:6.4.0:compile, zedi.pacbridge:pacbridge-domain:jar:6.4.0:compile, org.eclipse.persistence:eclipselink:jar:2.5.0:compile, org.eclipse.persistence:javax.persistence:jar:2.1.0:compile, org.eclipse.persistence:commonj.sdo:jar:2.1.1:compile, org.wildfly.checkstyle:wildfly-checkstyle-config:jar:1.0.4.Final:compile, zedi.pacbridge:pacbridge-net:jar:6.4.0:compile, zedi.pacbridge:pacbridge-utl:jar:6.4.0:compile, commons-beanutils:commons-beanutils:jar:1.8.3:compile, commons-logging:commons-logging:jar:1.1.1:compile, org.reflections:reflections:jar:0.9.11:compile, org.javassist:javassist:jar:3.21.0-GA:compile, javax:javaee-api:jar:7.0:compile, com.sun.mail:javax.mail:jar:1.5.0:compile, zedi.pacbridge:pacbridge-utl:test-jar:tests:6.4.0:compile, zedi.pacbridge:pacbridge-gdn:jar:6.4.0:compile, commons-codec:commons-codec:jar:1.7:compile, zedi.pacbridge:pacbridge-zap:jar:6.4.0:compile, javax.jms:jms:jar:1.1:compile, javax.mail:mail:jar:1.4:compile, javax.activation:activation:jar:1.1:compile, com.google.inject:guice:jar:7.0.0:compile, jakarta.inject:jakarta.inject-api:jar:2.0.1:compile, aopalliance:aopalliance:jar:1.0:compile, org.yaml:snakeyaml:jar:1.21:compile, org.mockito:mockito-core:jar:3.0.0:compile, net.bytebuddy:byte-buddy:jar:1.9.10:compile, net.bytebuddy:byte-buddy-agent:jar:1.9.10:compile, org.json:json:jar:20151123:compile, org.jdom:jdom:jar:2.0.2:compile, commons-lang:commons-lang:jar:2.6:compile, xpp3:xpp3:jar:1.1.4c:compile]
+[DEBUG] Collected project classpath [/home/fgdev/projects/figbridge/fg_tester/target/classes]
+[DEBUG] Adding to classpath : /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG] Adding project dependency artifact: slf4j-api to classpath
+[DEBUG] Adding project dependency artifact: slf4j-log4j12 to classpath
+[DEBUG] Adding project dependency artifact: log4j to classpath
+[DEBUG] Adding project dependency artifact: guava to classpath
+[DEBUG] Adding project dependency artifact: failureaccess to classpath
+[DEBUG] Adding project dependency artifact: listenablefuture to classpath
+[DEBUG] Adding project dependency artifact: jsr305 to classpath
+[DEBUG] Adding project dependency artifact: checker-qual to classpath
+[DEBUG] Adding project dependency artifact: error_prone_annotations to classpath
+[DEBUG] Adding project dependency artifact: j2objc-annotations to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-app to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-domain to classpath
+[DEBUG] Adding project dependency artifact: eclipselink to classpath
+[DEBUG] Adding project dependency artifact: javax.persistence to classpath
+[DEBUG] Adding project dependency artifact: commonj.sdo to classpath
+[DEBUG] Adding project dependency artifact: wildfly-checkstyle-config to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-net to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-utl to classpath
+[DEBUG] Adding project dependency artifact: commons-beanutils to classpath
+[DEBUG] Adding project dependency artifact: commons-logging to classpath
+[DEBUG] Adding project dependency artifact: reflections to classpath
+[DEBUG] Adding project dependency artifact: javassist to classpath
+[DEBUG] Adding project dependency artifact: javaee-api to classpath
+[DEBUG] Adding project dependency artifact: javax.mail to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-utl to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-gdn to classpath
+[DEBUG] Adding project dependency artifact: commons-codec to classpath
+[DEBUG] Adding project dependency artifact: pacbridge-zap to classpath
+[DEBUG] Adding project dependency artifact: jms to classpath
+[DEBUG] Adding project dependency artifact: mail to classpath
+[DEBUG] Adding project dependency artifact: activation to classpath
+[DEBUG] Adding project dependency artifact: guice to classpath
+[DEBUG] Adding project dependency artifact: jakarta.inject-api to classpath
+[DEBUG] Adding project dependency artifact: aopalliance to classpath
+[DEBUG] Adding project dependency artifact: snakeyaml to classpath
+[DEBUG] Adding project dependency artifact: mockito-core to classpath
+[DEBUG] Adding project dependency artifact: byte-buddy to classpath
+[DEBUG] Adding project dependency artifact: byte-buddy-agent to classpath
+[DEBUG] Adding project dependency artifact: json to classpath
+[DEBUG] Adding project dependency artifact: jdom to classpath
+[DEBUG] Adding project dependency artifact: commons-lang to classpath
+[DEBUG] Adding project dependency artifact: xpp3 to classpath
+[DEBUG] joining on thread Thread[zedi.fg.tester.Main.main(),5,zedi.fg.tester.Main]
+[DEBUG] joining on thread Thread[AWT-EventQueue-0,6,zedi.fg.tester.Main]
+Binding listener socket to /0.0.0.0:3100
+Listening for connections on /0.0.0.0:3100
+[DEBUG] interrupting thread Thread[TestConfigurationSetupCoordinator,5,zedi.fg.tester.Main]
+[DEBUG] joining on thread Thread[TestConfigurationSetupCoordinator,5,zedi.fg.tester.Main]
+Unhandled exception
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1638)
+	at zedi.fg.tester.configs.TestConfigurationSetupCoordinator$CoordinatorRunner.run(TestConfigurationSetupCoordinator.java:127)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[DEBUG] interrupting thread Thread[AWT-EventQueue-0,6,zedi.fg.tester.Main]
+[DEBUG] joining on thread Thread[AWT-EventQueue-0,6,zedi.fg.tester.Main]
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=95453, ConflictMarker.markTime=29278, ConflictMarker.nodeCount=22, ConflictIdSorter.graphTime=34638, ConflictIdSorter.topsortTime=16897, ConflictIdSorter.conflictIdCount=13, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=319619, ConflictResolver.conflictItemCount=22, DfDependencyCollector.collectTime=29157046, DfDependencyCollector.transformTime=513539}
+[DEBUG] org.apache.maven.plugins:maven-jar-plugin:jar:3.3.0
+[DEBUG]    org.apache.maven.shared:file-management:jar:3.1.0:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       commons-io:commons-io:jar:2.11.0:compile
+[DEBUG]    org.apache.maven:maven-archiver:jar:3.6.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-io:jar:3.4.0:compile
+[DEBUG]          javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.codehaus.plexus:plexus-archiver:jar:4.4.0:compile
+[DEBUG]          org.apache.commons:commons-compress:jar:1.21:compile
+[DEBUG]          org.iq80.snappy:snappy:jar:0.4:compile
+[DEBUG]          org.tukaani:xz:jar:1.9:runtime
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.26:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.4.2:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.3.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.3.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-jar-plugin:3.3.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-jar-plugin:jar:3.3.0
+[DEBUG]   Included: org.apache.maven.shared:file-management:jar:3.1.0
+[DEBUG]   Included: commons-io:commons-io:jar:2.11.0
+[DEBUG]   Included: org.apache.maven:maven-archiver:jar:3.6.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.4.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:4.4.0
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.21
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.9
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.4.2
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-jar-plugin:3.3.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar:default-jar' with basic configurator -->
+[DEBUG]   (f) classesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/classes
+[DEBUG]   (f) finalName = eventgenerator-1.0.0
+[DEBUG]   (f) forceCreation = false
+[DEBUG]   (f) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skipIfEmpty = false
+[DEBUG]   (f) useDefaultManifestFile = false
+[DEBUG] -- end configuration --
+[DEBUG] isUp2date: false (Destination /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0.jar not found.)
+[INFO] Building jar: /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0.jar
+[DEBUG] adding directory META-INF/
+[DEBUG] adding entry META-INF/MANIFEST.MF
+[DEBUG] adding directory zedi/
+[DEBUG] adding directory zedi/fg/
+[DEBUG] adding directory zedi/fg/tester/
+[DEBUG] adding directory zedi/fg/tester/util/
+[DEBUG] adding directory zedi/fg/tester/configs/
+[DEBUG] adding directory zedi/fg/tester/ui/
+[DEBUG] adding directory zedi/fg/tester/net/
+[DEBUG] adding entry zedi/fg/tester/Main.class
+[DEBUG] adding entry zedi/fg/tester/util/SwingUtl.class
+[DEBUG] adding entry zedi/fg/tester/util/ConfigureUpdateHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/TransmissionNotificationHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/HeartbeatMessageHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/BundledReportMessageHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/ConfigurationFileSerializer.class
+[DEBUG] adding entry zedi/fg/tester/util/Constants.class
+[DEBUG] adding entry zedi/fg/tester/util/Configuration.class
+[DEBUG] adding entry zedi/fg/tester/util/FgMessageSender.class
+[DEBUG] adding entry zedi/fg/tester/util/TransmissionPackage.class
+[DEBUG] adding entry zedi/fg/tester/util/AckDecoderNotificationHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/ZapMessageHandler.class
+[DEBUG] adding entry zedi/fg/tester/util/TransmissionPackage$TYPE.class
+[DEBUG] adding entry zedi/fg/tester/util/ZiosReturnCodes.class
+[DEBUG] adding entry zedi/fg/tester/util/ConfigurationSerializer.class
+[DEBUG] adding entry zedi/fg/tester/util/AppController.class
+[DEBUG] adding entry zedi/fg/tester/configs/DeleteEventConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/StoreAndForwardTestConfiguration$State.class
+[DEBUG] adding entry zedi/fg/tester/configs/AddEventConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/A1000TestConfiguration$1.class
+[DEBUG] adding entry zedi/fg/tester/configs/ConfigureIOPointsEventGnerator.class
+[DEBUG] adding entry zedi/fg/tester/configs/StoreAndForwardTestConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/A1000TestConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/SystemIOPointsReportConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/BaseTestConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/ConfigurationSetup.class
+[DEBUG] adding entry zedi/fg/tester/configs/ModbusTestConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/AIDITestConfiguration$1.class
+[DEBUG] adding entry zedi/fg/tester/configs/A1000TestConfiguration$IOActionLoad.class
+[DEBUG] adding entry zedi/fg/tester/configs/AddSiteConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/AIDITestConfiguration$State.class
+[DEBUG] adding entry zedi/fg/tester/configs/TestConfigurationSetupCoordinator.class
+[DEBUG] adding entry zedi/fg/tester/configs/A1000TestConfiguration$State.class
+[DEBUG] adding entry zedi/fg/tester/configs/ModbusTestConfiguration$State.class
+[DEBUG] adding entry zedi/fg/tester/configs/ModbusTestConfiguration$1.class
+[DEBUG] adding entry zedi/fg/tester/configs/AIDITestConfiguration.class
+[DEBUG] adding entry zedi/fg/tester/configs/TestConfigurator.class
+[DEBUG] adding entry zedi/fg/tester/configs/TestConfigurationSetupCoordinator$CoordinatorRunner.class
+[DEBUG] adding entry zedi/fg/tester/configs/StoreAndForwardTestConfiguration$1.class
+[DEBUG] adding entry zedi/fg/tester/Test.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/StatusPanel.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddSiteDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddEventDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/DeleteEventDialog.class
+[DEBUG] adding entry zedi/fg/tester/ui/TraceWindow$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$4.class
+[DEBUG] adding entry zedi/fg/tester/ui/ScrubDialog.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$7.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$8.class
+[DEBUG] adding entry zedi/fg/tester/ui/PreferencesDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/ScrubDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddSiteDialog.class
+[DEBUG] adding entry zedi/fg/tester/ui/TraceWindow.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$10.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddEventDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/TraceWindow$TraceWindowListener.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$11.class
+[DEBUG] adding entry zedi/fg/tester/ui/DemandPollDialog.class
+[DEBUG] adding entry zedi/fg/tester/ui/DemandPollDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/ConsoleTextPane.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddSiteDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$12.class
+[DEBUG] adding entry zedi/fg/tester/ui/DemandPollDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/DeleteEventDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/ConsoleTextPane$PopupMenuListener.class
+[DEBUG] adding entry zedi/fg/tester/ui/AddEventDialog.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$9.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$MainFrameWindowListener.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$6.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$3.class
+[DEBUG] adding entry zedi/fg/tester/ui/ConsoleTextPane$ClearMenuItem.class
+[DEBUG] adding entry zedi/fg/tester/ui/DeleteEventDialog$2.class
+[DEBUG] adding entry zedi/fg/tester/ui/ConsoleTextPane$SelectAllMenuItem.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$13.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$5.class
+[DEBUG] adding entry zedi/fg/tester/ui/ScrollingConsolePane.class
+[DEBUG] adding entry zedi/fg/tester/ui/ScrubDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/ConsoleTextPane$CopyMenuItem.class
+[DEBUG] adding entry zedi/fg/tester/ui/MainFrame.class
+[DEBUG] adding entry zedi/fg/tester/ui/PreferencesDialog$1.class
+[DEBUG] adding entry zedi/fg/tester/ui/TextPaneAppender.class
+[DEBUG] adding entry zedi/fg/tester/ui/PreferencesDialog.class
+[DEBUG] adding entry zedi/fg/tester/net/FgSession$1.class
+[DEBUG] adding entry zedi/fg/tester/net/MockAuthenticationDelegate.class
+[DEBUG] adding entry zedi/fg/tester/net/FgAuthenticator.class
+[DEBUG] adding entry zedi/fg/tester/net/ZapProtocolStackFactory.class
+[DEBUG] adding entry zedi/fg/tester/net/FgSession.class
+[DEBUG] adding entry zedi/fg/tester/net/FgSession$State.class
+[DEBUG] adding entry zedi/fg/tester/net/ConnectionListener.class
+[DEBUG] adding entry zedi/fg/tester/net/ZapMessageOrchastrator.class
+[DEBUG] adding entry zedi/fg/tester/InjectorModel.class
+[DEBUG] adding directory META-INF/maven/
+[DEBUG] adding directory META-INF/maven/zedi.pacbridge/
+[DEBUG] adding directory META-INF/maven/zedi.pacbridge/eventgenerator/
+[DEBUG] adding entry META-INF/maven/zedi.pacbridge/eventgenerator/pom.xml
+[DEBUG] adding entry META-INF/maven/zedi.pacbridge/eventgenerator/pom.properties
+[INFO] 
+[INFO] --- jar:3.3.0:test-jar (default) @ eventgenerator ---
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-jar-plugin:3.3.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar:default' with basic configurator -->
+[DEBUG]   (f) classifier = tests
+[DEBUG]   (f) finalName = eventgenerator-1.0.0
+[DEBUG]   (f) forceCreation = false
+[DEBUG]   (f) outputDirectory = /home/fgdev/projects/figbridge/fg_tester/target
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skipIfEmpty = false
+[DEBUG]   (f) testClassesDirectory = /home/fgdev/projects/figbridge/fg_tester/target/test-classes
+[DEBUG]   (f) useDefaultManifestFile = false
+[DEBUG] -- end configuration --
+[DEBUG] isUp2date: false (Destination /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0-tests.jar not found.)
+[INFO] Building jar: /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0-tests.jar
+[DEBUG] adding directory META-INF/
+[DEBUG] adding entry META-INF/MANIFEST.MF
+[DEBUG] adding directory zedi/
+[DEBUG] adding directory zedi/fg/
+[DEBUG] adding directory zedi/fg/tester/
+[DEBUG] adding directory zedi/fg/tester/net/
+[DEBUG] adding entry zedi/fg/tester/net/WhenFgAuthenticatorIsAskedToAuthenticate.class
+[DEBUG] adding directory META-INF/maven/
+[DEBUG] adding directory META-INF/maven/zedi.pacbridge/
+[DEBUG] adding directory META-INF/maven/zedi.pacbridge/eventgenerator/
+[DEBUG] adding entry META-INF/maven/zedi.pacbridge/eventgenerator/pom.xml
+[DEBUG] adding entry META-INF/maven/zedi.pacbridge/eventgenerator/pom.properties
+[INFO] 
+[INFO] --- install:3.1.1:install (default-install) @ eventgenerator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=20793, ConflictMarker.markTime=14474, ConflictMarker.nodeCount=4, ConflictIdSorter.graphTime=4288, ConflictIdSorter.topsortTime=8652, ConflictIdSorter.conflictIdCount=4, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=63916, ConflictResolver.conflictItemCount=4, DfDependencyCollector.collectTime=2000533, DfDependencyCollector.transformTime=122225}
+[DEBUG] org.apache.maven.plugins:maven-install-plugin:jar:3.1.1
+[DEBUG]    org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile
+[DEBUG]       org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.5.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-install-plugin:3.1.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-install-plugin:3.1.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-install-plugin:3.1.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-install-plugin:jar:3.1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-install-plugin:3.1.1:install from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-install-plugin:3.1.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5cb0d902]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-install-plugin:3.1.1:install:default-install' with basic configurator -->
+[DEBUG]   (f) allowIncompleteProjects = false
+[DEBUG]   (f) installAtEnd = false
+[DEBUG]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugins.maven_install_plugin.HelpMojo', role hint: 'org.apache.maven.plugins:maven-install-plugin:3.1.1:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugins.install.InstallMojo', role hint: 'org.apache.maven.plugins:maven-install-plugin:3.1.1:install'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugins.install.InstallFileMojo', role hint: 'org.apache.maven.plugins:maven-install-plugin:3.1.1:install-file'
+---
+[DEBUG]   (f) project = MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml
+[DEBUG]   (f) reactorProjects = [MavenProject: zedi.pacbridge:eventgenerator:1.0.0 @ /home/fgdev/projects/figbridge/fg_tester/pom.xml]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4248b963
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] Attaching for install: zedi.pacbridge:eventgenerator:test-jar:tests:1.0.0
+[INFO] Installing /home/fgdev/projects/figbridge/fg_tester/pom.xml to /usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/eventgenerator-1.0.0.pom
+[DEBUG] Writing tracking file '/usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/_remote.repositories'
+[INFO] Installing /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0.jar to /usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/eventgenerator-1.0.0.jar
+[DEBUG] Writing tracking file '/usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/_remote.repositories'
+[INFO] Installing /home/fgdev/projects/figbridge/fg_tester/target/eventgenerator-1.0.0-tests.jar to /usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/eventgenerator-1.0.0-tests.jar
+[DEBUG] Writing tracking file '/usr/share/maven-repo/zedi/pacbridge/eventgenerator/1.0.0/_remote.repositories'
+[DEBUG] Installing zedi.pacbridge:eventgenerator/maven-metadata.xml to /usr/share/maven-repo/zedi/pacbridge/eventgenerator/maven-metadata-local.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.629 s
+[INFO] Finished at: 2023-12-13T07:05:10-07:00
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory

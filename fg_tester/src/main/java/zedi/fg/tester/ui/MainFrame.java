@@ -35,6 +35,8 @@ public class MainFrame extends JFrame implements ActionListener
     private DeleteEventDialog deleteEventDialog;
     private PreferencesDialog preferenceDialog;
     private AddSiteDialog addSiteDialog;
+    private AddIOPointsDialog addIOPointsDialog;
+    private UpdateIOPointDialog updateIOPointsDialog;
 
 	private JMenuBar menuBar = new JMenuBar();
 
@@ -218,7 +220,28 @@ public class MainFrame extends JFrame implements ActionListener
         });
         sendMenu.add(addSiteMenuItem);
 
-        sendMenu.setEnabled(false);
+        JMenuItem addIOPointMenuItem = new JMenuItem("Add IOPoints...");
+        addIOPointMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (addIOPointsDialog == null)
+                    addIOPointsDialog = new AddIOPointsDialog(appController);
+                addIOPointsDialog.setLocationRelativeTo(MainFrame.this);
+                addIOPointsDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(addIOPointMenuItem);
+
+        JMenuItem updateIOPointMenuItem = new JMenuItem("Update IOPoints...");
+        updateIOPointMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (updateIOPointsDialog == null)
+                    updateIOPointsDialog = new UpdateIOPointDialog(appController);
+                updateIOPointsDialog.setLocationRelativeTo(MainFrame.this);
+                updateIOPointsDialog.setVisible(true);
+            }
+        });
+        sendMenu.add(updateIOPointMenuItem);
+        //sendMenu.setEnabled(false);
         
         return sendMenu;
 	}
