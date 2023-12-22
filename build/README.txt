@@ -23,4 +23,4 @@ mvn clean
 mvn compile
 mvn install
 
-
+There is a simple shell script to do this for you in that directory.
