@@ -25,9 +25,9 @@ import zedi.pacbridge.zap.values.ZapDataType;
 @PrepareForTest({IoPointReading.class, ReadingCollection.class})
 public class ReadingCollectionTest extends BaseTestCase {
 
-    private static final ZapDataType DATATYPE1 = ZapDataType.UnsignedInteger;
-    private static final ZapDataType DATATYPE2 = ZapDataType.UnsignedByte;
-    private static final Integer TIMESTAMP = 100;
+    public static final ZapDataType DATATYPE1 = ZapDataType.UnsignedInteger;
+    public static final ZapDataType DATATYPE2 = ZapDataType.UnsignedByte;
+    public static final Integer TIMESTAMP = 100;
     
     @Test
     public void shouldShouldDeserialize() throws Exception {

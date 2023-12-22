@@ -10,26 +10,33 @@ import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.PatternLayout;
 import org.junit.After;
 import org.junit.Before;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mockito;
+import org.mockito.MockitoSession;
+import org.mockito.quality.Strictness;
 
 public abstract class BaseTestCase {
     
    static {
-        if (!org.apache.log4j.Logger.getRootLogger().getAllAppenders().hasMoreElements())
+        //if (!org.apache.log4j.Logger.getRootLogger().getAllAppenders().hasMoreElements())
             org.apache.log4j.Logger.getRootLogger().addAppender(new ConsoleAppender(new PatternLayout("%m%n")));
     }
         
     private Properties savedSystemProperties = new Properties();
+    private MockitoSession mockitoSession;
     
     @Before
     public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
+        mockitoSession = Mockito.mockitoSession()
+                            .initMocks(this)
+                            .strictness(Strictness.LENIENT)
+                            .startMocking();
         saveSystemProperties();
     }
 
     @After
     public void tearDown() throws Exception {
         restoreSystemProperties();
+        mockitoSession.finishMocking();
     }
         
     private void saveSystemProperties() {
